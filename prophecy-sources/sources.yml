@@ -1,0 +1,19 @@
+---
+version: 2
+sources:
+- name: "andre_dev.alteryx_spatial"
+  database: "andre_dev"
+  schema: "alteryx_spatial"
+  tables:
+  - name: "buffer_polygons"
+    columns:
+    - name: "name"
+      dataType:
+        type: "String"
+    - name: "distance"
+      dataType:
+        type: "Integer"
+    - name: "geometry"
+      dataType:
+        type: "String"
+    type: "table"

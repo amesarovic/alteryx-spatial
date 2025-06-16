@@ -1,0 +1,167 @@
+{
+  "id" : "BufferTool_01",
+  "metainfo" : {
+    "label" : "BufferTool_01",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "GoTUxxS0Yxv5D0353Nj4c$$oy5hcHeZp3N3Dx7LYRMqi" : {
+      "id" : "GoTUxxS0Yxv5D0353Nj4c$$oy5hcHeZp3N3Dx7LYRMqi",
+      "component" : "BufferTool",
+      "metadata" : {
+        "label" : "buffer_polygons_1",
+        "x" : -220,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "buffer_polygons" ],
+        "_oldMacroProperties" : {
+          "macroName" : "BufferTool",
+          "projectName" : "andre_spatial_07",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['buffer_polygons']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"distance\", \"dataType\": \"Integer\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "distance",
+            "value" : "0"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"distance\", \"dataType\": \"Integer\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "polygonColumnName" : "geometry",
+        "unit" : "miles",
+        "distance" : 0
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "P-VS5PiNB-qf2DChszyKa$$eq9MG9AGC7XQ5JBhsw2zm",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "distance",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "yYVnJddTt5lkoGLE70uzG$$vlQzN1FPhXSVaAVpQV2Eq",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "output",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "BufferTool_andre_spatial_07",
+        "name" : "BufferTool",
+        "projectName" : "andre_spatial_07",
+        "sourceProjectName" : "andre_spatial_07"
+      }
+    },
+    "UuHH67dFsJEFFtyYwk80b$$cbW65bxkSOJYfGDlxMOqK" : {
+      "id" : "UuHH67dFsJEFFtyYwk80b$$cbW65bxkSOJYfGDlxMOqK",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "buffer_polygons",
+        "x" : -480,
+        "y" : -220,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "buffer_polygons",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SAqjyeVNiIBWT9pMQzYze$$M1rxKVFCWeT3xfOdU4DOb",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "cJJ1oVXaGAaQc3Sfi8N3Q$$39UFwTspd3r_HRZxheACC",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "distance",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "q_WA6VJ39B5x0wqjQ1I1J",
+    "source" : "UuHH67dFsJEFFtyYwk80b$$cbW65bxkSOJYfGDlxMOqK",
+    "sourcePort" : "cJJ1oVXaGAaQc3Sfi8N3Q$$39UFwTspd3r_HRZxheACC",
+    "target" : "GoTUxxS0Yxv5D0353Nj4c$$oy5hcHeZp3N3Dx7LYRMqi",
+    "targetPort" : "P-VS5PiNB-qf2DChszyKa$$eq9MG9AGC7XQ5JBhsw2zm"
+  } ],
+  "component" : "Pipeline"
+}
