@@ -48,7 +48,7 @@ macros:
   - name: "polygonColumnName"
     type: "value"
     description: "{\"ProphecyType\": \"value\"}"
-  - name: "distance"
+  - name: "threshold"
     type: "value"
     description: "{\"ProphecyType\": \"value\"}"
   - name: "unit"

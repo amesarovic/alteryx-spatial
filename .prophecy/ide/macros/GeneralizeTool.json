@@ -2,7 +2,7 @@
   "GeneralizeTool" : {
     "name" : "GeneralizeTool",
     "macroType" : "query",
-    "definition" : "\n    {{ log(\"table_name=\" ~ table_name, info=True) }}\n    {{ log(\"schema=\" ~ schema, info=True) }}\n    {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n    {{ log(\"distance=\" ~ distance, info=True) }}\n    {{ log(\"unit=\" ~ unit, info=True) }}\n\n    select\n    andre_dev.alteryx_spatial.generalize({{polygonColumnName}}, {{distance}}) as output\n    from {{ table_name }}",
+    "definition" : "\n    {{ log(\"table_name=\" ~ table_name, info=True) }}\n    {{ log(\"schema=\" ~ schema, info=True) }}\n    {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n    {{ log(\"threshold=\" ~ threshold, info=True) }}\n    {{ log(\"unit=\" ~ unit, info=True) }}\n\n    select\n    andre_dev.alteryx_spatial.generalize({{polygonColumnName}}, {{threshold}}) as output\n    from {{ table_name }}",
     "parameters" : {
       "type" : "record",
       "fields" : [ {
@@ -11,6 +11,7 @@
           "type" : "value"
         },
         "optional" : false,
+        "comment" : "",
         "isWorkflowNodeConfiguration" : false,
         "isReferenced" : false
       }, {
@@ -19,6 +20,7 @@
           "type" : "value"
         },
         "optional" : false,
+        "comment" : "",
         "isWorkflowNodeConfiguration" : false,
         "isReferenced" : false
       }, {
@@ -27,10 +29,11 @@
           "type" : "value"
         },
         "optional" : false,
+        "comment" : "",
         "isWorkflowNodeConfiguration" : false,
         "isReferenced" : false
       }, {
-        "name" : "distance",
+        "name" : "threshold",
         "kind" : {
           "type" : "value"
         },
@@ -43,6 +46,7 @@
           "type" : "value"
         },
         "optional" : false,
+        "comment" : "",
         "isWorkflowNodeConfiguration" : false,
         "isReferenced" : false
       } ]
@@ -50,7 +54,7 @@
     "staleState" : "none",
     "propertiesFile" : {
       "name" : "macros",
-      "content" : "---\nversion: 2\nmacros:\n- name: \"BufferTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTool2\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"GeneralizeTool\"\n  arguments:\n  - name: \"parameter1\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"BufferTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTool2\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"GeneralizeTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
       "path" : "andre_spatial_07/macros/macros.yml",
       "projectConfiguration" : null,
       "folderConfiguration" : {
@@ -106,7 +110,23 @@
         }, {
           "name" : "GeneralizeTool",
           "arguments" : [ {
-            "name" : "parameter1",
+            "name" : "table_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "schema",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "polygonColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "distance",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "unit",
             "type" : "value",
             "description" : "{\"ProphecyType\": \"value\"}"
           } ],

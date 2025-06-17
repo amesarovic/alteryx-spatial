@@ -98,7 +98,7 @@ sqlSources:
     author: mesarovic.andre@prophecy.io
     files:
     - models/GeneralizeTool_01/schema.yml
-    createdAt: '2025-06-17 03:30:33'
+    createdAt: '2025-06-17 03:40:47'
     tables: []
 sqlUnreferencedSources: {}
 sqlPipeline:

@@ -15,7 +15,7 @@ class GeneralizeTool(MacroSpec):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
-        distance: int = 0
+        threshold: int = 0
         unit: str = "kms"
         polygonColumnName: str = ""
 
@@ -89,7 +89,7 @@ class GeneralizeTool(MacroSpec):
             "'" + table_name + "'",
             props.schema,
             "'" + props.polygonColumnName + "'",            
-            str(props.distance),
+            str(props.threshold),
             "'" + props.unit + "'"
         ]
 
@@ -104,7 +104,7 @@ class GeneralizeTool(MacroSpec):
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             polygonColumnName=parametersMap.get('polygonColumnName'),
-            distance=int(parametersMap.get('distance')),
+            threshold=int(parametersMap.get('threshold')),
             unit=str(parametersMap.get('unit'))
         )
 
@@ -117,7 +117,7 @@ class GeneralizeTool(MacroSpec):
                 MacroParameter("relation_name", str(properties.relation_name)),
                 MacroParameter("schema", str(properties.schema)),
                 MacroParameter("destinationColumnNames", properties.polygonColumnName),
-                MacroParameter("distance", str(properties.distance)),
+                MacroParameter("threshold", str(properties.threshold)),
                 MacroParameter("unit", properties.unit)
             ],
         )

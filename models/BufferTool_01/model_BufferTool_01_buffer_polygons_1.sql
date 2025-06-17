@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mbzyn6z6__BufferTool_01__buffer_polygons_1",
+    "alias": "prophecy_tmp__mbzz50xy__BufferTool_01__buffer_polygons_1",
     "database": "andre_dev",
     "schema": "spatial"
   })
