@@ -1,7 +1,7 @@
 {
-  "id" : "model_MakeGridTool_01_create_grid",
+  "id" : "model_GeneralizeTool_01_generalize_polygons",
   "metainfo" : {
-    "label" : "model_MakeGridTool_01_create_grid",
+    "label" : "model_GeneralizeTool_01_generalize_polygons",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mc02h9m2__MakeGridTool_01__create_grid\"",
+        "alias" : "\"prophecy_tmp__mc02buye__GeneralizeTool_01__generalize_polygons\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"spatial\"",
@@ -19,18 +19,18 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__mc02h9m2__MakeGridTool_01__create_grid" : {
-      "id" : "prophecy_tmp__mc02h9m2__MakeGridTool_01__create_grid",
+    "prophecy_tmp__mc02buye__GeneralizeTool_01__generalize_polygons" : {
+      "id" : "prophecy_tmp__mc02buye__GeneralizeTool_01__generalize_polygons",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "create_grid",
+        "label" : "generalize_polygons",
         "phase" : 0
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM create_grid\n\n",
+        "query" : "\nSELECT *\n\nFROM generalize_polygons\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -50,20 +50,19 @@
         "autoUpdateOnRun" : false
       }
     },
-    "lC8HyRuZBYC0sKfa6aEm4$$UGGo8vFEEjb2Sf3eYObQE" : {
-      "id" : "lC8HyRuZBYC0sKfa6aEm4$$UGGo8vFEEjb2Sf3eYObQE",
-      "component" : "MakeGridTool",
+    "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG" : {
+      "id" : "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG",
+      "component" : "GeneralizeTool",
       "metadata" : {
-        "label" : "create_grid",
-        "x" : -200,
-        "y" : -180,
+        "label" : "generalize_polygons",
+        "x" : -520,
+        "y" : -620,
         "phase" : 0
       },
       "properties" : {
-        "cell_size" : 0,
         "relation_name" : [ "ne_polygons" ],
         "_oldMacroProperties" : {
-          "macroName" : "MakeGridTool",
+          "macroName" : "GeneralizeTool",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
             "name" : "relation_name",
@@ -75,7 +74,7 @@
             "name" : "destinationColumnNames",
             "value" : "geometry"
           }, {
-            "name" : "cell_size",
+            "name" : "threshold",
             "value" : "0"
           }, {
             "name" : "unit",
@@ -83,29 +82,30 @@
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "threshold" : 0,
         "polygonColumnName" : "geometry",
         "unit" : "kms"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "dcPYFSQ2sjxxbCoGwGv96$$4auFuLE95IPAfEfJMWaRm",
+          "id" : "dk4qGrq7Nlj3uJAd2a73e$$TFQIzUFyXW7P8zcFhw9LS",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "JP4OS8EeIdV2-v4ts7I56$$UYv6SU_dxVX6AnYL-4m2-",
+          "id" : "Sbi21f0O5-a0-_69Giedc$$g40z5MDRxMLxBXYQD8rbt",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "zEZqykhtmkTWSVIVaykRW" : {
-      "id" : "zEZqykhtmkTWSVIVaykRW",
+    "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy" : {
+      "id" : "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy",
       "component" : "Source",
       "metadata" : {
         "label" : "ne_polygons",
-        "x" : -380,
-        "y" : -180,
+        "x" : -720,
+        "y" : -620,
         "phase" : 0
       },
       "properties" : {
@@ -114,15 +114,14 @@
         },
         "table" : {
           "name" : "ne_polygons",
-          "sourceType" : "Table",
           "sourceName" : "andre_dev.alteryx_spatial",
-          "alias" : ""
+          "sourceType" : "Table"
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "3jW04dSeopy_dpb8nyROz",
+          "id" : "WDq_fNRSuP8aUQ9zVv6ci$$jH04ff8Aux-qxbChlzYB8",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -131,17 +130,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_lC8HyRuZBYC0sKfa6aEm4$$UGGo8vFEEjb2Sf3eYObQE_prophecy_tmp__mc02h9m2__MakeGridTool_01__create_grid",
-    "source" : "lC8HyRuZBYC0sKfa6aEm4$$UGGo8vFEEjb2Sf3eYObQE",
-    "sourcePort" : "JP4OS8EeIdV2-v4ts7I56$$UYv6SU_dxVX6AnYL-4m2-",
-    "target" : "prophecy_tmp__mc02h9m2__MakeGridTool_01__create_grid",
+    "id" : "conn_VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG_prophecy_tmp__mc02buye__GeneralizeTool_01__generalize_polygons",
+    "source" : "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG",
+    "sourcePort" : "Sbi21f0O5-a0-_69Giedc$$g40z5MDRxMLxBXYQD8rbt",
+    "target" : "prophecy_tmp__mc02buye__GeneralizeTool_01__generalize_polygons",
     "targetPort" : "input_port_0_1"
   }, {
-    "id" : "G-QvPW5WAiz0_FiIQPoMG$$tDscMO5usPrXcMdhchlYk",
-    "source" : "zEZqykhtmkTWSVIVaykRW",
-    "sourcePort" : "3jW04dSeopy_dpb8nyROz",
-    "target" : "lC8HyRuZBYC0sKfa6aEm4$$UGGo8vFEEjb2Sf3eYObQE",
-    "targetPort" : "dcPYFSQ2sjxxbCoGwGv96$$4auFuLE95IPAfEfJMWaRm"
+    "id" : "Zgyxz-j5DDIWUzcKmiOlE",
+    "source" : "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy",
+    "sourcePort" : "WDq_fNRSuP8aUQ9zVv6ci$$jH04ff8Aux-qxbChlzYB8",
+    "target" : "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG",
+    "targetPort" : "dk4qGrq7Nlj3uJAd2a73e$$TFQIzUFyXW7P8zcFhw9LS"
   } ],
   "component" : "Model"
 }

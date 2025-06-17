@@ -1,0 +1,16 @@
+---
+version: 2
+models:
+- name: "model_Float_MakeGridTool_01_Float_MakeGridTool_0"
+  tags:
+  - "prophecy_temp"
+sources:
+- name: "prophecy_tmp_source__Float_MakeGridTool_01"
+  database: "andre_dev"
+  schema: "spatial"
+  config:
+    enabled: true
+  tables:
+  - name: "prophecy_tmp__mc02ov3h__Float_MakeGridTool_01__Float_MakeGridTool_0"
+    tags:
+    - "prophecy_temp"

@@ -1,7 +1,7 @@
 {
-  "id" : "GeneralizeTool_01",
+  "id" : "Float_MakeGridTool_01",
   "metainfo" : {
-    "label" : "GeneralizeTool_01",
+    "label" : "Float_MakeGridTool_01",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -22,13 +22,13 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy" : {
-      "id" : "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy",
+    "BJ9w1VBmLQAlu4GZxRWJ2$$da4-e9svy3v17A3IsiXZg" : {
+      "id" : "BJ9w1VBmLQAlu4GZxRWJ2$$da4-e9svy3v17A3IsiXZg",
       "component" : "Dataset",
       "metadata" : {
         "label" : "ne_polygons",
-        "x" : -720,
-        "y" : -620,
+        "x" : -360,
+        "y" : -140,
         "phase" : 0
       },
       "properties" : {
@@ -43,11 +43,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "GvNpg7uSKjTb3muZVUivT$$7rmvqic8b3H5-SmIqOKip",
+          "id" : "FiGCV24Lh_MHIxAtgSFP3$$fTU_Ar4yYfhOC8bZojMxv",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "WDq_fNRSuP8aUQ9zVv6ci$$jH04ff8Aux-qxbChlzYB8",
+          "id" : "Ww_b92IW79E3O1Ufy7aTZ$$DkeAAz3ZMnxQo1hdie19t",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -68,28 +68,28 @@
         "isCustomOutputSchema" : false
       }
     },
-    "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG" : {
-      "id" : "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG",
+    "AghyJV2MDmeAax4Jyfv7v$$iinM5AgAsX1SggJbTWh2_" : {
+      "id" : "AghyJV2MDmeAax4Jyfv7v$$iinM5AgAsX1SggJbTWh2_",
       "component" : "Model",
       "metadata" : {
-        "label" : "model_GeneralizeTool_01_generalize_polygons",
+        "label" : "model_Float_MakeGridTool_01_Float_MakeGridTool_0",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "model_GeneralizeTool_01_generalize_polygons"
+        "modelName" : "model_Float_MakeGridTool_01_Float_MakeGridTool_0"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__mc02buye__GeneralizeTool_01__generalize_polygons", "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG", "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy" ],
+        "visualProcessIds" : [ "prophecy_tmp__mc02ov3h__Float_MakeGridTool_01__Float_MakeGridTool_0", "AghyJV2MDmeAax4Jyfv7v$$iinM5AgAsX1SggJbTWh2_", "BJ9w1VBmLQAlu4GZxRWJ2$$da4-e9svy3v17A3IsiXZg" ],
         "type" : "table",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "model_GeneralizeTool_01_generalize_polygons_in_0",
+          "id" : "model_Float_MakeGridTool_01_Float_MakeGridTool_0_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "model_GeneralizeTool_01_generalize_polygons_out_0",
+          "id" : "model_Float_MakeGridTool_01_Float_MakeGridTool_0_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -97,11 +97,11 @@
     }
   },
   "connections" : [ {
-    "id" : "Zgyxz-j5DDIWUzcKmiOlE",
-    "source" : "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy",
-    "sourcePort" : "WDq_fNRSuP8aUQ9zVv6ci$$jH04ff8Aux-qxbChlzYB8",
-    "target" : "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG",
-    "targetPort" : "model_GeneralizeTool_01_generalize_polygons_in_0"
+    "id" : "NRe-gtYVTRkpGGTc5vrUh",
+    "source" : "BJ9w1VBmLQAlu4GZxRWJ2$$da4-e9svy3v17A3IsiXZg",
+    "sourcePort" : "Ww_b92IW79E3O1Ufy7aTZ$$DkeAAz3ZMnxQo1hdie19t",
+    "target" : "AghyJV2MDmeAax4Jyfv7v$$iinM5AgAsX1SggJbTWh2_",
+    "targetPort" : "model_Float_MakeGridTool_01_Float_MakeGridTool_0_in_0"
   } ],
   "component" : "Pipeline"
 }
