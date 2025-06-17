@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc0jnmr9__Generalize2Tool_a__generalize_polygons",
+    "alias": "prophecy_tmp__mc0ju924__Generalize2Tool_a__generalize_polygons",
     "database": "andre_dev",
     "schema": "spatial"
   })

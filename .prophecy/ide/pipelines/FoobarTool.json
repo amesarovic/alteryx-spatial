@@ -1,7 +1,7 @@
 {
-  "id" : "FoobarTool2_a",
+  "id" : "FoobarTool",
   "metainfo" : {
-    "label" : "FoobarTool2_a",
+    "label" : "FoobarTool",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -22,20 +22,66 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "7uZs5bXUgE01A1plZbCdC$$oPneo2JH9wRVKGPQw9W64" : {
-      "id" : "7uZs5bXUgE01A1plZbCdC$$oPneo2JH9wRVKGPQw9W64",
-      "component" : "FoobarTool2",
+    "GFz3f-O4RKBDGzTRE0-O0$$_VAwpjDWZG-0a0PL_Z88T" : {
+      "id" : "GFz3f-O4RKBDGzTRE0-O0$$_VAwpjDWZG-0a0PL_Z88T",
+      "component" : "Dataset",
       "metadata" : {
-        "label" : "process_geospatial_data",
-        "x" : -200,
-        "y" : -220,
+        "label" : "ne_polygons",
+        "x" : -620,
+        "y" : -340,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "ne_polygons",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "sourceType" : "Table"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "usBiF1bthKIKoH6AtB7jK$$fl6I1zNPIX4cuwwxJIxfh",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "aLpSjWziKV5xa_ujVq9uV$$PikVewH_pRy_3PZQ_Q6UF",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "eDNwUlbVVMnJgAurDtL78$$-YHB2q0MkvJC51f_FeGoY" : {
+      "id" : "eDNwUlbVVMnJgAurDtL78$$-YHB2q0MkvJC51f_FeGoY",
+      "component" : "FoobarTool",
+      "metadata" : {
+        "label" : "process_ne_polygons",
+        "x" : -420,
+        "y" : -340,
         "phase" : 0
       },
       "properties" : {
         "cell_size" : 1,
         "relation_name" : [ "ne_polygons" ],
         "_oldMacroProperties" : {
-          "macroName" : "FoobarTool2",
+          "macroName" : "FoobarTool",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
             "name" : "relation_name",
@@ -60,7 +106,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "hVtCalm8bJCRgVXlbdWgS$$CXXDkn4QybytdSw34_g5V",
+          "id" : "_Pc6WICHkVGBHS2bgJGGf$$0yHYacachyxGEf1_eYWdT",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -79,7 +125,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "4BVboGMgLgY6aPNpQcLpO$$wFvOPBPSXy4fnPkQdKKDu",
+          "id" : "kYWXf_OoqZYAitDkvqvJv$$Wh5P4S9rjYQKBYylQOowi",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -95,65 +141,19 @@
         "isCustomOutputSchema" : false
       },
       "componentInfo" : {
-        "gemId" : "FoobarTool2_andre_spatial_07",
-        "name" : "FoobarTool2",
+        "gemId" : "FoobarTool_andre_spatial_07",
+        "name" : "FoobarTool",
         "projectName" : "andre_spatial_07",
         "sourceProjectName" : "andre_spatial_07"
-      }
-    },
-    "-5SYOA5LKVBHuJ_17A-u9$$IYeb_RaaB5qXGmjy70Lax" : {
-      "id" : "-5SYOA5LKVBHuJ_17A-u9$$IYeb_RaaB5qXGmjy70Lax",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "ne_polygons",
-        "x" : -500,
-        "y" : -220,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "ne_polygons",
-          "sourceName" : "andre_dev.alteryx_spatial",
-          "sourceType" : "Table"
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "XkBFKeL2Yl7u7Z9mpOHr6$$xd0dtrIoCiDzde9EAb_P6",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "4QZH_LP4G7OQl1VVdg7RC$$zr2d1otngrWJ522vdLa96",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "databricks",
-            "fields" : [ {
-              "name" : "name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "geometry",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
       }
     }
   },
   "connections" : [ {
-    "id" : "yE6xBm6NAIpABCsDAmJ72",
-    "source" : "-5SYOA5LKVBHuJ_17A-u9$$IYeb_RaaB5qXGmjy70Lax",
-    "sourcePort" : "4QZH_LP4G7OQl1VVdg7RC$$zr2d1otngrWJ522vdLa96",
-    "target" : "7uZs5bXUgE01A1plZbCdC$$oPneo2JH9wRVKGPQw9W64",
-    "targetPort" : "hVtCalm8bJCRgVXlbdWgS$$CXXDkn4QybytdSw34_g5V"
+    "id" : "6CXB4zSTIMjMRMXtqE_ui$$z9Lgv4JMiS0LaYHr3Yk3m",
+    "source" : "GFz3f-O4RKBDGzTRE0-O0$$_VAwpjDWZG-0a0PL_Z88T",
+    "sourcePort" : "aLpSjWziKV5xa_ujVq9uV$$PikVewH_pRy_3PZQ_Q6UF",
+    "target" : "eDNwUlbVVMnJgAurDtL78$$-YHB2q0MkvJC51f_FeGoY",
+    "targetPort" : "_Pc6WICHkVGBHS2bgJGGf$$0yHYacachyxGEf1_eYWdT"
   } ],
   "component" : "Pipeline"
 }

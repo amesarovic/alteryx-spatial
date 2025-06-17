@@ -53,7 +53,7 @@ class Float_MakeGridTool(MacroSpec):
                         .bindProperty("polygonColumnName")
                 )                               
                 .addElement(
-                    NumberBox("Cell size",placeholder="1",minValueVar=1)
+                    NumberBox("Cell size",placeholder="1",minValueVar=1).bindProperty("cell_size")
                 )                
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")

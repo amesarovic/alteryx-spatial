@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc0ls74f__FoobarTool2_a__process_geospatial_data",
+    "alias": "prophecy_tmp__mc0kfwgo__FoobarTool__process_ne_polygons",
     "database": "andre_dev",
     "schema": "spatial"
   })
@@ -15,10 +15,10 @@ WITH ne_polygons AS (
 
 ),
 
-process_geospatial_data AS (
+process_ne_polygons AS (
 
   {{
-    andre_spatial_07.FoobarTool2(
+    andre_spatial_07.FoobarTool(
       'ne_polygons', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
@@ -31,4 +31,4 @@ process_geospatial_data AS (
 
 SELECT *
 
-FROM process_geospatial_data
+FROM process_ne_polygons
