@@ -22,92 +22,13 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "Lecbe1QFNZm4ATg5VTB__$$OonUGhHqQ9QiNuHrDOTn-" : {
-      "id" : "Lecbe1QFNZm4ATg5VTB__$$OonUGhHqQ9QiNuHrDOTn-",
-      "component" : "MakeGridTool3",
-      "metadata" : {
-        "label" : "create_grid",
-        "x" : -340,
-        "y" : -340,
-        "phase" : 0
-      },
-      "properties" : {
-        "cell_size" : "0.1",
-        "relation_name" : [ "ne_polygons" ],
-        "_oldMacroProperties" : {
-          "macroName" : "MakeGridTool3",
-          "projectName" : "andre_spatial_07",
-          "parameters" : [ {
-            "name" : "relation_name",
-            "value" : "['ne_polygons']"
-          }, {
-            "name" : "schema",
-            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
-          }, {
-            "name" : "destinationColumnNames",
-            "value" : "geometry"
-          }, {
-            "name" : "cell_size",
-            "value" : "0.1"
-          }, {
-            "name" : "unit",
-            "value" : "miles"
-          } ]
-        },
-        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
-        "polygonColumnName" : "geometry",
-        "unit" : "miles"
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "PRgkpcGKqjLYxuTr_-4E3$$7usSo5J7kembL-b9oPJAh",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "databricks",
-            "fields" : [ {
-              "name" : "name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "geometry",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "7EDHmH5-k533L45UMB0CH$$h8Zd3xFa5r4yjRSaBphCO",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "output",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      },
-      "componentInfo" : {
-        "gemId" : "MakeGridTool3_andre_spatial_07",
-        "name" : "MakeGridTool3",
-        "projectName" : "andre_spatial_07",
-        "sourceProjectName" : "andre_spatial_07"
-      }
-    },
     "0KIsmMe25idM0W0bBpu9e$$iPHmhpM5_WH_43RRB8GGE" : {
       "id" : "0KIsmMe25idM0W0bBpu9e$$iPHmhpM5_WH_43RRB8GGE",
       "component" : "Dataset",
       "metadata" : {
         "label" : "ne_polygons",
-        "x" : -540,
-        "y" : -280,
+        "x" : -560,
+        "y" : -340,
         "phase" : 0
       },
       "properties" : {
@@ -146,14 +67,83 @@
         } ],
         "isCustomOutputSchema" : false
       }
+    },
+    "FC2WbQ049FCaE6p5XTGtH$$UeeuUe3RaCH59jn8_p-dX" : {
+      "id" : "FC2WbQ049FCaE6p5XTGtH$$UeeuUe3RaCH59jn8_p-dX",
+      "component" : "MakeGridTool3",
+      "metadata" : {
+        "label" : "create_grid",
+        "x" : -240,
+        "y" : -300,
+        "phase" : 0
+      },
+      "properties" : {
+        "cell_size" : "",
+        "relation_name" : [ "ne_polygons" ],
+        "_oldMacroProperties" : {
+          "macroName" : "MakeGridTool3",
+          "projectName" : "andre_spatial_07",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['ne_polygons']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "cell_size",
+            "value" : ""
+          }, {
+            "name" : "unit",
+            "value" : "kms"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "polygonColumnName" : "geometry",
+        "unit" : "kms"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "d584vTf8LbNiSbHXRh5qP$$yNARajZOYMvZoAic5EqQu",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "d4fiTriqgwWERoLT4jIcc$$ViFP4tgj41uUsjxkIaSH2",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "MakeGridTool3_andre_spatial_07",
+        "name" : "MakeGridTool3",
+        "projectName" : "andre_spatial_07",
+        "sourceProjectName" : "andre_spatial_07"
+      }
     }
   },
   "connections" : [ {
-    "id" : "LqPsyPSgtnMcWo_0hrNXm",
+    "id" : "RQxuRGttw5Bwss6pE0SFp",
     "source" : "0KIsmMe25idM0W0bBpu9e$$iPHmhpM5_WH_43RRB8GGE",
     "sourcePort" : "fyA4Vogov-qqGDc_D2rWm$$3TqxxcPBhkNIMzWJnzwIg",
-    "target" : "Lecbe1QFNZm4ATg5VTB__$$OonUGhHqQ9QiNuHrDOTn-",
-    "targetPort" : "PRgkpcGKqjLYxuTr_-4E3$$7usSo5J7kembL-b9oPJAh"
+    "target" : "FC2WbQ049FCaE6p5XTGtH$$UeeuUe3RaCH59jn8_p-dX",
+    "targetPort" : "d584vTf8LbNiSbHXRh5qP$$yNARajZOYMvZoAic5EqQu"
   } ],
   "component" : "Pipeline"
 }
