@@ -4,8 +4,7 @@ with DAG(Schedule = Schedule):
     buffer_polygons = Task(
         task_id = "buffer_polygons", 
         component = "Dataset", 
-        writeOptions = {"writeMode" : "overwrite"}, 
-        table = {"name" : "buffer_polygons", "sourceName" : "andre_dev.alteryx_spatial", "sourceType" : "Table"}
+        table = {"name" : "buffer_polygons", "sourceType" : "Source", "sourceName" : "andre_dev.alteryx_spatial", "alias" : ""}
     )
     model_BufferTool_01_buffer_polygons_1 = Task(
         task_id = "model_BufferTool_01_buffer_polygons_1", 

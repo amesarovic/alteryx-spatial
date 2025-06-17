@@ -37,7 +37,18 @@ sqlMacros:
     - .prophecy/ide/macros/BufferTool.json
     - macros/macros.yml
     - gems/BufferTool.py
-    createdAt: '2025-06-17 02:54:36'
+    createdAt: '2025-06-17 03:12:58'
+  .prophecy/metadata/sqlmacros/GeneralizeTool:
+    name: GeneralizeTool
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/GeneralizeTool.sql
+    - .prophecy/ide/macros/GeneralizeTool.json
+    - macros/macros.yml
+    - gems/GeneralizeTool.py
+    createdAt: '2025-06-17 03:27:52'
   .prophecy/metadata/sqlmacros/generate_schema_name:
     name: generate_schema_name
     macroType: expression
@@ -65,13 +76,11 @@ sqlSources:
         - name: name
           dataType:
             type: String
-        - name: distance
-          dataType:
-            type: Integer
         - name: geometry
           dataType:
             type: String
-      description: null
+      description: Geospatial data representing buffer polygons, useful for spatial
+        analysis and geographic insights.
       author: mesarovic.andre@prophecy.io
       createdAt: '2025-06-16 19:08:46'
       tableType: table
@@ -81,7 +90,15 @@ sqlSources:
     author: mesarovic.andre@prophecy.io
     files:
     - models/BufferTool_01/schema.yml
-    createdAt: '2025-06-17 02:54:46'
+    createdAt: '2025-06-17 03:21:44'
+    tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__GeneralizeTool_01:
+    name: prophecy_tmp_source__GeneralizeTool_01
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/GeneralizeTool_01/schema.yml
+    createdAt: '2025-06-17 03:30:33'
     tables: []
 sqlUnreferencedSources: {}
 sqlPipeline:
@@ -114,4 +131,15 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/BufferTool_01.json
     - pipelines/BufferTool_01.py
     createdAt: '2025-06-16 19:07:30'
+  .prophecy/metadata/sqlorchestratorpipeline/GeneralizeTool_01:
+    name: GeneralizeTool_01
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/GeneralizeTool_01/schema.yml
+    - models/GeneralizeTool_01/model_GeneralizeTool_01_generalize_polygons.sql
+    - .prophecy/ide/pipelines/GeneralizeTool_01.json
+    - pipelines/GeneralizeTool_01.py
+    createdAt: '2025-06-17 03:09:45'
 sqlBusinessApps: {}

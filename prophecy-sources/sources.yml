@@ -6,14 +6,15 @@ sources:
   schema: "alteryx_spatial"
   tables:
   - name: "buffer_polygons"
+    description: "Geospatial data representing buffer polygons, useful for spatial\
+      \ analysis and geographic insights."
     columns:
     - name: "name"
+      description: "The name associated with the polygon"
       dataType:
         type: "String"
-    - name: "distance"
-      dataType:
-        type: "Integer"
     - name: "geometry"
+      description: "The geometric representation of the buffer polygon"
       dataType:
         type: "String"
     type: "table"

@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mbzyn6z6__BufferTool_01__buffer_polygons_1",
+    "alias": "prophecy_tmp__mbzyvhg0__GeneralizeTool_01__generalize_polygons",
     "database": "andre_dev",
     "schema": "spatial"
   })
@@ -15,10 +15,10 @@ WITH buffer_polygons AS (
 
 ),
 
-buffer_polygons_1 AS (
+generalize_polygons AS (
 
   {{
-    andre_spatial_07.BufferTool(
+    andre_spatial_07.GeneralizeTool(
       'buffer_polygons', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
@@ -31,4 +31,4 @@ buffer_polygons_1 AS (
 
 SELECT *
 
-FROM buffer_polygons_1
+FROM generalize_polygons
