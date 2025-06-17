@@ -7,9 +7,9 @@ with DAG(Schedule = Schedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "ne_polygons", "sourceName" : "andre_dev.alteryx_spatial", "sourceType" : "Table"}
     )
-    model_FoobarTool_process_ne_polygons = Task(
-        task_id = "model_FoobarTool_process_ne_polygons", 
+    model_FoobarTool2_a_process_geospatial_data = Task(
+        task_id = "model_FoobarTool2_a_process_geospatial_data", 
         component = "Model", 
-        modelName = "model_FoobarTool_process_ne_polygons"
+        modelName = "model_FoobarTool2_a_process_geospatial_data"
     )
-    ne_polygons.out >> model_FoobarTool_process_ne_polygons.in_0
+    ne_polygons.out >> model_FoobarTool2_a_process_geospatial_data.in_0

@@ -4,14 +4,14 @@ import json
 from prophecy.cb.sql.MacroBuilderBase import *
 from prophecy.cb.ui.uispec import *
 
-class FoobarTool(MacroSpec):
-    name: str = "FoobarTool"
+class FoobarTool2(MacroSpec):
+    name: str = "FoobarTool2"
     projectName: str = "andre_spatial_07"
     category: str = "Spatial"
     minNumOfInputPorts: int = 1
     
     @dataclass(frozen=True)
-    class FoobarToolProperties(MacroProperties):
+    class FoobarTool2Properties(MacroProperties):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
@@ -39,7 +39,7 @@ class FoobarTool(MacroSpec):
         return relation_name
 
     def dialog(self) -> Dialog:
-        return Dialog("FoobarTool").addElement(
+        return Dialog("FoobarTool2").addElement(
             ColumnsLayout(gap="1rem", height="100%")
             .addColumn(
                 Ports(allowInputAddOrDelete=True),
@@ -78,7 +78,7 @@ class FoobarTool(MacroSpec):
         )
         return newState.bindProperties(newProperties)
 
-    def apply(self, props: FoobarToolProperties) -> str:
+    def apply(self, props: FoobarTool2Properties) -> str:
         # Get the table name
         table_name: str = ",".join(str(rel) for rel in props.relation_name)
 
@@ -100,7 +100,7 @@ class FoobarTool(MacroSpec):
     def loadProperties(self, properties: MacroProperties) -> PropertiesType:
         # load the component's state given default macro property representation
         parametersMap = self.convertToParameterMap(properties.parameters)
-        return FoobarTool.FoobarToolProperties(
+        return FoobarTool2.FoobarTool2Properties(
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             polygonColumnName=parametersMap.get('polygonColumnName'),

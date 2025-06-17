@@ -15,7 +15,7 @@ class Generalize2Tool(MacroSpec):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
-        threshold: int = 1
+        threshold: int = 10
         unit: str = "kms"
         polygonColumnName: str = ""
 
@@ -53,7 +53,7 @@ class Generalize2Tool(MacroSpec):
                         .bindProperty("polygonColumnName")
                 )                               
                 .addElement(
-                    NumberBox("Threshold",placeholder="1",minValueVar=1).bindProperty("threshold")
+                    NumberBox("Threshold",placeholder="10",minValueVar=1).bindProperty("threshold")
                 )                
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")

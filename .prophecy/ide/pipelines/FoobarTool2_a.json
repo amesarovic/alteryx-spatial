@@ -1,7 +1,7 @@
 {
-  "id" : "FoobarTool",
+  "id" : "FoobarTool2_a",
   "metainfo" : {
-    "label" : "FoobarTool",
+    "label" : "FoobarTool2_a",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -22,19 +22,20 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "gVBY6M83N4xFWoNX5JwuE$$SrApAy2NUd0tdkkw3kgLZ" : {
-      "id" : "gVBY6M83N4xFWoNX5JwuE$$SrApAy2NUd0tdkkw3kgLZ",
-      "component" : "FoobarTool",
+    "7uZs5bXUgE01A1plZbCdC$$oPneo2JH9wRVKGPQw9W64" : {
+      "id" : "7uZs5bXUgE01A1plZbCdC$$oPneo2JH9wRVKGPQw9W64",
+      "component" : "FoobarTool2",
       "metadata" : {
-        "label" : "process_ne_polygons",
-        "x" : -240,
-        "y" : -240,
+        "label" : "process_geospatial_data",
+        "x" : -200,
+        "y" : -220,
         "phase" : 0
       },
       "properties" : {
+        "cell_size" : 1,
         "relation_name" : [ "ne_polygons" ],
         "_oldMacroProperties" : {
-          "macroName" : "FoobarTool",
+          "macroName" : "FoobarTool2",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
             "name" : "relation_name",
@@ -46,8 +47,8 @@
             "name" : "destinationColumnNames",
             "value" : "geometry"
           }, {
-            "name" : "distance",
-            "value" : "33"
+            "name" : "cell_size",
+            "value" : "1"
           }, {
             "name" : "unit",
             "value" : "kms"
@@ -55,12 +56,11 @@
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "polygonColumnName" : "geometry",
-        "unit" : "kms",
-        "distance" : 33
+        "unit" : "kms"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "Dul5g7kkcfmSKV_lSFyLb$$wp_QXxvhuXBc-NWQk-j9W",
+          "id" : "hVtCalm8bJCRgVXlbdWgS$$CXXDkn4QybytdSw34_g5V",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -79,7 +79,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "mScESZP4ageP-292C3CeA$$af481RzdWnFG9j1CeLXaL",
+          "id" : "4BVboGMgLgY6aPNpQcLpO$$wFvOPBPSXy4fnPkQdKKDu",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -95,19 +95,19 @@
         "isCustomOutputSchema" : false
       },
       "componentInfo" : {
-        "gemId" : "FoobarTool_andre_spatial_07",
-        "name" : "FoobarTool",
+        "gemId" : "FoobarTool2_andre_spatial_07",
+        "name" : "FoobarTool2",
         "projectName" : "andre_spatial_07",
         "sourceProjectName" : "andre_spatial_07"
       }
     },
-    "GFz3f-O4RKBDGzTRE0-O0$$_VAwpjDWZG-0a0PL_Z88T" : {
-      "id" : "GFz3f-O4RKBDGzTRE0-O0$$_VAwpjDWZG-0a0PL_Z88T",
+    "-5SYOA5LKVBHuJ_17A-u9$$IYeb_RaaB5qXGmjy70Lax" : {
+      "id" : "-5SYOA5LKVBHuJ_17A-u9$$IYeb_RaaB5qXGmjy70Lax",
       "component" : "Dataset",
       "metadata" : {
         "label" : "ne_polygons",
-        "x" : -480,
-        "y" : -200,
+        "x" : -500,
+        "y" : -220,
         "phase" : 0
       },
       "properties" : {
@@ -122,11 +122,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "usBiF1bthKIKoH6AtB7jK$$fl6I1zNPIX4cuwwxJIxfh",
+          "id" : "XkBFKeL2Yl7u7Z9mpOHr6$$xd0dtrIoCiDzde9EAb_P6",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "aLpSjWziKV5xa_ujVq9uV$$PikVewH_pRy_3PZQ_Q6UF",
+          "id" : "4QZH_LP4G7OQl1VVdg7RC$$zr2d1otngrWJ522vdLa96",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -149,11 +149,11 @@
     }
   },
   "connections" : [ {
-    "id" : "5NaoEbsXXRWfiTw3T1z1-",
-    "source" : "GFz3f-O4RKBDGzTRE0-O0$$_VAwpjDWZG-0a0PL_Z88T",
-    "sourcePort" : "aLpSjWziKV5xa_ujVq9uV$$PikVewH_pRy_3PZQ_Q6UF",
-    "target" : "gVBY6M83N4xFWoNX5JwuE$$SrApAy2NUd0tdkkw3kgLZ",
-    "targetPort" : "Dul5g7kkcfmSKV_lSFyLb$$wp_QXxvhuXBc-NWQk-j9W"
+    "id" : "yE6xBm6NAIpABCsDAmJ72",
+    "source" : "-5SYOA5LKVBHuJ_17A-u9$$IYeb_RaaB5qXGmjy70Lax",
+    "sourcePort" : "4QZH_LP4G7OQl1VVdg7RC$$zr2d1otngrWJ522vdLa96",
+    "target" : "7uZs5bXUgE01A1plZbCdC$$oPneo2JH9wRVKGPQw9W64",
+    "targetPort" : "hVtCalm8bJCRgVXlbdWgS$$CXXDkn4QybytdSw34_g5V"
   } ],
   "component" : "Pipeline"
 }
