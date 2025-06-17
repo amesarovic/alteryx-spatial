@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mc0j4sb7__FoobarTool__process_ne_polygons"
+  - name: "prophecy_tmp__mc0jjohu__FoobarTool__process_ne_polygons"
     tags:
     - "prophecy_temp"

@@ -1,7 +1,7 @@
 {
-  "id" : "FoobarTool",
+  "id" : "Generalize2Tool_a",
   "metainfo" : {
-    "label" : "FoobarTool",
+    "label" : "Generalize2Tool_a",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -22,19 +22,19 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "gVBY6M83N4xFWoNX5JwuE$$SrApAy2NUd0tdkkw3kgLZ" : {
-      "id" : "gVBY6M83N4xFWoNX5JwuE$$SrApAy2NUd0tdkkw3kgLZ",
-      "component" : "FoobarTool",
+    "ABnw9YSsWMPC1i8h3ZqIP$$-SrMzjFIXB2PbMwM4EKUx" : {
+      "id" : "ABnw9YSsWMPC1i8h3ZqIP$$-SrMzjFIXB2PbMwM4EKUx",
+      "component" : "Generalize2Tool",
       "metadata" : {
-        "label" : "process_ne_polygons",
-        "x" : -240,
-        "y" : -240,
+        "label" : "generalize_polygons",
+        "x" : -120,
+        "y" : -140,
         "phase" : 0
       },
       "properties" : {
         "relation_name" : [ "ne_polygons" ],
         "_oldMacroProperties" : {
-          "macroName" : "FoobarTool",
+          "macroName" : "Generalize2Tool",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
             "name" : "relation_name",
@@ -46,21 +46,21 @@
             "name" : "destinationColumnNames",
             "value" : "geometry"
           }, {
-            "name" : "distance",
-            "value" : "33"
+            "name" : "threshold",
+            "value" : "4"
           }, {
             "name" : "unit",
             "value" : "kms"
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "threshold" : 4,
         "polygonColumnName" : "geometry",
-        "unit" : "kms",
-        "distance" : 33
+        "unit" : "kms"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "Dul5g7kkcfmSKV_lSFyLb$$wp_QXxvhuXBc-NWQk-j9W",
+          "id" : "1pKkSO6NETGKHmPkzGELC$$Qh7E7TzwH9rgkDugZaN-d",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -79,7 +79,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "mScESZP4ageP-292C3CeA$$af481RzdWnFG9j1CeLXaL",
+          "id" : "uX4w_DmYsmiiFVrz-Y4M8$$XBf2UVpwoc--9z57aF1oj",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -95,19 +95,19 @@
         "isCustomOutputSchema" : false
       },
       "componentInfo" : {
-        "gemId" : "FoobarTool_andre_spatial_07",
-        "name" : "FoobarTool",
+        "gemId" : "Generalize2Tool_andre_spatial_07",
+        "name" : "Generalize2Tool",
         "projectName" : "andre_spatial_07",
         "sourceProjectName" : "andre_spatial_07"
       }
     },
-    "GFz3f-O4RKBDGzTRE0-O0$$_VAwpjDWZG-0a0PL_Z88T" : {
-      "id" : "GFz3f-O4RKBDGzTRE0-O0$$_VAwpjDWZG-0a0PL_Z88T",
+    "7eZ8321KERJ9vpBm91w8p$$-F6p_0Snkq2Q4SOMXjHQC" : {
+      "id" : "7eZ8321KERJ9vpBm91w8p$$-F6p_0Snkq2Q4SOMXjHQC",
       "component" : "Dataset",
       "metadata" : {
         "label" : "ne_polygons",
-        "x" : -480,
-        "y" : -200,
+        "x" : -440,
+        "y" : -80,
         "phase" : 0
       },
       "properties" : {
@@ -122,11 +122,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "usBiF1bthKIKoH6AtB7jK$$fl6I1zNPIX4cuwwxJIxfh",
+          "id" : "NXmt2E8NU3gaWw943KZjX$$wjcOx9WDPuHUAGewGEIp-",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "aLpSjWziKV5xa_ujVq9uV$$PikVewH_pRy_3PZQ_Q6UF",
+          "id" : "-K4gunKDZth_K1qZeu_H_$$cseZDootcQvEEeVFFQpa8",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -149,11 +149,11 @@
     }
   },
   "connections" : [ {
-    "id" : "5NaoEbsXXRWfiTw3T1z1-",
-    "source" : "GFz3f-O4RKBDGzTRE0-O0$$_VAwpjDWZG-0a0PL_Z88T",
-    "sourcePort" : "aLpSjWziKV5xa_ujVq9uV$$PikVewH_pRy_3PZQ_Q6UF",
-    "target" : "gVBY6M83N4xFWoNX5JwuE$$SrApAy2NUd0tdkkw3kgLZ",
-    "targetPort" : "Dul5g7kkcfmSKV_lSFyLb$$wp_QXxvhuXBc-NWQk-j9W"
+    "id" : "Effp8nogH5gNgxSUKJdrq",
+    "source" : "7eZ8321KERJ9vpBm91w8p$$-F6p_0Snkq2Q4SOMXjHQC",
+    "sourcePort" : "-K4gunKDZth_K1qZeu_H_$$cseZDootcQvEEeVFFQpa8",
+    "target" : "ABnw9YSsWMPC1i8h3ZqIP$$-SrMzjFIXB2PbMwM4EKUx",
+    "targetPort" : "1pKkSO6NETGKHmPkzGELC$$Qh7E7TzwH9rgkDugZaN-d"
   } ],
   "component" : "Pipeline"
 }

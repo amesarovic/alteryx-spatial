@@ -4,18 +4,18 @@ import json
 from prophecy.cb.sql.MacroBuilderBase import *
 from prophecy.cb.ui.uispec import *
 
-class FoobarTool(MacroSpec):
-    name: str = "FoobarTool"
+class Generalize2Tool(MacroSpec):
+    name: str = "Generalize2Tool"
     projectName: str = "andre_spatial_07"
     category: str = "Spatial"
     minNumOfInputPorts: int = 1
     
     @dataclass(frozen=True)
-    class FoobarToolProperties(MacroProperties):
+    class Generalize2ToolProperties(MacroProperties):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
-        distance: int = 10
+        threshold: int = 1
         unit: str = "kms"
         polygonColumnName: str = ""
 
@@ -39,7 +39,7 @@ class FoobarTool(MacroSpec):
         return relation_name
 
     def dialog(self) -> Dialog:
-        return Dialog("FoobarTool").addElement(
+        return Dialog("Generalize2Tool").addElement(
             ColumnsLayout(gap="1rem", height="100%")
             .addColumn(
                 Ports(allowInputAddOrDelete=True),
@@ -53,7 +53,7 @@ class FoobarTool(MacroSpec):
                         .bindProperty("polygonColumnName")
                 )                               
                 .addElement(
-                    NumberBox("Distance",placeholder="10",minValueVar=1).bindProperty("distance")
+                    NumberBox("Threshold",placeholder="1",minValueVar=1).bindProperty("threshold")
                 )                
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
@@ -78,7 +78,7 @@ class FoobarTool(MacroSpec):
         )
         return newState.bindProperties(newProperties)
 
-    def apply(self, props: FoobarToolProperties) -> str:
+    def apply(self, props: Generalize2ToolProperties) -> str:
         # Get the table name
         table_name: str = ",".join(str(rel) for rel in props.relation_name)
 
@@ -89,7 +89,7 @@ class FoobarTool(MacroSpec):
             "'" + table_name + "'",
             props.schema,
             "'" + props.polygonColumnName + "'",            
-            str(props.distance),
+            str(props.threshold),
             "'" + props.unit + "'"
         ]
 
@@ -100,11 +100,11 @@ class FoobarTool(MacroSpec):
     def loadProperties(self, properties: MacroProperties) -> PropertiesType:
         # load the component's state given default macro property representation
         parametersMap = self.convertToParameterMap(properties.parameters)
-        return FoobarTool.FoobarToolProperties(
+        return Generalize2Tool.Generalize2ToolProperties(
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             polygonColumnName=parametersMap.get('polygonColumnName'),
-            distance=int(parametersMap.get('distance')),
+            threshold=int(parametersMap.get('threshold')),
             unit=str(parametersMap.get('unit'))
         )
 
@@ -117,7 +117,7 @@ class FoobarTool(MacroSpec):
                 MacroParameter("relation_name", str(properties.relation_name)),
                 MacroParameter("schema", str(properties.schema)),
                 MacroParameter("destinationColumnNames", properties.polygonColumnName),
-                MacroParameter("distance", str(properties.distance)),
+                MacroParameter("threshold", str(properties.threshold)),
                 MacroParameter("unit", properties.unit)
             ],
         )

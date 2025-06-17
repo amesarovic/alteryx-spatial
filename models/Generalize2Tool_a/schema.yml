@@ -1,0 +1,16 @@
+---
+version: 2
+models:
+- name: "model_Generalize2Tool_a_generalize_polygons"
+  tags:
+  - "prophecy_temp"
+sources:
+- name: "prophecy_tmp_source__Generalize2Tool_a"
+  database: "andre_dev"
+  schema: "spatial"
+  config:
+    enabled: true
+  tables:
+  - name: "prophecy_tmp__mc0ju924__Generalize2Tool_a__generalize_polygons"
+    tags:
+    - "prophecy_temp"
