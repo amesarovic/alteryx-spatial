@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mbzgx81q__BufferTool_01__buffer_polygons_1",
+    "alias": "prophecy_tmp__mbzxn6zx__BufferTool_01__buffer_polygons_1",
     "database": "andre_dev",
     "schema": "spatial"
   })
@@ -27,7 +27,7 @@ buffer_polygons_1 AS (
       ], 
       'geometry', 
       0, 
-      'miles'
+      'kms'
     )
   }}
 

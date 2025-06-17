@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mbzgx81q__BufferTool_01__buffer_polygons_1\"",
+        "alias" : "\"prophecy_tmp__mbzxn6zx__BufferTool_01__buffer_polygons_1\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"spatial\"",
@@ -19,8 +19,8 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__mbzgx81q__BufferTool_01__buffer_polygons_1" : {
-      "id" : "prophecy_tmp__mbzgx81q__BufferTool_01__buffer_polygons_1",
+    "prophecy_tmp__mbzxn6zx__BufferTool_01__buffer_polygons_1" : {
+      "id" : "prophecy_tmp__mbzxn6zx__BufferTool_01__buffer_polygons_1",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "buffer_polygons_1",
@@ -50,13 +50,13 @@
         "autoUpdateOnRun" : false
       }
     },
-    "GoTUxxS0Yxv5D0353Nj4c$$oy5hcHeZp3N3Dx7LYRMqi" : {
-      "id" : "GoTUxxS0Yxv5D0353Nj4c$$oy5hcHeZp3N3Dx7LYRMqi",
+    "YZPVevqYSOg1U757inFJ8$$WWgVaUSKEgjAFa9MWO9m2" : {
+      "id" : "YZPVevqYSOg1U757inFJ8$$WWgVaUSKEgjAFa9MWO9m2",
       "component" : "BufferTool",
       "metadata" : {
         "label" : "buffer_polygons_1",
-        "x" : -220,
-        "y" : -220,
+        "x" : -440,
+        "y" : -200,
         "phase" : 0
       },
       "properties" : {
@@ -78,48 +78,50 @@
             "value" : "0"
           }, {
             "name" : "unit",
-            "value" : "miles"
+            "value" : "kms"
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"distance\", \"dataType\": \"Integer\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "polygonColumnName" : "geometry",
-        "unit" : "miles",
+        "unit" : "kms",
         "distance" : 0
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "P-VS5PiNB-qf2DChszyKa$$eq9MG9AGC7XQ5JBhsw2zm",
+          "id" : "irEvRI2kK4gcfTOuBPHJG$$O8P2TlMXr3QSn97t740Nl",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "yYVnJddTt5lkoGLE70uzG$$vlQzN1FPhXSVaAVpQV2Eq",
+          "id" : "uQH913ges-3B4jeRNRsm-$$56YOCv8CDwLI8NGkgu4Bs",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "UuHH67dFsJEFFtyYwk80b$$cbW65bxkSOJYfGDlxMOqK" : {
-      "id" : "UuHH67dFsJEFFtyYwk80b$$cbW65bxkSOJYfGDlxMOqK",
+    "PGP_DhQqqLgQ-74cBYBVs$$ucwBxkquvXuifRj88lMoK" : {
+      "id" : "PGP_DhQqqLgQ-74cBYBVs$$ucwBxkquvXuifRj88lMoK",
       "component" : "Source",
       "metadata" : {
         "label" : "buffer_polygons",
-        "x" : -480,
-        "y" : -220,
+        "x" : -660,
+        "y" : -200,
         "phase" : 0
       },
       "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
         "table" : {
           "name" : "buffer_polygons",
-          "sourceType" : "Source",
           "sourceName" : "andre_dev.alteryx_spatial",
-          "alias" : ""
+          "sourceType" : "Table"
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "cJJ1oVXaGAaQc3Sfi8N3Q$$39UFwTspd3r_HRZxheACC",
+          "id" : "B3dpWIuw6-aLvZ6xf-pGa$$64CWtPKxM3ltuzQ-U32bB",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -128,17 +130,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_GoTUxxS0Yxv5D0353Nj4c$$oy5hcHeZp3N3Dx7LYRMqi_prophecy_tmp__mbzgx81q__BufferTool_01__buffer_polygons_1",
-    "source" : "GoTUxxS0Yxv5D0353Nj4c$$oy5hcHeZp3N3Dx7LYRMqi",
-    "sourcePort" : "yYVnJddTt5lkoGLE70uzG$$vlQzN1FPhXSVaAVpQV2Eq",
-    "target" : "prophecy_tmp__mbzgx81q__BufferTool_01__buffer_polygons_1",
+    "id" : "conn_YZPVevqYSOg1U757inFJ8$$WWgVaUSKEgjAFa9MWO9m2_prophecy_tmp__mbzxn6zx__BufferTool_01__buffer_polygons_1",
+    "source" : "YZPVevqYSOg1U757inFJ8$$WWgVaUSKEgjAFa9MWO9m2",
+    "sourcePort" : "uQH913ges-3B4jeRNRsm-$$56YOCv8CDwLI8NGkgu4Bs",
+    "target" : "prophecy_tmp__mbzxn6zx__BufferTool_01__buffer_polygons_1",
     "targetPort" : "input_port_0_1"
   }, {
-    "id" : "q_WA6VJ39B5x0wqjQ1I1J",
-    "source" : "UuHH67dFsJEFFtyYwk80b$$cbW65bxkSOJYfGDlxMOqK",
-    "sourcePort" : "cJJ1oVXaGAaQc3Sfi8N3Q$$39UFwTspd3r_HRZxheACC",
-    "target" : "GoTUxxS0Yxv5D0353Nj4c$$oy5hcHeZp3N3Dx7LYRMqi",
-    "targetPort" : "P-VS5PiNB-qf2DChszyKa$$eq9MG9AGC7XQ5JBhsw2zm"
+    "id" : "is4QQj1_VbAPzXsnObgsn",
+    "source" : "PGP_DhQqqLgQ-74cBYBVs$$ucwBxkquvXuifRj88lMoK",
+    "sourcePort" : "B3dpWIuw6-aLvZ6xf-pGa$$64CWtPKxM3ltuzQ-U32bB",
+    "target" : "YZPVevqYSOg1U757inFJ8$$WWgVaUSKEgjAFa9MWO9m2",
+    "targetPort" : "irEvRI2kK4gcfTOuBPHJG$$O8P2TlMXr3QSn97t740Nl"
   } ],
   "component" : "Model"
 }

@@ -22,30 +22,32 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "UuHH67dFsJEFFtyYwk80b$$cbW65bxkSOJYfGDlxMOqK" : {
-      "id" : "UuHH67dFsJEFFtyYwk80b$$cbW65bxkSOJYfGDlxMOqK",
+    "PGP_DhQqqLgQ-74cBYBVs$$ucwBxkquvXuifRj88lMoK" : {
+      "id" : "PGP_DhQqqLgQ-74cBYBVs$$ucwBxkquvXuifRj88lMoK",
       "component" : "Dataset",
       "metadata" : {
         "label" : "buffer_polygons",
-        "x" : -480,
-        "y" : -220,
+        "x" : -660,
+        "y" : -200,
         "phase" : 0
       },
       "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
         "table" : {
           "name" : "buffer_polygons",
-          "sourceType" : "Source",
           "sourceName" : "andre_dev.alteryx_spatial",
-          "alias" : ""
+          "sourceType" : "Table"
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "SAqjyeVNiIBWT9pMQzYze$$M1rxKVFCWeT3xfOdU4DOb",
+          "id" : "tkEAMX_wYwGmhZFeDPeq5$$UiFJRKuYqXTvRs6V4AYs5",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "cJJ1oVXaGAaQc3Sfi8N3Q$$39UFwTspd3r_HRZxheACC",
+          "id" : "B3dpWIuw6-aLvZ6xf-pGa$$64CWtPKxM3ltuzQ-U32bB",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -71,8 +73,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "GoTUxxS0Yxv5D0353Nj4c$$oy5hcHeZp3N3Dx7LYRMqi" : {
-      "id" : "GoTUxxS0Yxv5D0353Nj4c$$oy5hcHeZp3N3Dx7LYRMqi",
+    "YZPVevqYSOg1U757inFJ8$$WWgVaUSKEgjAFa9MWO9m2" : {
+      "id" : "YZPVevqYSOg1U757inFJ8$$WWgVaUSKEgjAFa9MWO9m2",
       "component" : "Model",
       "metadata" : {
         "label" : "model_BufferTool_01_buffer_polygons_1",
@@ -82,7 +84,7 @@
         "modelName" : "model_BufferTool_01_buffer_polygons_1"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__mbzgx81q__BufferTool_01__buffer_polygons_1", "GoTUxxS0Yxv5D0353Nj4c$$oy5hcHeZp3N3Dx7LYRMqi", "UuHH67dFsJEFFtyYwk80b$$cbW65bxkSOJYfGDlxMOqK" ],
+        "visualProcessIds" : [ "prophecy_tmp__mbzxn6zx__BufferTool_01__buffer_polygons_1", "YZPVevqYSOg1U757inFJ8$$WWgVaUSKEgjAFa9MWO9m2", "PGP_DhQqqLgQ-74cBYBVs$$ucwBxkquvXuifRj88lMoK" ],
         "type" : "table",
         "isTemporaryTable" : true
       },
@@ -100,10 +102,10 @@
     }
   },
   "connections" : [ {
-    "id" : "q_WA6VJ39B5x0wqjQ1I1J",
-    "source" : "UuHH67dFsJEFFtyYwk80b$$cbW65bxkSOJYfGDlxMOqK",
-    "sourcePort" : "cJJ1oVXaGAaQc3Sfi8N3Q$$39UFwTspd3r_HRZxheACC",
-    "target" : "GoTUxxS0Yxv5D0353Nj4c$$oy5hcHeZp3N3Dx7LYRMqi",
+    "id" : "is4QQj1_VbAPzXsnObgsn",
+    "source" : "PGP_DhQqqLgQ-74cBYBVs$$ucwBxkquvXuifRj88lMoK",
+    "sourcePort" : "B3dpWIuw6-aLvZ6xf-pGa$$64CWtPKxM3ltuzQ-U32bB",
+    "target" : "YZPVevqYSOg1U757inFJ8$$WWgVaUSKEgjAFa9MWO9m2",
     "targetPort" : "model_BufferTool_01_buffer_polygons_1_in_0"
   } ],
   "component" : "Pipeline"
