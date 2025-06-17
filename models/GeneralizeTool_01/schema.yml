@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mc02buye__GeneralizeTool_01__generalize_polygons"
+  - name: "prophecy_tmp__mc0im9td__GeneralizeTool_01__generalize_polygons"
     tags:
     - "prophecy_temp"
