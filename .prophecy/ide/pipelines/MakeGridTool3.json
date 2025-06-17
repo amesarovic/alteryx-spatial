@@ -68,17 +68,17 @@
         "isCustomOutputSchema" : false
       }
     },
-    "FC2WbQ049FCaE6p5XTGtH$$UeeuUe3RaCH59jn8_p-dX" : {
-      "id" : "FC2WbQ049FCaE6p5XTGtH$$UeeuUe3RaCH59jn8_p-dX",
+    "DP6qVD-R727yHoqOou1fb$$ORmmhRUa5o6jPb-o6_llZ" : {
+      "id" : "DP6qVD-R727yHoqOou1fb$$ORmmhRUa5o6jPb-o6_llZ",
       "component" : "MakeGridTool3",
       "metadata" : {
         "label" : "create_grid",
-        "x" : -240,
-        "y" : -300,
+        "x" : -200,
+        "y" : -320,
         "phase" : 0
       },
       "properties" : {
-        "cell_size" : "",
+        "cell_size" : "0.2",
         "relation_name" : [ "ne_polygons" ],
         "_oldMacroProperties" : {
           "macroName" : "MakeGridTool3",
@@ -94,7 +94,7 @@
             "value" : "geometry"
           }, {
             "name" : "cell_size",
-            "value" : ""
+            "value" : "0.2"
           }, {
             "name" : "unit",
             "value" : "kms"
@@ -106,7 +106,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "d584vTf8LbNiSbHXRh5qP$$yNARajZOYMvZoAic5EqQu",
+          "id" : "TxFcGriM25cqY9I_AH6ME$$kY0xLyba9kKA2KLHIbrKv",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -125,7 +125,17 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "d4fiTriqgwWERoLT4jIcc$$ViFP4tgj41uUsjxkIaSH2",
+          "id" : "lfbMyrR4Kw5afdJGyFFPm$$WptZm1waiBUxGL7HhAq6j",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "output",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -139,11 +149,11 @@
     }
   },
   "connections" : [ {
-    "id" : "RQxuRGttw5Bwss6pE0SFp",
+    "id" : "Flem7Iovjw4_ywsx0XT6r",
     "source" : "0KIsmMe25idM0W0bBpu9e$$iPHmhpM5_WH_43RRB8GGE",
     "sourcePort" : "fyA4Vogov-qqGDc_D2rWm$$3TqxxcPBhkNIMzWJnzwIg",
-    "target" : "FC2WbQ049FCaE6p5XTGtH$$UeeuUe3RaCH59jn8_p-dX",
-    "targetPort" : "d584vTf8LbNiSbHXRh5qP$$yNARajZOYMvZoAic5EqQu"
+    "target" : "DP6qVD-R727yHoqOou1fb$$ORmmhRUa5o6jPb-o6_llZ",
+    "targetPort" : "TxFcGriM25cqY9I_AH6ME$$kY0xLyba9kKA2KLHIbrKv"
   } ],
   "component" : "Pipeline"
 }

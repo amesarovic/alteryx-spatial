@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc0uvg3i__MakeGridTool3__create_grid",
+    "alias": "prophecy_tmp__mc0v2vv5__MakeGridTool3__create_grid",
     "database": "andre_dev",
     "schema": "spatial"
   })
@@ -17,7 +17,15 @@ WITH ne_polygons AS (
 
 create_grid AS (
 
-  {{ andre_spatial_07.MakeGridTool3('ne_polygons',[{"name": "name", "dataType": "String"}, {"name": "geometry", "dataType": "String"}],'geometry',,'kms') }}
+  {{
+    andre_spatial_07.MakeGridTool3(
+      'ne_polygons', 
+      [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
+      'geometry', 
+      0.2, 
+      'kms'
+    )
+  }}
 
 )
 
