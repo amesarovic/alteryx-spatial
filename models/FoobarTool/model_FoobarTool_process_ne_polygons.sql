@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc0iqb8x__BufferTool_01__buffer_ne_polygons",
+    "alias": "prophecy_tmp__mc0j4sb7__FoobarTool__process_ne_polygons",
     "database": "andre_dev",
     "schema": "spatial"
   })
@@ -15,14 +15,14 @@ WITH ne_polygons AS (
 
 ),
 
-buffer_ne_polygons AS (
+process_ne_polygons AS (
 
   {{
-    andre_spatial_07.BufferTool(
+    andre_spatial_07.FoobarTool(
       'ne_polygons', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      99, 
+      4, 
       'kms'
     )
   }}
@@ -31,4 +31,4 @@ buffer_ne_polygons AS (
 
 SELECT *
 
-FROM buffer_ne_polygons
+FROM process_ne_polygons
