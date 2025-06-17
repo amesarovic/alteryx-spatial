@@ -15,7 +15,7 @@ class BufferTool(MacroSpec):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
-        distance: int = 0
+        distance: int = 10
         unit: str = "kms"
         polygonColumnName: str = ""
 
@@ -53,7 +53,7 @@ class BufferTool(MacroSpec):
                         .bindProperty("polygonColumnName")
                 )                               
                 .addElement(
-                    NumberBox("Distance",placeholder="1",minValueVar=1)
+                    NumberBox("Distance",placeholder="10",minValueVar=1).bindProperty("distance")
                 )                
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")

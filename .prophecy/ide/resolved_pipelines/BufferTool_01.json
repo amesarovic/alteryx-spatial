@@ -27,8 +27,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "ne_polygons",
-        "x" : -700,
-        "y" : -360,
+        "x" : -1020,
+        "y" : -580,
         "phase" : 0
       },
       "properties" : {
@@ -66,28 +66,28 @@
         "isCustomOutputSchema" : false
       }
     },
-    "aOVPCxxGOLnGXmUfmumZm$$o0QiPaMFKGyjPhaL7g2ke" : {
-      "id" : "aOVPCxxGOLnGXmUfmumZm$$o0QiPaMFKGyjPhaL7g2ke",
+    "efR6YGeNpAQDE0SDeDRzu$$XiB0p_nAwuu6ke0pF2irI" : {
+      "id" : "efR6YGeNpAQDE0SDeDRzu$$XiB0p_nAwuu6ke0pF2irI",
       "component" : "Model",
       "metadata" : {
-        "label" : "model_BufferTool_01_buffer_polygons_1",
+        "label" : "model_BufferTool_01_buffer_ne_polygons",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "model_BufferTool_01_buffer_polygons_1"
+        "modelName" : "model_BufferTool_01_buffer_ne_polygons"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__mc00wk89__BufferTool_01__buffer_polygons_1", "aOVPCxxGOLnGXmUfmumZm$$o0QiPaMFKGyjPhaL7g2ke", "48r1a8aEpKRBj7OicSFei$$YpHbgzWMVmIV5t16KKF5c" ],
+        "visualProcessIds" : [ "prophecy_tmp__mc0fd8y9__BufferTool_01__buffer_ne_polygons", "efR6YGeNpAQDE0SDeDRzu$$XiB0p_nAwuu6ke0pF2irI", "48r1a8aEpKRBj7OicSFei$$YpHbgzWMVmIV5t16KKF5c" ],
         "type" : "table",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "model_BufferTool_01_buffer_polygons_1_in_0",
+          "id" : "model_BufferTool_01_buffer_ne_polygons_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "model_BufferTool_01_buffer_polygons_1_out_0",
+          "id" : "model_BufferTool_01_buffer_ne_polygons_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -95,11 +95,11 @@
     }
   },
   "connections" : [ {
-    "id" : "jCwBN6RkzDLMAyqt_Jc9p",
+    "id" : "4gb7T2l1PSSNz2AuOPP2V",
     "source" : "48r1a8aEpKRBj7OicSFei$$YpHbgzWMVmIV5t16KKF5c",
     "sourcePort" : "K5qyaWbucOM7fZtZaxCh9$$zEgiT7dYEWeo1wK6jSia_",
-    "target" : "aOVPCxxGOLnGXmUfmumZm$$o0QiPaMFKGyjPhaL7g2ke",
-    "targetPort" : "model_BufferTool_01_buffer_polygons_1_in_0"
+    "target" : "efR6YGeNpAQDE0SDeDRzu$$XiB0p_nAwuu6ke0pF2irI",
+    "targetPort" : "model_BufferTool_01_buffer_ne_polygons_in_0"
   } ],
   "component" : "Pipeline"
 }

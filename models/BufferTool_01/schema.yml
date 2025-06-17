@@ -1,7 +1,7 @@
 ---
 version: 2
 models:
-- name: "model_BufferTool_01_buffer_polygons_1"
+- name: "model_BufferTool_01_buffer_ne_polygons"
   tags:
   - "prophecy_temp"
 sources:
@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mc00wk89__BufferTool_01__buffer_polygons_1"
+  - name: "prophecy_tmp__mc0fd8y9__BufferTool_01__buffer_ne_polygons"
     tags:
     - "prophecy_temp"

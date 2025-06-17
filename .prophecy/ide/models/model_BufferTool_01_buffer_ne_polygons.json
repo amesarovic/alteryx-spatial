@@ -1,7 +1,7 @@
 {
-  "id" : "model_MakeGridTool_01_create_grid",
+  "id" : "model_BufferTool_01_buffer_ne_polygons",
   "metainfo" : {
-    "label" : "model_MakeGridTool_01_create_grid",
+    "label" : "model_BufferTool_01_buffer_ne_polygons",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mc0cusp3__MakeGridTool_01__create_grid\"",
+        "alias" : "\"prophecy_tmp__mc0fd8y9__BufferTool_01__buffer_ne_polygons\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"spatial\"",
@@ -19,18 +19,18 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__mc0cusp3__MakeGridTool_01__create_grid" : {
-      "id" : "prophecy_tmp__mc0cusp3__MakeGridTool_01__create_grid",
+    "prophecy_tmp__mc0fd8y9__BufferTool_01__buffer_ne_polygons" : {
+      "id" : "prophecy_tmp__mc0fd8y9__BufferTool_01__buffer_ne_polygons",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "create_grid",
+        "label" : "buffer_ne_polygons",
         "phase" : 0
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM create_grid\n\n",
+        "query" : "\nSELECT *\n\nFROM buffer_ne_polygons\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -50,20 +50,19 @@
         "autoUpdateOnRun" : false
       }
     },
-    "lC8HyRuZBYC0sKfa6aEm4$$UGGo8vFEEjb2Sf3eYObQE" : {
-      "id" : "lC8HyRuZBYC0sKfa6aEm4$$UGGo8vFEEjb2Sf3eYObQE",
-      "component" : "MakeGridTool",
+    "efR6YGeNpAQDE0SDeDRzu$$XiB0p_nAwuu6ke0pF2irI" : {
+      "id" : "efR6YGeNpAQDE0SDeDRzu$$XiB0p_nAwuu6ke0pF2irI",
+      "component" : "BufferTool",
       "metadata" : {
-        "label" : "create_grid",
-        "x" : -200,
-        "y" : -180,
+        "label" : "buffer_ne_polygons",
+        "x" : -700,
+        "y" : -540,
         "phase" : 0
       },
       "properties" : {
-        "cell_size" : 0,
         "relation_name" : [ "ne_polygons" ],
         "_oldMacroProperties" : {
-          "macroName" : "MakeGridTool",
+          "macroName" : "BufferTool",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
             "name" : "relation_name",
@@ -75,8 +74,8 @@
             "name" : "destinationColumnNames",
             "value" : "geometry"
           }, {
-            "name" : "cell_size",
-            "value" : "0"
+            "name" : "distance",
+            "value" : "100"
           }, {
             "name" : "unit",
             "value" : "kms"
@@ -84,37 +83,35 @@
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "polygonColumnName" : "geometry",
-        "unit" : "kms"
+        "unit" : "kms",
+        "distance" : 100
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "dcPYFSQ2sjxxbCoGwGv96$$4auFuLE95IPAfEfJMWaRm",
+          "id" : "p9aARls-GZw-pd2JarI4w$$X-yEHRyugj-4lpP9TSUS4",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "JP4OS8EeIdV2-v4ts7I56$$UYv6SU_dxVX6AnYL-4m2-",
+          "id" : "RVUAldz7R2LlZQmDByYwJ$$Ndfksc61A4wB073AvNo24",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "zEZqykhtmkTWSVIVaykRW" : {
-      "id" : "zEZqykhtmkTWSVIVaykRW",
+    "48r1a8aEpKRBj7OicSFei$$YpHbgzWMVmIV5t16KKF5c" : {
+      "id" : "48r1a8aEpKRBj7OicSFei$$YpHbgzWMVmIV5t16KKF5c",
       "component" : "Source",
       "metadata" : {
         "label" : "ne_polygons",
-        "x" : -380,
-        "y" : -180,
+        "x" : -1020,
+        "y" : -580,
         "phase" : 0
       },
       "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
         "table" : {
           "name" : "ne_polygons",
-          "sourceType" : "Table",
+          "sourceType" : "Source",
           "sourceName" : "andre_dev.alteryx_spatial",
           "alias" : ""
         }
@@ -122,7 +119,7 @@
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "3jW04dSeopy_dpb8nyROz",
+          "id" : "K5qyaWbucOM7fZtZaxCh9$$zEgiT7dYEWeo1wK6jSia_",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -131,17 +128,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_lC8HyRuZBYC0sKfa6aEm4$$UGGo8vFEEjb2Sf3eYObQE_prophecy_tmp__mc0cusp3__MakeGridTool_01__create_grid",
-    "source" : "lC8HyRuZBYC0sKfa6aEm4$$UGGo8vFEEjb2Sf3eYObQE",
-    "sourcePort" : "JP4OS8EeIdV2-v4ts7I56$$UYv6SU_dxVX6AnYL-4m2-",
-    "target" : "prophecy_tmp__mc0cusp3__MakeGridTool_01__create_grid",
+    "id" : "conn_efR6YGeNpAQDE0SDeDRzu$$XiB0p_nAwuu6ke0pF2irI_prophecy_tmp__mc0fd8y9__BufferTool_01__buffer_ne_polygons",
+    "source" : "efR6YGeNpAQDE0SDeDRzu$$XiB0p_nAwuu6ke0pF2irI",
+    "sourcePort" : "RVUAldz7R2LlZQmDByYwJ$$Ndfksc61A4wB073AvNo24",
+    "target" : "prophecy_tmp__mc0fd8y9__BufferTool_01__buffer_ne_polygons",
     "targetPort" : "input_port_0_1"
   }, {
-    "id" : "G-QvPW5WAiz0_FiIQPoMG$$tDscMO5usPrXcMdhchlYk",
-    "source" : "zEZqykhtmkTWSVIVaykRW",
-    "sourcePort" : "3jW04dSeopy_dpb8nyROz",
-    "target" : "lC8HyRuZBYC0sKfa6aEm4$$UGGo8vFEEjb2Sf3eYObQE",
-    "targetPort" : "dcPYFSQ2sjxxbCoGwGv96$$4auFuLE95IPAfEfJMWaRm"
+    "id" : "4gb7T2l1PSSNz2AuOPP2V",
+    "source" : "48r1a8aEpKRBj7OicSFei$$YpHbgzWMVmIV5t16KKF5c",
+    "sourcePort" : "K5qyaWbucOM7fZtZaxCh9$$zEgiT7dYEWeo1wK6jSia_",
+    "target" : "efR6YGeNpAQDE0SDeDRzu$$XiB0p_nAwuu6ke0pF2irI",
+    "targetPort" : "p9aARls-GZw-pd2JarI4w$$X-yEHRyugj-4lpP9TSUS4"
   } ],
   "component" : "Model"
 }
