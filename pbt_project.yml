@@ -49,6 +49,17 @@ sqlMacros:
     - macros/macros.yml
     - gems/GeneralizeTool.py
     createdAt: '2025-06-17 03:27:52'
+  .prophecy/metadata/sqlmacros/MakeGridTool:
+    name: MakeGridTool
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/MakeGridTool.sql
+    - .prophecy/ide/macros/MakeGridTool.json
+    - macros/macros.yml
+    - gems/MakeGridTool.py
+    createdAt: '2025-06-17 04:34:21'
   .prophecy/metadata/sqlmacros/generate_schema_name:
     name: generate_schema_name
     macroType: expression
@@ -68,7 +79,7 @@ sqlSources:
     - prophecy-sources/sources.yml
     createdAt: '2025-06-16 19:08:46'
     tables:
-    - name: buffer_polygons
+    - name: ne_polygons
       schema:
         entityType: ''
         providerType: databricks
@@ -79,10 +90,10 @@ sqlSources:
         - name: geometry
           dataType:
             type: String
-      description: Geospatial data representing buffer polygons, useful for spatial
-        analysis and geographic insights.
+      description: Geospatial data representing polygons, useful for mapping and spatial
+        analysis.
       author: mesarovic.andre@prophecy.io
-      createdAt: '2025-06-16 19:08:46'
+      createdAt: '2025-06-17 04:25:45'
       tableType: table
   .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTool_01:
     name: prophecy_tmp_source__BufferTool_01
@@ -98,7 +109,15 @@ sqlSources:
     author: mesarovic.andre@prophecy.io
     files:
     - models/GeneralizeTool_01/schema.yml
-    createdAt: '2025-06-17 03:40:47'
+    createdAt: '2025-06-17 03:48:00'
+    tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__MakeGridTool_01:
+    name: prophecy_tmp_source__MakeGridTool_01
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/MakeGridTool_01/schema.yml
+    createdAt: '2025-06-17 04:43:37'
     tables: []
 sqlUnreferencedSources: {}
 sqlPipeline:
@@ -142,4 +161,15 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/GeneralizeTool_01.json
     - pipelines/GeneralizeTool_01.py
     createdAt: '2025-06-17 03:09:45'
+  .prophecy/metadata/sqlorchestratorpipeline/MakeGridTool_01:
+    name: MakeGridTool_01
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/MakeGridTool_01/schema.yml
+    - models/MakeGridTool_01/model_MakeGridTool_01_create_grid.sql
+    - .prophecy/ide/pipelines/MakeGridTool_01.json
+    - pipelines/MakeGridTool_01.py
+    createdAt: '2025-06-17 04:43:13'
 sqlBusinessApps: {}

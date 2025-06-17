@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc013xcd__GeneralizeTool_01__generalize_polygons",
+    "alias": "prophecy_tmp__mc01g9f5__MakeGridTool_01__create_grid",
     "database": "andre_dev",
     "schema": "spatial"
   })
@@ -15,10 +15,10 @@ WITH ne_polygons AS (
 
 ),
 
-generalize_polygons AS (
+create_grid AS (
 
   {{
-    andre_spatial_07.GeneralizeTool(
+    andre_spatial_07.MakeGridTool(
       'ne_polygons', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
@@ -31,4 +31,4 @@ generalize_polygons AS (
 
 SELECT *
 
-FROM generalize_polygons
+FROM create_grid

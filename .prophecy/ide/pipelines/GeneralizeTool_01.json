@@ -22,69 +22,23 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "m6ktQW-yWzFc5zLC6T_VU$$QMwJwU1D83WpsKKerZguI" : {
-      "id" : "m6ktQW-yWzFc5zLC6T_VU$$QMwJwU1D83WpsKKerZguI",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "buffer_polygons",
-        "x" : -400,
-        "y" : -280,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "buffer_polygons",
-          "sourceName" : "andre_dev.alteryx_spatial",
-          "sourceType" : "Table"
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "nOQevqomGni1rmW1XX2Wi$$OQAVn5cD6RxWioUA5KiVX",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "qlM__pOzAYfhAHGsoVzIR$$LfyZKEIM8iVgqudZN8OZq",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "databricks",
-            "fields" : [ {
-              "name" : "name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "geometry",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
-    "Lqbjg_1i1u5yN4i31oZlm$$b03q0OS_mLoa1jW99fDDq" : {
-      "id" : "Lqbjg_1i1u5yN4i31oZlm$$b03q0OS_mLoa1jW99fDDq",
+    "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG" : {
+      "id" : "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG",
       "component" : "GeneralizeTool",
       "metadata" : {
         "label" : "generalize_polygons",
-        "x" : -200,
-        "y" : -280,
+        "x" : -520,
+        "y" : -620,
         "phase" : 0
       },
       "properties" : {
-        "relation_name" : [ "buffer_polygons" ],
+        "relation_name" : [ "ne_polygons" ],
         "_oldMacroProperties" : {
           "macroName" : "GeneralizeTool",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['buffer_polygons']"
+            "value" : "['ne_polygons']"
           }, {
             "name" : "schema",
             "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
@@ -106,7 +60,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "jTX1ANs68BlFTVRhcckS6$$sPYRygCJk13z_DSlLO_-B",
+          "id" : "dk4qGrq7Nlj3uJAd2a73e$$TFQIzUFyXW7P8zcFhw9LS",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -125,7 +79,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "ELLdztnP8nrltUupQ0OK8$$4KnB-syMmGeU1XMR17fyu",
+          "id" : "Sbi21f0O5-a0-_69Giedc$$g40z5MDRxMLxBXYQD8rbt",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -146,14 +100,60 @@
         "projectName" : "andre_spatial_07",
         "sourceProjectName" : "andre_spatial_07"
       }
+    },
+    "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy" : {
+      "id" : "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "ne_polygons",
+        "x" : -720,
+        "y" : -620,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "ne_polygons",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "sourceType" : "Table"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GvNpg7uSKjTb3muZVUivT$$7rmvqic8b3H5-SmIqOKip",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "WDq_fNRSuP8aUQ9zVv6ci$$jH04ff8Aux-qxbChlzYB8",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
   "connections" : [ {
-    "id" : "Up1skMQgXXTVJtQKfG9c2$$fjiFUBQ_Pe5LLD0ZUJ9pv",
-    "source" : "m6ktQW-yWzFc5zLC6T_VU$$QMwJwU1D83WpsKKerZguI",
-    "sourcePort" : "qlM__pOzAYfhAHGsoVzIR$$LfyZKEIM8iVgqudZN8OZq",
-    "target" : "Lqbjg_1i1u5yN4i31oZlm$$b03q0OS_mLoa1jW99fDDq",
-    "targetPort" : "jTX1ANs68BlFTVRhcckS6$$sPYRygCJk13z_DSlLO_-B"
+    "id" : "Zgyxz-j5DDIWUzcKmiOlE",
+    "source" : "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy",
+    "sourcePort" : "WDq_fNRSuP8aUQ9zVv6ci$$jH04ff8Aux-qxbChlzYB8",
+    "target" : "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG",
+    "targetPort" : "dk4qGrq7Nlj3uJAd2a73e$$TFQIzUFyXW7P8zcFhw9LS"
   } ],
   "component" : "Pipeline"
 }

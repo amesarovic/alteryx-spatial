@@ -5,16 +5,16 @@ sources:
   database: "andre_dev"
   schema: "alteryx_spatial"
   tables:
-  - name: "buffer_polygons"
-    description: "Geospatial data representing buffer polygons, useful for spatial\
-      \ analysis and geographic insights."
+  - name: "ne_polygons"
+    description: "Geospatial data representing polygons, useful for mapping and spatial\
+      \ analysis."
     columns:
     - name: "name"
-      description: "The name associated with the polygon"
+      description: "The name of the polygon"
       dataType:
         type: "String"
     - name: "geometry"
-      description: "The geometric representation of the buffer polygon"
+      description: "Geometric representation of the polygon shape"
       dataType:
         type: "String"
     type: "table"

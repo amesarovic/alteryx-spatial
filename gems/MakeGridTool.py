@@ -4,18 +4,18 @@ import json
 from prophecy.cb.sql.MacroBuilderBase import *
 from prophecy.cb.ui.uispec import *
 
-class GeneralizeTool(MacroSpec):
-    name: str = "GeneralizeTool"
+class MakeGridTool(MacroSpec):
+    name: str = "MakeGridTool"
     projectName: str = "andre_spatial_07"
     category: str = "Spatial"
     minNumOfInputPorts: int = 1
     
     @dataclass(frozen=True)
-    class GeneralizeToolProperties(MacroProperties):
+    class MakeGridToolProperties(MacroProperties):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
-        threshold: int = 0
+        cell_size: int = 0
         unit: str = "kms"
         polygonColumnName: str = ""
 
@@ -39,7 +39,7 @@ class GeneralizeTool(MacroSpec):
         return relation_name
 
     def dialog(self) -> Dialog:
-        return Dialog("GeneralizeTool").addElement(
+        return Dialog("MakeGridTool").addElement(
             ColumnsLayout(gap="1rem", height="100%")
             .addColumn(
                 Ports(allowInputAddOrDelete=True),
@@ -53,7 +53,7 @@ class GeneralizeTool(MacroSpec):
                         .bindProperty("polygonColumnName")
                 )                               
                 .addElement(
-                    NumberBox("Threshold",placeholder="1",minValueVar=1)
+                    NumberBox("Cell size",placeholder="1",minValueVar=1)
                 )                
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
@@ -78,7 +78,7 @@ class GeneralizeTool(MacroSpec):
         )
         return newState.bindProperties(newProperties)
 
-    def apply(self, props: GeneralizeToolProperties) -> str:
+    def apply(self, props: MakeGridToolProperties) -> str:
         # Get the table name
         table_name: str = ",".join(str(rel) for rel in props.relation_name)
 
@@ -89,7 +89,7 @@ class GeneralizeTool(MacroSpec):
             "'" + table_name + "'",
             props.schema,
             "'" + props.polygonColumnName + "'",            
-            str(props.threshold),
+            str(props.cell_size),
             "'" + props.unit + "'"
         ]
 
@@ -100,11 +100,11 @@ class GeneralizeTool(MacroSpec):
     def loadProperties(self, properties: MacroProperties) -> PropertiesType:
         # load the component's state given default macro property representation
         parametersMap = self.convertToParameterMap(properties.parameters)
-        return GeneralizeTool.GeneralizeToolProperties(
+        return MakeGridTool.MakeGridToolProperties(
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             polygonColumnName=parametersMap.get('polygonColumnName'),
-            threshold=int(parametersMap.get('threshold')),
+            cell_size=int(parametersMap.get('cell_size')),
             unit=str(parametersMap.get('unit'))
         )
 
@@ -117,7 +117,7 @@ class GeneralizeTool(MacroSpec):
                 MacroParameter("relation_name", str(properties.relation_name)),
                 MacroParameter("schema", str(properties.schema)),
                 MacroParameter("destinationColumnNames", properties.polygonColumnName),
-                MacroParameter("threshold", str(properties.threshold)),
+                MacroParameter("cell_size", str(properties.cell_size)),
                 MacroParameter("unit", properties.unit)
             ],
         )
