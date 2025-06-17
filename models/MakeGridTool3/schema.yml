@@ -1,0 +1,16 @@
+---
+version: 2
+models:
+- name: "model_MakeGridTool3_create_grid"
+  tags:
+  - "prophecy_temp"
+sources:
+- name: "prophecy_tmp_source__MakeGridTool3"
+  database: "andre_dev"
+  schema: "spatial"
+  config:
+    enabled: true
+  tables:
+  - name: "prophecy_tmp__mc0tf2pt__MakeGridTool3__create_grid"
+    tags:
+    - "prophecy_temp"

@@ -4,18 +4,18 @@ import json
 from prophecy.cb.sql.MacroBuilderBase import *
 from prophecy.cb.ui.uispec import *
 
-class Float_MakeGridTool(MacroSpec):
-    name: str = "Float_MakeGridTool"
+class MakeGridTool3(MacroSpec):
+    name: str = "MakeGridTool3"
     projectName: str = "andre_spatial_07"
     category: str = "Spatial"
     minNumOfInputPorts: int = 1
     
     @dataclass(frozen=True)
-    class Float_MakeGridToolProperties(MacroProperties):
+    class MakeGridTool3Properties(MacroProperties):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
-        cell_size: int = 1
+        cell_size: str = "0.456"
         unit: str = "kms"
         polygonColumnName: str = ""
 
@@ -39,7 +39,7 @@ class Float_MakeGridTool(MacroSpec):
         return relation_name
 
     def dialog(self) -> Dialog:
-        return Dialog("Float_MakeGridTool").addElement(
+        return Dialog("MakeGridTool3").addElement(
             ColumnsLayout(gap="1rem", height="100%")
             .addColumn(
                 Ports(allowInputAddOrDelete=True),
@@ -51,10 +51,13 @@ class Float_MakeGridTool(MacroSpec):
                     SchemaColumnsDropdown("Polygon Column Input")
                         .bindSchema("component.ports.inputs[0].schema")
                         .bindProperty("polygonColumnName")
-                )                               
+                )  
                 .addElement(
-                    NumberBox("Cell size",placeholder="1",minValueVar=1)
-                )                
+                    TextBox("My Cell size", placeholder="0.123", helpText="Help me").bindProperty("cell_size")
+                )                               
+   #             .addElement(
+   #                 NumberBox("Cell size",placeholder="0.1",minValueVar=0).bindProperty("cell_size")
+   #             )                
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
                 )                                
@@ -78,7 +81,7 @@ class Float_MakeGridTool(MacroSpec):
         )
         return newState.bindProperties(newProperties)
 
-    def apply(self, props: Float_MakeGridToolProperties) -> str:
+    def apply(self, props: MakeGridTool3Properties) -> str:
         # Get the table name
         table_name: str = ",".join(str(rel) for rel in props.relation_name)
 
@@ -100,11 +103,11 @@ class Float_MakeGridTool(MacroSpec):
     def loadProperties(self, properties: MacroProperties) -> PropertiesType:
         # load the component's state given default macro property representation
         parametersMap = self.convertToParameterMap(properties.parameters)
-        return Float_MakeGridTool.Float_MakeGridToolProperties(
+        return MakeGridTool3.MakeGridTool3Properties(
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             polygonColumnName=parametersMap.get('polygonColumnName'),
-            cell_size=float(parametersMap.get('cell_size')),
+            cell_size=parametersMap.get('cell_size'),
             unit=str(parametersMap.get('unit'))
         )
 
@@ -117,7 +120,7 @@ class Float_MakeGridTool(MacroSpec):
                 MacroParameter("relation_name", str(properties.relation_name)),
                 MacroParameter("schema", str(properties.schema)),
                 MacroParameter("destinationColumnNames", properties.polygonColumnName),
-                MacroParameter("cell_size", str(properties.cell_size)),
+                MacroParameter("cell_size", properties.cell_size),
                 MacroParameter("unit", properties.unit)
             ],
         )

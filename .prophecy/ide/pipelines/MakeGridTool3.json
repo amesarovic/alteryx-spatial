@@ -1,7 +1,7 @@
 {
-  "id" : "Float_MakeGridTool_01",
+  "id" : "MakeGridTool3",
   "metainfo" : {
-    "label" : "Float_MakeGridTool_01",
+    "label" : "MakeGridTool3",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -22,66 +22,20 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "BJ9w1VBmLQAlu4GZxRWJ2$$da4-e9svy3v17A3IsiXZg" : {
-      "id" : "BJ9w1VBmLQAlu4GZxRWJ2$$da4-e9svy3v17A3IsiXZg",
-      "component" : "Dataset",
+    "Lecbe1QFNZm4ATg5VTB__$$OonUGhHqQ9QiNuHrDOTn-" : {
+      "id" : "Lecbe1QFNZm4ATg5VTB__$$OonUGhHqQ9QiNuHrDOTn-",
+      "component" : "MakeGridTool3",
       "metadata" : {
-        "label" : "ne_polygons",
-        "x" : -800,
-        "y" : -440,
+        "label" : "create_grid",
+        "x" : -340,
+        "y" : -340,
         "phase" : 0
       },
       "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "ne_polygons",
-          "sourceName" : "andre_dev.alteryx_spatial",
-          "sourceType" : "Table"
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "FiGCV24Lh_MHIxAtgSFP3$$fTU_Ar4yYfhOC8bZojMxv",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "Ww_b92IW79E3O1Ufy7aTZ$$DkeAAz3ZMnxQo1hdie19t",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "databricks",
-            "fields" : [ {
-              "name" : "name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "geometry",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
-    "LaRunwEl3wvxRfg1TelyN$$e2dlbBzQYQdr1W9gtpY3I" : {
-      "id" : "LaRunwEl3wvxRfg1TelyN$$e2dlbBzQYQdr1W9gtpY3I",
-      "component" : "Float_MakeGridTool",
-      "metadata" : {
-        "label" : "create_grid_from_polygons",
-        "x" : -580,
-        "y" : -440,
-        "phase" : 0
-      },
-      "properties" : {
-        "cell_size" : 1,
+        "cell_size" : "0.1",
         "relation_name" : [ "ne_polygons" ],
         "_oldMacroProperties" : {
-          "macroName" : "Float_MakeGridTool",
+          "macroName" : "MakeGridTool3",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
             "name" : "relation_name",
@@ -94,19 +48,19 @@
             "value" : "geometry"
           }, {
             "name" : "cell_size",
-            "value" : "1"
+            "value" : "0.1"
           }, {
             "name" : "unit",
-            "value" : "kms"
+            "value" : "miles"
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "polygonColumnName" : "geometry",
-        "unit" : "kms"
+        "unit" : "miles"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "P9RSK8bejbxEMEqOCmnrM$$Tb1g7HkStqdSntJeXrLOP",
+          "id" : "PRgkpcGKqjLYxuTr_-4E3$$7usSo5J7kembL-b9oPJAh",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -125,7 +79,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "tSsU4LQDh4HeIPOGGehzM$$i5lDHarroii_FAcApVolN",
+          "id" : "7EDHmH5-k533L45UMB0CH$$h8Zd3xFa5r4yjRSaBphCO",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -141,19 +95,65 @@
         "isCustomOutputSchema" : false
       },
       "componentInfo" : {
-        "gemId" : "Float_MakeGridTool_andre_spatial_07",
-        "name" : "Float_MakeGridTool",
+        "gemId" : "MakeGridTool3_andre_spatial_07",
+        "name" : "MakeGridTool3",
         "projectName" : "andre_spatial_07",
         "sourceProjectName" : "andre_spatial_07"
+      }
+    },
+    "0KIsmMe25idM0W0bBpu9e$$iPHmhpM5_WH_43RRB8GGE" : {
+      "id" : "0KIsmMe25idM0W0bBpu9e$$iPHmhpM5_WH_43RRB8GGE",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "ne_polygons",
+        "x" : -540,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "ne_polygons",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "sourceType" : "Table"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "O3n64oNQuuNAVogHvh_JQ$$mzhixu97gSOUjZ5MP9d5T",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "fyA4Vogov-qqGDc_D2rWm$$3TqxxcPBhkNIMzWJnzwIg",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
       }
     }
   },
   "connections" : [ {
-    "id" : "MfHtclM3XC-JlcjO2nWIJ$$PVzWHjKfo8cWDDfQpXyP7",
-    "source" : "BJ9w1VBmLQAlu4GZxRWJ2$$da4-e9svy3v17A3IsiXZg",
-    "sourcePort" : "Ww_b92IW79E3O1Ufy7aTZ$$DkeAAz3ZMnxQo1hdie19t",
-    "target" : "LaRunwEl3wvxRfg1TelyN$$e2dlbBzQYQdr1W9gtpY3I",
-    "targetPort" : "P9RSK8bejbxEMEqOCmnrM$$Tb1g7HkStqdSntJeXrLOP"
+    "id" : "LqPsyPSgtnMcWo_0hrNXm",
+    "source" : "0KIsmMe25idM0W0bBpu9e$$iPHmhpM5_WH_43RRB8GGE",
+    "sourcePort" : "fyA4Vogov-qqGDc_D2rWm$$3TqxxcPBhkNIMzWJnzwIg",
+    "target" : "Lecbe1QFNZm4ATg5VTB__$$OonUGhHqQ9QiNuHrDOTn-",
+    "targetPort" : "PRgkpcGKqjLYxuTr_-4E3$$7usSo5J7kembL-b9oPJAh"
   } ],
   "component" : "Pipeline"
 }

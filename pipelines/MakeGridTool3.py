@@ -7,9 +7,9 @@ with DAG(Schedule = Schedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "ne_polygons", "sourceName" : "andre_dev.alteryx_spatial", "sourceType" : "Table"}
     )
-    model_Float_MakeGridTool_01_create_grid_from_polygons = Task(
-        task_id = "model_Float_MakeGridTool_01_create_grid_from_polygons", 
+    model_MakeGridTool3_create_grid = Task(
+        task_id = "model_MakeGridTool3_create_grid", 
         component = "Model", 
-        modelName = "model_Float_MakeGridTool_01_create_grid_from_polygons"
+        modelName = "model_MakeGridTool3_create_grid"
     )
-    ne_polygons.out >> model_Float_MakeGridTool_01_create_grid_from_polygons.in_0
+    ne_polygons.out >> model_MakeGridTool3_create_grid.in_0

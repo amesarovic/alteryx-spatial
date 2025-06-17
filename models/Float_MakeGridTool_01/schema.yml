@@ -1,7 +1,7 @@
 ---
 version: 2
 models:
-- name: "model_Float_MakeGridTool_01_Float_MakeGridTool_0"
+- name: "model_Float_MakeGridTool_01_create_grid_from_polygons"
   tags:
   - "prophecy_temp"
 sources:
@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mc0m8wki__Float_MakeGridTool_01__Float_MakeGridTool_0"
+  - name: "prophecy_tmp__mc0ssbk0__Float_MakeGridTool_01__create_grid_from_polygons"
     tags:
     - "prophecy_temp"
