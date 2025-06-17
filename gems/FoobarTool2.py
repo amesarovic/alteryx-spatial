@@ -4,18 +4,18 @@ import json
 from prophecy.cb.sql.MacroBuilderBase import *
 from prophecy.cb.ui.uispec import *
 
-class Generalize2Tool(MacroSpec):
-    name: str = "Generalize2Tool"
+class FoobarTool2(MacroSpec):
+    name: str = "FoobarTool2"
     projectName: str = "andre_spatial_07"
     category: str = "Spatial"
     minNumOfInputPorts: int = 1
     
     @dataclass(frozen=True)
-    class Generalize2ToolProperties(MacroProperties):
+    class FoobarTool2Properties(MacroProperties):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
-        threshold: int = 10
+        cell_size: int = 10
         unit: str = "kms"
         polygonColumnName: str = ""
 
@@ -39,7 +39,7 @@ class Generalize2Tool(MacroSpec):
         return relation_name
 
     def dialog(self) -> Dialog:
-        return Dialog("Generalize2Tool").addElement(
+        return Dialog("FoobarTool2").addElement(
             ColumnsLayout(gap="1rem", height="100%")
             .addColumn(
                 Ports(allowInputAddOrDelete=True),
@@ -53,7 +53,7 @@ class Generalize2Tool(MacroSpec):
                         .bindProperty("polygonColumnName")
                 )                               
                 .addElement(
-                    NumberBox("Threshold",placeholder="10",minValueVar=1).bindProperty("threshold")
+                    NumberBox("Cell size",placeholder="10",minValueVar=1).bindProperty("cell_size")
                 )                
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
@@ -78,7 +78,7 @@ class Generalize2Tool(MacroSpec):
         )
         return newState.bindProperties(newProperties)
 
-    def apply(self, props: Generalize2ToolProperties) -> str:
+    def apply(self, props: FoobarTool2Properties) -> str:
         # Get the table name
         table_name: str = ",".join(str(rel) for rel in props.relation_name)
 
@@ -89,7 +89,7 @@ class Generalize2Tool(MacroSpec):
             "'" + table_name + "'",
             props.schema,
             "'" + props.polygonColumnName + "'",            
-            str(props.threshold),
+            str(props.cell_size),
             "'" + props.unit + "'"
         ]
 
@@ -100,11 +100,11 @@ class Generalize2Tool(MacroSpec):
     def loadProperties(self, properties: MacroProperties) -> PropertiesType:
         # load the component's state given default macro property representation
         parametersMap = self.convertToParameterMap(properties.parameters)
-        return Generalize2Tool.Generalize2ToolProperties(
+        return FoobarTool2.FoobarTool2Properties(
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             polygonColumnName=parametersMap.get('polygonColumnName'),
-            threshold=int(parametersMap.get('threshold')),
+            cell_size=int(parametersMap.get('cell_size')),
             unit=str(parametersMap.get('unit'))
         )
 
@@ -117,7 +117,7 @@ class Generalize2Tool(MacroSpec):
                 MacroParameter("relation_name", str(properties.relation_name)),
                 MacroParameter("schema", str(properties.schema)),
                 MacroParameter("destinationColumnNames", properties.polygonColumnName),
-                MacroParameter("threshold", str(properties.threshold)),
+                MacroParameter("cell_size", str(properties.cell_size)),
                 MacroParameter("unit", properties.unit)
             ],
         )

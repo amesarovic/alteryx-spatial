@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc0k27wa__MakeGridTool_01__create_grid",
+    "alias": "prophecy_tmp__mc0cusp3__MakeGridTool_01__create_grid",
     "database": "andre_dev",
     "schema": "spatial"
   })
@@ -22,7 +22,7 @@ create_grid AS (
       'ne_polygons', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      2, 
+      0, 
       'kms'
     )
   }}

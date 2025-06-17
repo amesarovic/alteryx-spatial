@@ -1,4 +1,5 @@
-{{%- macro FoobarTool(table_name,schema,polygonColumnName,cell_size,unit) -%}
+
+{%- macro FoobarTool2(table_name,schema,polygonColumnName,cell_size,unit) -%}
     {{ log("table_name=" ~ table_name, info=True) }}
     {{ log("schema=" ~ schema, info=True) }}
     {{ log("polygonColumnName=" ~ polygonColumnName, info=True) }}

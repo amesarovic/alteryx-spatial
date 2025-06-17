@@ -79,7 +79,7 @@
         "phase" : 0
       },
       "properties" : {
-        "cell_size" : 2,
+        "cell_size" : 0,
         "relation_name" : [ "ne_polygons" ],
         "_oldMacroProperties" : {
           "macroName" : "MakeGridTool",
@@ -95,7 +95,7 @@
             "value" : "geometry"
           }, {
             "name" : "cell_size",
-            "value" : "2"
+            "value" : "0"
           }, {
             "name" : "unit",
             "value" : "kms"
