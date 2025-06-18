@@ -27,28 +27,6 @@ sqlModels: {}
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
-  .prophecy/metadata/sqlmacros/Float_MakeGridTool:
-    name: Float_MakeGridTool
-    macroType: query
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - macros/Float_MakeGridTool.sql
-    - .prophecy/ide/macros/Float_MakeGridTool.json
-    - macros/macros.yml
-    - gems/Float_MakeGridTool.py
-    createdAt: '2025-06-17 05:15:04'
-  .prophecy/metadata/sqlmacros/FoobarTool2:
-    name: FoobarTool2
-    macroType: query
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - macros/FoobarTool2.sql
-    - .prophecy/ide/macros/FoobarTool2.json
-    - macros/macros.yml
-    - gems/FoobarTool2.py
-    createdAt: '2025-06-17 15:49:13'
   .prophecy/metadata/sqlmacros/MakeGridTool:
     name: MakeGridTool
     macroType: query
@@ -139,13 +117,28 @@ sqlSources:
       author: mesarovic.andre@prophecy.io
       createdAt: '2025-06-17 04:25:45'
       tableType: table
+    - name: new_england
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: name
+          dataType:
+            type: String
+        - name: geometry
+          dataType:
+            type: String
+      description: null
+      author: mesarovic.andre@prophecy.io
+      createdAt: '2025-06-18 06:26:37'
+      tableType: table
   .prophecy/metadata/sqlsources/prophecy_tmp_source__MakeGridTool3:
     name: prophecy_tmp_source__MakeGridTool3
     description: null
     author: mesarovic.andre@prophecy.io
     files:
     - models/MakeGridTool3/schema.yml
-    createdAt: '2025-06-17 18:32:07'
+    createdAt: '2025-06-17 18:38:34'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTool_01:
     name: prophecy_tmp_source__BufferTool_01
@@ -153,23 +146,7 @@ sqlSources:
     author: mesarovic.andre@prophecy.io
     files:
     - models/BufferTool_01/schema.yml
-    createdAt: '2025-06-17 11:07:14'
-    tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__Float_MakeGridTool_01:
-    name: prophecy_tmp_source__Float_MakeGridTool_01
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Float_MakeGridTool_01/schema.yml
-    createdAt: '2025-06-17 17:28:45'
-    tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__FoobarTool2_a:
-    name: prophecy_tmp_source__FoobarTool2_a
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/FoobarTool2_a/schema.yml
-    createdAt: '2025-06-17 15:49:13'
+    createdAt: '2025-06-18 06:38:03'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__GeneralizeTool_01:
     name: prophecy_tmp_source__GeneralizeTool_01
@@ -226,17 +203,6 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/MakeGridTool3.json
     - pipelines/MakeGridTool3.py
     createdAt: '2025-06-17 18:18:31'
-  .prophecy/metadata/sqlorchestratorpipeline/Float_MakeGridTool_01:
-    name: Float_MakeGridTool_01
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Float_MakeGridTool_01/schema.yml
-    - models/Float_MakeGridTool_01/model_Float_MakeGridTool_01_create_grid_from_polygons.sql
-    - .prophecy/ide/pipelines/Float_MakeGridTool_01.json
-    - pipelines/Float_MakeGridTool_01.py
-    createdAt: '2025-06-17 05:17:57'
   .prophecy/metadata/sqlorchestratorpipeline/BufferTool_01:
     name: BufferTool_01
     schema: null
@@ -244,7 +210,7 @@ sqlOrchestratorPipelines:
     author: mesarovic.andre@prophecy.io
     files:
     - models/BufferTool_01/schema.yml
-    - models/BufferTool_01/model_BufferTool_01_buffer_ne_polygons.sql
+    - models/BufferTool_01/model_BufferTool_01_buffer_new_england.sql
     - .prophecy/ide/pipelines/BufferTool_01.json
     - pipelines/BufferTool_01.py
     createdAt: '2025-06-16 19:07:30'
@@ -259,17 +225,6 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/Generalize2Tool_a.json
     - pipelines/Generalize2Tool_a.py
     createdAt: '2025-06-17 14:02:34'
-  .prophecy/metadata/sqlorchestratorpipeline/FoobarTool2_a:
-    name: FoobarTool2_a
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/FoobarTool2_a/schema.yml
-    - models/FoobarTool2_a/model_FoobarTool2_a_process_geospatial_data.sql
-    - .prophecy/ide/pipelines/FoobarTool2_a.json
-    - pipelines/FoobarTool2_a.py
-    createdAt: '2025-06-17 15:49:13'
   .prophecy/metadata/sqlorchestratorpipeline/MakeGridTool_01:
     name: MakeGridTool_01
     schema: null

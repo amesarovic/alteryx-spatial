@@ -1,29 +1,29 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc0iqb8x__BufferTool_01__buffer_ne_polygons",
+    "alias": "prophecy_tmp__mc1kzhu6__BufferTool_01__buffer_new_england",
     "database": "andre_dev",
     "schema": "spatial"
   })
 }}
 
-WITH ne_polygons AS (
+WITH new_england AS (
 
   SELECT * 
   
-  FROM {{ source('andre_dev.alteryx_spatial', 'ne_polygons') }}
+  FROM {{ source('andre_dev.alteryx_spatial', 'new_england') }}
 
 ),
 
-buffer_ne_polygons AS (
+buffer_new_england AS (
 
   {{
     andre_spatial_07.BufferTool(
-      'ne_polygons', 
+      'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      99, 
-      'kms'
+      20, 
+      'miles'
     )
   }}
 
@@ -31,4 +31,4 @@ buffer_ne_polygons AS (
 
 SELECT *
 
-FROM buffer_ne_polygons
+FROM buffer_new_england

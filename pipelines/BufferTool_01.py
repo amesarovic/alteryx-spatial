@@ -1,14 +1,15 @@
 Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@gmail.com"], enabled = False)
 
 with DAG(Schedule = Schedule):
-    ne_polygons = Task(
-        task_id = "ne_polygons", 
+    new_england = Task(
+        task_id = "new_england", 
         component = "Dataset", 
-        table = {"name" : "ne_polygons", "sourceType" : "Source", "sourceName" : "andre_dev.alteryx_spatial", "alias" : ""}
+        writeOptions = {"writeMode" : "overwrite"}, 
+        table = {"name" : "new_england", "sourceName" : "andre_dev.alteryx_spatial", "sourceType" : "Table"}
     )
-    model_BufferTool_01_buffer_ne_polygons = Task(
-        task_id = "model_BufferTool_01_buffer_ne_polygons", 
+    model_BufferTool_01_buffer_new_england = Task(
+        task_id = "model_BufferTool_01_buffer_new_england", 
         component = "Model", 
-        modelName = "model_BufferTool_01_buffer_ne_polygons"
+        modelName = "model_BufferTool_01_buffer_new_england"
     )
-    ne_polygons.out >> model_BufferTool_01_buffer_ne_polygons.in_0
+    new_england.out >> model_BufferTool_01_buffer_new_england.in_0

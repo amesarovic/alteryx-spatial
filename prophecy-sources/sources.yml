@@ -18,3 +18,12 @@ sources:
       dataType:
         type: "String"
     type: "table"
+  - name: "new_england"
+    columns:
+    - name: "name"
+      dataType:
+        type: "String"
+    - name: "geometry"
+      dataType:
+        type: "String"
+    type: "table"

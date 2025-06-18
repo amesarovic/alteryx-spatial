@@ -1,17 +1,17 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc0v2vv5__MakeGridTool3__create_grid",
+    "alias": "prophecy_tmp__mc1krw6d__MakeGridTool3__create_grid",
     "database": "andre_dev",
     "schema": "spatial"
   })
 }}
 
-WITH ne_polygons AS (
+WITH new_england AS (
 
   SELECT * 
   
-  FROM {{ source('andre_dev.alteryx_spatial', 'ne_polygons') }}
+  FROM {{ source('andre_dev.alteryx_spatial', 'new_england') }}
 
 ),
 
@@ -19,11 +19,11 @@ create_grid AS (
 
   {{
     andre_spatial_07.MakeGridTool3(
-      'ne_polygons', 
+      'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      0.2, 
-      'kms'
+      0.3, 
+      'miles'
     )
   }}
 

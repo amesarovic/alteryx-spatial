@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mc0v2vv5__MakeGridTool3__create_grid\"",
+        "alias" : "\"prophecy_tmp__mc1krw6d__MakeGridTool3__create_grid\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"spatial\"",
@@ -19,8 +19,8 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__mc0v2vv5__MakeGridTool3__create_grid" : {
-      "id" : "prophecy_tmp__mc0v2vv5__MakeGridTool3__create_grid",
+    "prophecy_tmp__mc1krw6d__MakeGridTool3__create_grid" : {
+      "id" : "prophecy_tmp__mc1krw6d__MakeGridTool3__create_grid",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "create_grid",
@@ -50,24 +50,24 @@
         "autoUpdateOnRun" : false
       }
     },
-    "DP6qVD-R727yHoqOou1fb$$ORmmhRUa5o6jPb-o6_llZ" : {
-      "id" : "DP6qVD-R727yHoqOou1fb$$ORmmhRUa5o6jPb-o6_llZ",
+    "A4htBzzK7co7aK6ZqA0s1$$M2DhHr99xbjRowgWFFxUd" : {
+      "id" : "A4htBzzK7co7aK6ZqA0s1$$M2DhHr99xbjRowgWFFxUd",
       "component" : "MakeGridTool3",
       "metadata" : {
         "label" : "create_grid",
-        "x" : -200,
-        "y" : -320,
+        "x" : -660,
+        "y" : -620,
         "phase" : 0
       },
       "properties" : {
-        "cell_size" : "0.2",
-        "relation_name" : [ "ne_polygons" ],
+        "cell_size" : "0.3",
+        "relation_name" : [ "new_england" ],
         "_oldMacroProperties" : {
           "macroName" : "MakeGridTool3",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['ne_polygons']"
+            "value" : "['new_england']"
           }, {
             "name" : "schema",
             "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
@@ -76,52 +76,50 @@
             "value" : "geometry"
           }, {
             "name" : "cell_size",
-            "value" : "0.2"
+            "value" : "0.3"
           }, {
             "name" : "unit",
-            "value" : "kms"
+            "value" : "miles"
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "polygonColumnName" : "geometry",
-        "unit" : "kms"
+        "unit" : "miles"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "TxFcGriM25cqY9I_AH6ME$$kY0xLyba9kKA2KLHIbrKv",
+          "id" : "QnMMXK2SoI8hbXpwZ_rMv$$MrudboaNak-ookFBMxrnP",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "lfbMyrR4Kw5afdJGyFFPm$$WptZm1waiBUxGL7HhAq6j",
+          "id" : "Z-pz8d6D0rNn6zUDbnsIc$$HM9u2_XBvzkuG1E0CzxYR",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
     },
-    "0KIsmMe25idM0W0bBpu9e$$iPHmhpM5_WH_43RRB8GGE" : {
-      "id" : "0KIsmMe25idM0W0bBpu9e$$iPHmhpM5_WH_43RRB8GGE",
+    "ARctJmMTcRfAWTmNws10K$$CZSxgmkO_oAbGu7d2LRb0" : {
+      "id" : "ARctJmMTcRfAWTmNws10K$$CZSxgmkO_oAbGu7d2LRb0",
       "component" : "Source",
       "metadata" : {
-        "label" : "ne_polygons",
-        "x" : -560,
-        "y" : -340,
+        "label" : "new_england",
+        "x" : -920,
+        "y" : -620,
         "phase" : 0
       },
       "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
         "table" : {
-          "name" : "ne_polygons",
+          "name" : "new_england",
+          "sourceType" : "Source",
           "sourceName" : "andre_dev.alteryx_spatial",
-          "sourceType" : "Table"
+          "alias" : ""
         }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "fyA4Vogov-qqGDc_D2rWm$$3TqxxcPBhkNIMzWJnzwIg",
+          "id" : "AFmyu7aWnil9SkTaKoRAQ$$ERjnySjSHio_jqK7LrPLs",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -130,17 +128,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_DP6qVD-R727yHoqOou1fb$$ORmmhRUa5o6jPb-o6_llZ_prophecy_tmp__mc0v2vv5__MakeGridTool3__create_grid",
-    "source" : "DP6qVD-R727yHoqOou1fb$$ORmmhRUa5o6jPb-o6_llZ",
-    "sourcePort" : "lfbMyrR4Kw5afdJGyFFPm$$WptZm1waiBUxGL7HhAq6j",
-    "target" : "prophecy_tmp__mc0v2vv5__MakeGridTool3__create_grid",
+    "id" : "conn_A4htBzzK7co7aK6ZqA0s1$$M2DhHr99xbjRowgWFFxUd_prophecy_tmp__mc1krw6d__MakeGridTool3__create_grid",
+    "source" : "A4htBzzK7co7aK6ZqA0s1$$M2DhHr99xbjRowgWFFxUd",
+    "sourcePort" : "Z-pz8d6D0rNn6zUDbnsIc$$HM9u2_XBvzkuG1E0CzxYR",
+    "target" : "prophecy_tmp__mc1krw6d__MakeGridTool3__create_grid",
     "targetPort" : "input_port_0_1"
   }, {
-    "id" : "Flem7Iovjw4_ywsx0XT6r",
-    "source" : "0KIsmMe25idM0W0bBpu9e$$iPHmhpM5_WH_43RRB8GGE",
-    "sourcePort" : "fyA4Vogov-qqGDc_D2rWm$$3TqxxcPBhkNIMzWJnzwIg",
-    "target" : "DP6qVD-R727yHoqOou1fb$$ORmmhRUa5o6jPb-o6_llZ",
-    "targetPort" : "TxFcGriM25cqY9I_AH6ME$$kY0xLyba9kKA2KLHIbrKv"
+    "id" : "tq2Lopq-FVy7P34aEBjyd",
+    "source" : "ARctJmMTcRfAWTmNws10K$$CZSxgmkO_oAbGu7d2LRb0",
+    "sourcePort" : "AFmyu7aWnil9SkTaKoRAQ$$ERjnySjSHio_jqK7LrPLs",
+    "target" : "A4htBzzK7co7aK6ZqA0s1$$M2DhHr99xbjRowgWFFxUd",
+    "targetPort" : "QnMMXK2SoI8hbXpwZ_rMv$$MrudboaNak-ookFBMxrnP"
   } ],
   "component" : "Model"
 }
