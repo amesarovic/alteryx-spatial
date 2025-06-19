@@ -1,17 +1,17 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc0jnmr9__Generalize2Tool_a__generalize_polygons",
+    "alias": "prophecy_tmp__mc1l34j0__Generalize2Tool_a__generalize_polygons",
     "database": "andre_dev",
     "schema": "spatial"
   })
 }}
 
-WITH ne_polygons AS (
+WITH new_england AS (
 
   SELECT * 
   
-  FROM {{ source('andre_dev.alteryx_spatial', 'ne_polygons') }}
+  FROM {{ source('andre_dev.alteryx_spatial', 'new_england') }}
 
 ),
 
@@ -19,11 +19,11 @@ generalize_polygons AS (
 
   {{
     andre_spatial_07.Generalize2Tool(
-      'ne_polygons', 
+      'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
       4, 
-      'kms'
+      'miles'
     )
   }}
 

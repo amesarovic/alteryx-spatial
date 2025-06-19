@@ -27,18 +27,18 @@
       "component" : "Generalize2Tool",
       "metadata" : {
         "label" : "generalize_polygons",
-        "x" : -120,
-        "y" : -140,
+        "x" : -480,
+        "y" : -320,
         "phase" : 0
       },
       "properties" : {
-        "relation_name" : [ "ne_polygons" ],
+        "relation_name" : [ "new_england" ],
         "_oldMacroProperties" : {
           "macroName" : "Generalize2Tool",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
             "name" : "relation_name",
-            "value" : "['ne_polygons']"
+            "value" : "['new_england']"
           }, {
             "name" : "schema",
             "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
@@ -50,13 +50,13 @@
             "value" : "4"
           }, {
             "name" : "unit",
-            "value" : "kms"
+            "value" : "miles"
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "threshold" : 4,
         "polygonColumnName" : "geometry",
-        "unit" : "kms"
+        "unit" : "miles"
       },
       "ports" : {
         "inputs" : [ {
@@ -101,13 +101,13 @@
         "sourceProjectName" : "andre_spatial_07"
       }
     },
-    "7eZ8321KERJ9vpBm91w8p$$-F6p_0Snkq2Q4SOMXjHQC" : {
-      "id" : "7eZ8321KERJ9vpBm91w8p$$-F6p_0Snkq2Q4SOMXjHQC",
+    "yFosoLxelntO8aVd1gxMZ$$JfvJgLwSRgfp6-mqf6-hK" : {
+      "id" : "yFosoLxelntO8aVd1gxMZ$$JfvJgLwSRgfp6-mqf6-hK",
       "component" : "Dataset",
       "metadata" : {
-        "label" : "ne_polygons",
-        "x" : -440,
-        "y" : -80,
+        "label" : "new_england",
+        "x" : -700,
+        "y" : -320,
         "phase" : 0
       },
       "properties" : {
@@ -115,18 +115,18 @@
           "writeMode" : "overwrite"
         },
         "table" : {
-          "name" : "ne_polygons",
+          "name" : "new_england",
           "sourceName" : "andre_dev.alteryx_spatial",
           "sourceType" : "Table"
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "NXmt2E8NU3gaWw943KZjX$$wjcOx9WDPuHUAGewGEIp-",
+          "id" : "JN2rajG4INp8xPNCgknAC$$1Bu1l-vZ4ctmOYivyEAKB",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "-K4gunKDZth_K1qZeu_H_$$cseZDootcQvEEeVFFQpa8",
+          "id" : "W46q40pnunZ3ejkDz9Wyj$$t5VHiIIMI4iSytEFjlkaI",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -149,9 +149,9 @@
     }
   },
   "connections" : [ {
-    "id" : "Effp8nogH5gNgxSUKJdrq",
-    "source" : "7eZ8321KERJ9vpBm91w8p$$-F6p_0Snkq2Q4SOMXjHQC",
-    "sourcePort" : "-K4gunKDZth_K1qZeu_H_$$cseZDootcQvEEeVFFQpa8",
+    "id" : "gckZ2xE2Xa0WOQpWMxB6H$$6LbSj6Wa2RotZRyjscZGf",
+    "source" : "yFosoLxelntO8aVd1gxMZ$$JfvJgLwSRgfp6-mqf6-hK",
+    "sourcePort" : "W46q40pnunZ3ejkDz9Wyj$$t5VHiIIMI4iSytEFjlkaI",
     "target" : "ABnw9YSsWMPC1i8h3ZqIP$$-SrMzjFIXB2PbMwM4EKUx",
     "targetPort" : "1pKkSO6NETGKHmPkzGELC$$Qh7E7TzwH9rgkDugZaN-d"
   } ],
