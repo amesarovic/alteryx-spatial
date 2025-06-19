@@ -200,6 +200,7 @@ sqlOrchestratorPipelines:
     files:
     - models/MakeGridTool3/schema.yml
     - models/MakeGridTool3/model_MakeGridTool3_create_grid.sql
+    - models/MakeGridTool3/model_MakeGridTool3_create_grid_1.sql
     - .prophecy/ide/pipelines/MakeGridTool3.json
     - pipelines/MakeGridTool3.py
     createdAt: '2025-06-17 18:18:31'

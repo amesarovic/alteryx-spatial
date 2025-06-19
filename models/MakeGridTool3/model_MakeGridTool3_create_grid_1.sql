@@ -1,13 +1,13 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc2tepzi__MakeGridTool3__create_grid",
+    "alias": "prophecy_tmp__mc2tepzi__MakeGridTool3__create_grid_1",
     "database": "andre_dev",
     "schema": "spatial"
   })
 }}
 
-WITH new_england AS (
+WITH new_england_1 AS (
 
   SELECT * 
   
@@ -15,7 +15,7 @@ WITH new_england AS (
 
 ),
 
-create_grid AS (
+create_grid_1 AS (
 
   {{
     andre_spatial_07.MakeGridTool3(
@@ -31,4 +31,4 @@ create_grid AS (
 
 SELECT *
 
-FROM create_grid
+FROM create_grid_1

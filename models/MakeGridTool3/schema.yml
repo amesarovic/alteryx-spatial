@@ -4,6 +4,9 @@ models:
 - name: "model_MakeGridTool3_create_grid"
   tags:
   - "prophecy_temp"
+- name: "model_MakeGridTool3_create_grid_1"
+  tags:
+  - "prophecy_temp"
 sources:
 - name: "prophecy_tmp_source__MakeGridTool3"
   database: "andre_dev"
@@ -11,6 +14,9 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mc1krw6d__MakeGridTool3__create_grid"
+  - name: "prophecy_tmp__mc2tepzi__MakeGridTool3__create_grid"
+    tags:
+    - "prophecy_temp"
+  - name: "prophecy_tmp__mc2tepzi__MakeGridTool3__create_grid_1"
     tags:
     - "prophecy_temp"
