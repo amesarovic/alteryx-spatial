@@ -27,8 +27,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -1560,
-        "y" : -1020,
+        "x" : -1200,
+        "y" : -780,
         "phase" : 0
       },
       "properties" : {
@@ -68,13 +68,13 @@
         "isCustomOutputSchema" : false
       }
     },
-    "wotdrRt-K7-BuaqxJdBoX$$v4UJ-JkUoKcSX155h3gN9" : {
-      "id" : "wotdrRt-K7-BuaqxJdBoX$$v4UJ-JkUoKcSX155h3gN9",
+    "2OqA3r3rvWumW3J3QqVrr$$ZzdELpm5wI3gq1i7jJgRS" : {
+      "id" : "2OqA3r3rvWumW3J3QqVrr$$ZzdELpm5wI3gq1i7jJgRS",
       "component" : "BufferTool",
       "metadata" : {
         "label" : "buffer_new_england",
-        "x" : -1300,
-        "y" : -1020,
+        "x" : -960,
+        "y" : -780,
         "phase" : 0
       },
       "properties" : {
@@ -93,7 +93,7 @@
             "value" : "geometry"
           }, {
             "name" : "distance",
-            "value" : "1"
+            "value" : "20"
           }, {
             "name" : "unit",
             "value" : "miles"
@@ -102,11 +102,11 @@
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "polygonColumnName" : "geometry",
         "unit" : "miles",
-        "distance" : 1
+        "distance" : 20
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "DCaes2g1T3A_CTtoBccJt$$0jd4BWKr2nDUJyYq_YcrF",
+          "id" : "_huD3xY2SVo8xu8w2Y-TR$$-MUsrXcWpEXhZCFNQzyuI",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -125,7 +125,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "Omez8aTqc8ZMU_wD7Y8Q9$$GYTK6je3Pr-fc_X8tuURn",
+          "id" : "eRIXWL_iWi_jImkUtj2Jj$$Do3qOJ_LmmJvjE-VdDhZs",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -149,11 +149,11 @@
     }
   },
   "connections" : [ {
-    "id" : "H7QB-x-lDqFx61JQkpGzA",
+    "id" : "WZnypBrH9OQ_ZQ_xvOD12",
     "source" : "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf",
     "sourcePort" : "yLgNRWiIDZsQrg8YfBg0F$$eDTI5oEQ7tTan_V6c-uT7",
-    "target" : "wotdrRt-K7-BuaqxJdBoX$$v4UJ-JkUoKcSX155h3gN9",
-    "targetPort" : "DCaes2g1T3A_CTtoBccJt$$0jd4BWKr2nDUJyYq_YcrF"
+    "target" : "2OqA3r3rvWumW3J3QqVrr$$ZzdELpm5wI3gq1i7jJgRS",
+    "targetPort" : "_huD3xY2SVo8xu8w2Y-TR$$-MUsrXcWpEXhZCFNQzyuI"
   } ],
   "component" : "Pipeline"
 }

@@ -27,8 +27,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -1560,
-        "y" : -1020,
+        "x" : -1200,
+        "y" : -780,
         "phase" : 0
       },
       "properties" : {
@@ -68,8 +68,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "wotdrRt-K7-BuaqxJdBoX$$v4UJ-JkUoKcSX155h3gN9" : {
-      "id" : "wotdrRt-K7-BuaqxJdBoX$$v4UJ-JkUoKcSX155h3gN9",
+    "2OqA3r3rvWumW3J3QqVrr$$ZzdELpm5wI3gq1i7jJgRS" : {
+      "id" : "2OqA3r3rvWumW3J3QqVrr$$ZzdELpm5wI3gq1i7jJgRS",
       "component" : "Model",
       "metadata" : {
         "label" : "model_BufferTool_01_buffer_new_england",
@@ -79,7 +79,7 @@
         "modelName" : "model_BufferTool_01_buffer_new_england"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__mc2nlrg7__BufferTool_01__buffer_new_england", "wotdrRt-K7-BuaqxJdBoX$$v4UJ-JkUoKcSX155h3gN9", "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf" ],
+        "visualProcessIds" : [ "prophecy_tmp__mc2newaf__BufferTool_01__buffer_new_england", "2OqA3r3rvWumW3J3QqVrr$$ZzdELpm5wI3gq1i7jJgRS", "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf" ],
         "type" : "table",
         "isTemporaryTable" : true
       },
@@ -97,10 +97,10 @@
     }
   },
   "connections" : [ {
-    "id" : "H7QB-x-lDqFx61JQkpGzA",
+    "id" : "WZnypBrH9OQ_ZQ_xvOD12",
     "source" : "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf",
     "sourcePort" : "yLgNRWiIDZsQrg8YfBg0F$$eDTI5oEQ7tTan_V6c-uT7",
-    "target" : "wotdrRt-K7-BuaqxJdBoX$$v4UJ-JkUoKcSX155h3gN9",
+    "target" : "2OqA3r3rvWumW3J3QqVrr$$ZzdELpm5wI3gq1i7jJgRS",
     "targetPort" : "model_BufferTool_01_buffer_new_england_in_0"
   } ],
   "component" : "Pipeline"

@@ -15,8 +15,8 @@ class BufferTool(MacroSpec):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
-        distance: int = 1
-        unit: str = "miles"
+        distance: int = 10
+        unit: str = "kms"
         polygonColumnName: str = ""
 
     def get_relation_names(self, component: Component, context: SqlContext):

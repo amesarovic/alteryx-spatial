@@ -16,7 +16,7 @@ class MakeGridTool3(MacroSpec):
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
         cell_size: str = "0.456"
-        unit: str = "kms"
+        unit: str = "miles"
         polygonColumnName: str = ""
 
     def get_relation_names(self, component: Component, context: SqlContext):
@@ -54,10 +54,7 @@ class MakeGridTool3(MacroSpec):
                 )  
                 .addElement(
                     TextBox("My Cell size", placeholder="0.123", helpText="Help me").bindProperty("cell_size")
-                )                               
-   #             .addElement(
-   #                 NumberBox("Cell size",placeholder="0.1",minValueVar=0).bindProperty("cell_size")
-   #             )                
+                )                                            
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
                 )                                
