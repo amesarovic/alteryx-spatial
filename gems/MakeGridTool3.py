@@ -15,7 +15,7 @@ class MakeGridTool3(MacroSpec):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
-        cell_size: str = "0.456"
+        cell_size: str = "0.1"
         unit: str = "miles"
         polygonColumnName: str = ""
 
@@ -53,7 +53,7 @@ class MakeGridTool3(MacroSpec):
                         .bindProperty("polygonColumnName")
                 )  
                 .addElement(
-                    TextBox("My Cell size", placeholder="0.123", helpText="Help me").bindProperty("cell_size")
+                    TextBox("Cell size", placeholder="0.123", helpText="Help me").bindProperty("cell_size")
                 )                                            
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
@@ -62,8 +62,28 @@ class MakeGridTool3(MacroSpec):
        )
 
     def validate(self, context: SqlContext, component: Component) -> List[Diagnostic]:
-        # Validate the component's state
-        return super().validate(context,component)
+        diagnostics = []
+        if len(component.properties.cell_size.strip()) == 0:
+            diagnostics.append(
+                Diagnostic(
+                    "properties.cell_size",
+                    "Field 'Cell size' cannot be empty.",
+                    SeverityLevelEnum.Error
+                )
+            )
+        else:
+            try:
+                float(component.properties.cell_size)
+            except ValueError as e:
+                diagnostics.append(
+                    Diagnostic(
+                        "properties.cell_size",
+                        "Field 'Cell size' must be a float.",
+                        SeverityLevelEnum.Error
+                    )
+                )
+        return diagnostics
+
 
     def onChange(self, context: SqlContext, oldState: Component, newState: Component) -> Component:
         # Handle changes in the component's state and return the new state
