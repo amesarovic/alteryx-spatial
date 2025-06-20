@@ -1,24 +1,25 @@
+# commit: 46286e57ea6e309e8908f227469bb6b2281d88a4
+
 import dataclasses
 import json
 
 from prophecy.cb.sql.MacroBuilderBase import *
 from prophecy.cb.ui.uispec import *
 
-class BufferTool(MacroSpec):
-    name: str = "BufferTool"
+class BufferTool_01(MacroSpec):
+    name: str = "BufferTool_01"
     projectName: str = "andre_spatial_07"
     category: str = "Spatial"
     minNumOfInputPorts: int = 1
     
     @dataclass(frozen=True)
-    class BufferToolProperties(MacroProperties):
+    class BufferTool_01Properties(MacroProperties):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
-        distance: int = 1
-        unit: str = "miles"
-        geometryColumnName: str = ""
-        writeInputGeometry: bool = False
+        distance: int = 10
+        unit: str = "kms"
+        polygonColumnName: str = ""
 
     def get_relation_names(self, component: Component, context: SqlContext):
         all_upstream_nodes = []
@@ -40,8 +41,7 @@ class BufferTool(MacroSpec):
         return relation_name
 
     def dialog(self) -> Dialog:
-        help = "Add the input geometry to the result along with the output geometry"
-        return Dialog("BufferTool").addElement(
+        return Dialog("BufferTool_01").addElement(
             ColumnsLayout(gap="1rem", height="100%")
             .addColumn(
                 Ports(allowInputAddOrDelete=True),
@@ -50,18 +50,16 @@ class BufferTool(MacroSpec):
             .addColumn(
                 StackLayout()
                 .addElement(
-                    SchemaColumnsDropdown("Geometry Column Input")
+                    SchemaColumnsDropdown("Polygon Column Input")
                         .bindSchema("component.ports.inputs[0].schema")
-                        .bindProperty("geometryColumnName")
+                        .bindProperty("polygonColumnName")
                 )                               
                 .addElement(
                     NumberBox("Distance",placeholder="10",minValueVar=1).bindProperty("distance")
                 )                
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
-                ) 
-                .addElement(
-                    Checkbox("Write input geometry",helpText=help).bindProperty("writeInputGeometry"))                
+                )                                
            )
        )
 
@@ -82,7 +80,7 @@ class BufferTool(MacroSpec):
         )
         return newState.bindProperties(newProperties)
 
-    def apply(self, props: BufferToolProperties) -> str:
+    def apply(self, props: BufferTool_01Properties) -> str:
         # Get the table name
         table_name: str = ",".join(str(rel) for rel in props.relation_name)
 
@@ -90,12 +88,11 @@ class BufferTool(MacroSpec):
         resolved_macro_name = f"{self.projectName}.{self.name}"
 
         arguments = [
-            f"'{table_name}'",
+            "'" + table_name + "'",
             props.schema,
-            f"'{props.geometryColumnName}'",            
+            "'" + props.polygonColumnName + "'",            
             str(props.distance),
-            f"'{props.unit}'",
-            str(props.writeInputGeometry).lower(),
+            "'" + props.unit + "'"
         ]
 
         params = ",".join([param for param in arguments])
@@ -105,13 +102,12 @@ class BufferTool(MacroSpec):
     def loadProperties(self, properties: MacroProperties) -> PropertiesType:
         # load the component's state given default macro property representation
         parametersMap = self.convertToParameterMap(properties.parameters)
-        return BufferTool.BufferToolProperties(
+        return BufferTool_01.BufferTool_01Properties(
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
-            geometryColumnName=parametersMap.get('geometryColumnName'),
+            polygonColumnName=parametersMap.get('polygonColumnName'),
             distance=int(parametersMap.get('distance')),
-            unit=str(parametersMap.get('unit')),
-            writeInputGeometry=parametersMap.get('writeInputGeometry').lower() == 'true'
+            unit=str(parametersMap.get('unit'))
         )
 
     def unloadProperties(self, properties: PropertiesType) -> MacroProperties:
@@ -122,10 +118,9 @@ class BufferTool(MacroSpec):
             parameters=[
                 MacroParameter("relation_name", str(properties.relation_name)),
                 MacroParameter("schema", str(properties.schema)),
-                MacroParameter("destinationColumnNames", properties.geometryColumnName),
+                MacroParameter("destinationColumnNames", properties.polygonColumnName),
                 MacroParameter("distance", str(properties.distance)),
-                MacroParameter("unit", properties.unit),
-                MacroParameter("writeInputGeometry", str(properties.writeInputGeometry).lower()),
+                MacroParameter("unit", properties.unit)
             ],
         )
 

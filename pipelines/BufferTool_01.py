@@ -5,7 +5,13 @@ with DAG(Schedule = Schedule):
         task_id = "new_england", 
         component = "Dataset", 
         writeOptions = {"writeMode" : "overwrite"}, 
-        table = {"name" : "new_england", "sourceName" : "andre_dev.alteryx_spatial", "sourceType" : "Table"}
+        table = {
+          "name": "new_england", 
+          "sourceType": "Table", 
+          "sourceName": "andre_dev.alteryx_spatial", 
+          "alias": "", 
+          "additionalProperties": None
+        }
     )
     model_BufferTool_01_buffer_new_england = Task(
         task_id = "model_BufferTool_01_buffer_new_england", 

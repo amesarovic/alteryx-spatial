@@ -22,13 +22,13 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf" : {
-      "id" : "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf",
+    "Cb9n0M9fwvK4RdNG0RX2w$$dys3dJc5vFLfjGcDi2z8z" : {
+      "id" : "Cb9n0M9fwvK4RdNG0RX2w$$dys3dJc5vFLfjGcDi2z8z",
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -1820,
-        "y" : -1320,
+        "x" : -580,
+        "y" : -180,
         "phase" : 0
       },
       "properties" : {
@@ -37,17 +37,19 @@
         },
         "table" : {
           "name" : "new_england",
+          "sourceType" : "Table",
           "sourceName" : "andre_dev.alteryx_spatial",
-          "sourceType" : "Table"
+          "alias" : "",
+          "additionalProperties" : null
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "PyFdwpqEdtW8ex35jjX4X$$cmXPpgUdRtFRe53Fypn4j",
+          "id" : "pwJNK3McszwAyESaE9nz3$$5EPavy2ERAE4m_x3pHnTw",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "yLgNRWiIDZsQrg8YfBg0F$$eDTI5oEQ7tTan_V6c-uT7",
+          "id" : "2_tcitYXBgtC2osuY3V31$$PRxOe7JRl37t4tXFBICT3",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -68,20 +70,19 @@
         "isCustomOutputSchema" : false
       }
     },
-    "4QmPL_TnyfWol4AYYU9db$$8xKnoneELIa124S2Zu5OB" : {
-      "id" : "4QmPL_TnyfWol4AYYU9db$$8xKnoneELIa124S2Zu5OB",
-      "component" : "BufferTool",
+    "v67P-kAtuwFtuiI0Nwdat$$rLi847rvog-FbktWShBbs" : {
+      "id" : "v67P-kAtuwFtuiI0Nwdat$$rLi847rvog-FbktWShBbs",
+      "component" : "BufferTool_01",
       "metadata" : {
         "label" : "buffer_new_england",
-        "x" : -1560,
-        "y" : -1320,
+        "x" : -240,
+        "y" : -180,
         "phase" : 0
       },
       "properties" : {
         "relation_name" : [ "new_england" ],
-        "geometryColumnName" : "geometry",
         "_oldMacroProperties" : {
-          "macroName" : "BufferTool",
+          "macroName" : "BufferTool_01",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
             "name" : "relation_name",
@@ -94,23 +95,20 @@
             "value" : "geometry"
           }, {
             "name" : "distance",
-            "value" : "1"
+            "value" : "10"
           }, {
             "name" : "unit",
-            "value" : "miles"
-          }, {
-            "name" : "writeInputGeometry",
-            "value" : "false"
+            "value" : "kms"
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
-        "writeInputGeometry" : false,
-        "unit" : "miles",
-        "distance" : 1
+        "polygonColumnName" : "geometry",
+        "unit" : "kms",
+        "distance" : 10
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "-7nKK_C50zBlaft1e6_5u$$KnK2UnmHYHNcuBA8Wjg4e",
+          "id" : "9ehcAS5tDk1a_tfE4Z8Uo$$8veE4DJgfJ-vljr8YyK9Z",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -129,25 +127,35 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "rXwz65x7i45l7NKj0CXlC$$8wWd9GnGrTgnoqun9HDe_",
+          "id" : "02EsqlGRGNCKKSeOiDFTo$$p7RdWXewOIN6pft7tNec1",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "output",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
       },
       "componentInfo" : {
-        "gemId" : "BufferTool_andre_spatial_07",
-        "name" : "BufferTool",
+        "gemId" : "BufferTool_01_andre_spatial_07",
+        "name" : "BufferTool_01",
         "projectName" : "andre_spatial_07",
         "sourceProjectName" : "andre_spatial_07"
       }
     }
   },
   "connections" : [ {
-    "id" : "CctubiH2iOocf7YtSpBk4$$9D54Jnm63nuvxm5IAMV4b",
-    "source" : "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf",
-    "sourcePort" : "yLgNRWiIDZsQrg8YfBg0F$$eDTI5oEQ7tTan_V6c-uT7",
-    "target" : "4QmPL_TnyfWol4AYYU9db$$8xKnoneELIa124S2Zu5OB",
-    "targetPort" : "-7nKK_C50zBlaft1e6_5u$$KnK2UnmHYHNcuBA8Wjg4e"
+    "id" : "B718D6clX60PDvLg38Qig",
+    "source" : "Cb9n0M9fwvK4RdNG0RX2w$$dys3dJc5vFLfjGcDi2z8z",
+    "sourcePort" : "2_tcitYXBgtC2osuY3V31$$PRxOe7JRl37t4tXFBICT3",
+    "target" : "v67P-kAtuwFtuiI0Nwdat$$rLi847rvog-FbktWShBbs",
+    "targetPort" : "9ehcAS5tDk1a_tfE4Z8Uo$$8veE4DJgfJ-vljr8YyK9Z"
   } ],
   "component" : "Pipeline"
 }

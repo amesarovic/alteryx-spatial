@@ -22,13 +22,13 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf" : {
-      "id" : "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf",
+    "Cb9n0M9fwvK4RdNG0RX2w$$dys3dJc5vFLfjGcDi2z8z" : {
+      "id" : "Cb9n0M9fwvK4RdNG0RX2w$$dys3dJc5vFLfjGcDi2z8z",
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -1820,
-        "y" : -1320,
+        "x" : -580,
+        "y" : -180,
         "phase" : 0
       },
       "properties" : {
@@ -37,17 +37,19 @@
         },
         "table" : {
           "name" : "new_england",
+          "sourceType" : "Table",
           "sourceName" : "andre_dev.alteryx_spatial",
-          "sourceType" : "Table"
+          "alias" : "",
+          "additionalProperties" : null
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "PyFdwpqEdtW8ex35jjX4X$$cmXPpgUdRtFRe53Fypn4j",
+          "id" : "pwJNK3McszwAyESaE9nz3$$5EPavy2ERAE4m_x3pHnTw",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "yLgNRWiIDZsQrg8YfBg0F$$eDTI5oEQ7tTan_V6c-uT7",
+          "id" : "2_tcitYXBgtC2osuY3V31$$PRxOe7JRl37t4tXFBICT3",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -68,8 +70,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "4QmPL_TnyfWol4AYYU9db$$8xKnoneELIa124S2Zu5OB" : {
-      "id" : "4QmPL_TnyfWol4AYYU9db$$8xKnoneELIa124S2Zu5OB",
+    "v67P-kAtuwFtuiI0Nwdat$$rLi847rvog-FbktWShBbs" : {
+      "id" : "v67P-kAtuwFtuiI0Nwdat$$rLi847rvog-FbktWShBbs",
       "component" : "Model",
       "metadata" : {
         "label" : "model_BufferTool_01_buffer_new_england",
@@ -79,7 +81,7 @@
         "modelName" : "model_BufferTool_01_buffer_new_england"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__mc4v67i6__BufferTool_01__buffer_new_england", "4QmPL_TnyfWol4AYYU9db$$8xKnoneELIa124S2Zu5OB", "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf" ],
+        "visualProcessIds" : [ "prophecy_tmp__mc525m6r__BufferTool_01__buffer_new_england", "v67P-kAtuwFtuiI0Nwdat$$rLi847rvog-FbktWShBbs", "Cb9n0M9fwvK4RdNG0RX2w$$dys3dJc5vFLfjGcDi2z8z" ],
         "type" : "table",
         "isTemporaryTable" : true
       },
@@ -97,10 +99,10 @@
     }
   },
   "connections" : [ {
-    "id" : "CctubiH2iOocf7YtSpBk4$$9D54Jnm63nuvxm5IAMV4b",
-    "source" : "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf",
-    "sourcePort" : "yLgNRWiIDZsQrg8YfBg0F$$eDTI5oEQ7tTan_V6c-uT7",
-    "target" : "4QmPL_TnyfWol4AYYU9db$$8xKnoneELIa124S2Zu5OB",
+    "id" : "B718D6clX60PDvLg38Qig",
+    "source" : "Cb9n0M9fwvK4RdNG0RX2w$$dys3dJc5vFLfjGcDi2z8z",
+    "sourcePort" : "2_tcitYXBgtC2osuY3V31$$PRxOe7JRl37t4tXFBICT3",
+    "target" : "v67P-kAtuwFtuiI0Nwdat$$rLi847rvog-FbktWShBbs",
     "targetPort" : "model_BufferTool_01_buffer_new_england_in_0"
   } ],
   "component" : "Pipeline"
