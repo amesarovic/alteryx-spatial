@@ -157,7 +157,7 @@ sqlSources:
     author: mesarovic.andre@prophecy.io
     files:
     - models/BufferTool_01/schema.yml
-    createdAt: '2025-06-20 17:00:10'
+    createdAt: '2025-06-20 17:11:24'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__GeneralizeTool_01:
     name: prophecy_tmp_source__GeneralizeTool_01

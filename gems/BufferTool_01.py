@@ -17,9 +17,9 @@ class BufferTool_01(MacroSpec):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
-        distance: int = 10
-        unit: str = "kms"
-        polygonColumnName: str = ""
+        distance: int = 1
+        unit: str = "miles"
+        geometryColumnName: str = ""
 
     def get_relation_names(self, component: Component, context: SqlContext):
         all_upstream_nodes = []
@@ -50,9 +50,9 @@ class BufferTool_01(MacroSpec):
             .addColumn(
                 StackLayout()
                 .addElement(
-                    SchemaColumnsDropdown("Polygon Column Input")
+                    SchemaColumnsDropdown("Geometry Column Input")
                         .bindSchema("component.ports.inputs[0].schema")
-                        .bindProperty("polygonColumnName")
+                        .bindProperty("geometryColumnName")
                 )                               
                 .addElement(
                     NumberBox("Distance",placeholder="10",minValueVar=1).bindProperty("distance")
@@ -90,7 +90,7 @@ class BufferTool_01(MacroSpec):
         arguments = [
             "'" + table_name + "'",
             props.schema,
-            "'" + props.polygonColumnName + "'",            
+            "'" + props.geometryColumnName + "'",            
             str(props.distance),
             "'" + props.unit + "'"
         ]
@@ -105,7 +105,7 @@ class BufferTool_01(MacroSpec):
         return BufferTool_01.BufferTool_01Properties(
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
-            polygonColumnName=parametersMap.get('polygonColumnName'),
+            geometryColumnName=parametersMap.get('geometryColumnName'),
             distance=int(parametersMap.get('distance')),
             unit=str(parametersMap.get('unit'))
         )
@@ -118,7 +118,7 @@ class BufferTool_01(MacroSpec):
             parameters=[
                 MacroParameter("relation_name", str(properties.relation_name)),
                 MacroParameter("schema", str(properties.schema)),
-                MacroParameter("destinationColumnNames", properties.polygonColumnName),
+                MacroParameter("destinationColumnNames", properties.geometryColumnName),
                 MacroParameter("distance", str(properties.distance)),
                 MacroParameter("unit", properties.unit)
             ],
