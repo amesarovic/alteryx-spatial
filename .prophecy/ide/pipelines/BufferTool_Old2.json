@@ -106,8 +106,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -400,
-        "y" : -260,
+        "x" : -420,
+        "y" : -280,
         "phase" : 0
       },
       "properties" : {
