@@ -1,7 +1,7 @@
 ---
 version: 2
 models:
-- name: "model_MakeGridTool3_create_grid"
+- name: "model_MakeGridTool3_create_grid_new_england"
   tags:
   - "prophecy_temp"
 sources:
@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mc43y7tl__MakeGridTool3__create_grid"
+  - name: "prophecy_tmp__mc4v33yh__MakeGridTool3__create_grid_new_england"
     tags:
     - "prophecy_temp"

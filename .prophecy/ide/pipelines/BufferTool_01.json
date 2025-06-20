@@ -27,8 +27,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -1780,
-        "y" : -1300,
+        "x" : -1820,
+        "y" : -1320,
         "phase" : 0
       },
       "properties" : {
@@ -72,14 +72,14 @@
       "id" : "4QmPL_TnyfWol4AYYU9db$$8xKnoneELIa124S2Zu5OB",
       "component" : "BufferTool",
       "metadata" : {
-        "label" : "BufferTool_1",
+        "label" : "buffer_new_england",
         "x" : -1560,
         "y" : -1320,
         "phase" : 0
       },
       "properties" : {
         "relation_name" : [ "new_england" ],
-        "geometryColumnName" : "",
+        "geometryColumnName" : "geometry",
         "_oldMacroProperties" : {
           "macroName" : "BufferTool",
           "projectName" : "andre_spatial_07",
@@ -91,7 +91,7 @@
             "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
           }, {
             "name" : "destinationColumnNames",
-            "value" : ""
+            "value" : "geometry"
           }, {
             "name" : "distance",
             "value" : "1"

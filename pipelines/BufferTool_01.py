@@ -7,9 +7,9 @@ with DAG(Schedule = Schedule):
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {"name" : "new_england", "sourceName" : "andre_dev.alteryx_spatial", "sourceType" : "Table"}
     )
-    model_BufferTool_01_BufferTool_1 = Task(
-        task_id = "model_BufferTool_01_BufferTool_1", 
+    model_BufferTool_01_buffer_new_england = Task(
+        task_id = "model_BufferTool_01_buffer_new_england", 
         component = "Model", 
-        modelName = "model_BufferTool_01_BufferTool_1"
+        modelName = "model_BufferTool_01_buffer_new_england"
     )
-    new_england.out >> model_BufferTool_01_BufferTool_1.in_0
+    new_england.out >> model_BufferTool_01_buffer_new_england.in_0

@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc43y7tl__MakeGridTool3__create_grid",
+    "alias": "prophecy_tmp__mc4v67i6__BufferTool_01__buffer_new_england",
     "database": "andre_dev",
     "schema": "spatial"
   })
@@ -15,15 +15,16 @@ WITH new_england AS (
 
 ),
 
-create_grid AS (
+buffer_new_england AS (
 
   {{
-    andre_spatial_07.MakeGridTool3(
+    andre_spatial_07.BufferTool(
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      0.3, 
-      'miles'
+      1, 
+      'miles', 
+      false
     )
   }}
 
@@ -31,4 +32,4 @@ create_grid AS (
 
 SELECT *
 
-FROM create_grid
+FROM buffer_new_england

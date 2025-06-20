@@ -27,8 +27,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -1780,
-        "y" : -1300,
+        "x" : -1820,
+        "y" : -1320,
         "phase" : 0
       },
       "properties" : {
@@ -72,24 +72,24 @@
       "id" : "4QmPL_TnyfWol4AYYU9db$$8xKnoneELIa124S2Zu5OB",
       "component" : "Model",
       "metadata" : {
-        "label" : "model_BufferTool_01_BufferTool_1",
+        "label" : "model_BufferTool_01_buffer_new_england",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "model_BufferTool_01_BufferTool_1"
+        "modelName" : "model_BufferTool_01_buffer_new_england"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__mc49dxl8__BufferTool_01__BufferTool_1", "4QmPL_TnyfWol4AYYU9db$$8xKnoneELIa124S2Zu5OB", "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf" ],
+        "visualProcessIds" : [ "prophecy_tmp__mc4v67i6__BufferTool_01__buffer_new_england", "4QmPL_TnyfWol4AYYU9db$$8xKnoneELIa124S2Zu5OB", "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf" ],
         "type" : "table",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "model_BufferTool_01_BufferTool_1_in_0",
+          "id" : "model_BufferTool_01_buffer_new_england_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "model_BufferTool_01_BufferTool_1_out_0",
+          "id" : "model_BufferTool_01_buffer_new_england_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -101,7 +101,7 @@
     "source" : "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf",
     "sourcePort" : "yLgNRWiIDZsQrg8YfBg0F$$eDTI5oEQ7tTan_V6c-uT7",
     "target" : "4QmPL_TnyfWol4AYYU9db$$8xKnoneELIa124S2Zu5OB",
-    "targetPort" : "model_BufferTool_01_BufferTool_1_in_0"
+    "targetPort" : "model_BufferTool_01_buffer_new_england_in_0"
   } ],
   "component" : "Pipeline"
 }

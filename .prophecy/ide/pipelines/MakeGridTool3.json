@@ -27,8 +27,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -1200,
-        "y" : -760,
+        "x" : -1540,
+        "y" : -940,
         "phase" : 0
       },
       "properties" : {
@@ -66,17 +66,17 @@
         "isCustomOutputSchema" : false
       }
     },
-    "A4htBzzK7co7aK6ZqA0s1$$M2DhHr99xbjRowgWFFxUd" : {
-      "id" : "A4htBzzK7co7aK6ZqA0s1$$M2DhHr99xbjRowgWFFxUd",
+    "eXpNecx8tEbHw8Es8puhL$$m_v0XWQ6NBkBSzjw2BUs7" : {
+      "id" : "eXpNecx8tEbHw8Es8puhL$$m_v0XWQ6NBkBSzjw2BUs7",
       "component" : "MakeGridTool3",
       "metadata" : {
-        "label" : "create_grid",
-        "x" : -940,
-        "y" : -760,
+        "label" : "create_grid_new_england",
+        "x" : -1340,
+        "y" : -940,
         "phase" : 0
       },
       "properties" : {
-        "cell_size" : "0.3",
+        "cell_size" : "0.1",
         "relation_name" : [ "new_england" ],
         "_oldMacroProperties" : {
           "macroName" : "MakeGridTool3",
@@ -92,7 +92,7 @@
             "value" : "geometry"
           }, {
             "name" : "cell_size",
-            "value" : "0.3"
+            "value" : "0.1"
           }, {
             "name" : "unit",
             "value" : "miles"
@@ -104,7 +104,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "QnMMXK2SoI8hbXpwZ_rMv$$MrudboaNak-ookFBMxrnP",
+          "id" : "TZLkB--O81fSs_2tj21HW$$RnDY8OxZ4vD4rmVNoH_ip",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -123,7 +123,17 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "Z-pz8d6D0rNn6zUDbnsIc$$HM9u2_XBvzkuG1E0CzxYR",
+          "id" : "iZ_3m-kXiw7uzj4CTJgIo$$xyXY8tLiCrHhHniS26nmA",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "output",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -137,11 +147,11 @@
     }
   },
   "connections" : [ {
-    "id" : "tq2Lopq-FVy7P34aEBjyd",
+    "id" : "XLEW7lcADhGn2Z31oy_KL$$gIKHF_rkZeNUQzjTfVvK4",
     "source" : "ARctJmMTcRfAWTmNws10K$$CZSxgmkO_oAbGu7d2LRb0",
     "sourcePort" : "AFmyu7aWnil9SkTaKoRAQ$$ERjnySjSHio_jqK7LrPLs",
-    "target" : "A4htBzzK7co7aK6ZqA0s1$$M2DhHr99xbjRowgWFFxUd",
-    "targetPort" : "QnMMXK2SoI8hbXpwZ_rMv$$MrudboaNak-ookFBMxrnP"
+    "target" : "eXpNecx8tEbHw8Es8puhL$$m_v0XWQ6NBkBSzjw2BUs7",
+    "targetPort" : "TZLkB--O81fSs_2tj21HW$$RnDY8OxZ4vD4rmVNoH_ip"
   } ],
   "component" : "Pipeline"
 }
