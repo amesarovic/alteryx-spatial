@@ -1,24 +1,25 @@
+# commit be16b6493baec322b71f7937b0cf656cdba80356
+
 import dataclasses
 import json
 
 from prophecy.cb.sql.MacroBuilderBase import *
 from prophecy.cb.ui.uispec import *
 
-class BufferTool2(MacroSpec):
-    name: str = "BufferTool2"
+class BufferTool_Old(MacroSpec):
+    name: str = "BufferTool_Old"
     projectName: str = "andre_spatial_07"
     category: str = "Spatial"
     minNumOfInputPorts: int = 1
     
     @dataclass(frozen=True)
-    class BufferTool2Properties(MacroProperties):
+    class BufferTool_OldProperties(MacroProperties):
         # properties for the component with default values
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
         distance: int = 1
-        unit: str = "miles"
+        unit: str = "kms"
         geometryColumnName: str = ""
-        writeInputGeometry: bool = False
 
     def get_relation_names(self, component: Component, context: SqlContext):
         all_upstream_nodes = []
@@ -40,8 +41,7 @@ class BufferTool2(MacroSpec):
         return relation_name
 
     def dialog(self) -> Dialog:
-        help = "Add the input geometry to the result along with the output geometry"
-        return Dialog("BufferTool2").addElement(
+        return Dialog("BufferTool_Old").addElement(
             ColumnsLayout(gap="1rem", height="100%")
             .addColumn(
                 Ports(allowInputAddOrDelete=True),
@@ -59,9 +59,7 @@ class BufferTool2(MacroSpec):
                 )                
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
-                ) 
-                .addElement(
-                    Checkbox("Write input geometry",helpText=help).bindProperty("writeInputGeometry"))                
+                )                                
            )
        )
 
@@ -82,7 +80,7 @@ class BufferTool2(MacroSpec):
         )
         return newState.bindProperties(newProperties)
 
-    def apply(self, props: BufferTool2Properties) -> str:
+    def apply(self, props: BufferTool_OldProperties) -> str:
         # Get the table name
         table_name: str = ",".join(str(rel) for rel in props.relation_name)
 
@@ -90,12 +88,11 @@ class BufferTool2(MacroSpec):
         resolved_macro_name = f"{self.projectName}.{self.name}"
 
         arguments = [
-            f"'{table_name}'",
+            "'" + table_name + "'",
             props.schema,
-            f"'{props.geometryColumnName}'",            
+            "'" + props.geometryColumnName + "'",            
             str(props.distance),
-            f"'{props.unit}'",
-            str(props.writeInputGeometry).lower(),
+            "'" + props.unit + "'"
         ]
 
         params = ",".join([param for param in arguments])
@@ -105,13 +102,12 @@ class BufferTool2(MacroSpec):
     def loadProperties(self, properties: MacroProperties) -> PropertiesType:
         # load the component's state given default macro property representation
         parametersMap = self.convertToParameterMap(properties.parameters)
-        return BufferTool2.BufferTool2Properties(
+        return BufferTool_Old.BufferTool_OldProperties(
             relation_name=parametersMap.get('relation_name'),
             schema=parametersMap.get('schema'),
             geometryColumnName=parametersMap.get('geometryColumnName'),
             distance=int(parametersMap.get('distance')),
-            unit=str(parametersMap.get('unit')),
-            writeInputGeometry=parametersMap.get('writeInputGeometry').lower() == 'true'
+            unit=str(parametersMap.get('unit'))
         )
 
     def unloadProperties(self, properties: PropertiesType) -> MacroProperties:
@@ -124,8 +120,7 @@ class BufferTool2(MacroSpec):
                 MacroParameter("schema", str(properties.schema)),
                 MacroParameter("destinationColumnNames", properties.geometryColumnName),
                 MacroParameter("distance", str(properties.distance)),
-                MacroParameter("unit", properties.unit),
-                MacroParameter("writeInputGeometry", str(properties.writeInputGeometry).lower()),
+                MacroParameter("unit", properties.unit)
             ],
         )
 

@@ -1,0 +1,161 @@
+{
+  "id" : "BufferTool_Old2",
+  "metainfo" : {
+    "label" : "BufferTool_Old2",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "vcsWXElVpee8fT87nrU_M$$yvtTnFzaB1OaIAS5zlfgw" : {
+      "id" : "vcsWXElVpee8fT87nrU_M$$yvtTnFzaB1OaIAS5zlfgw",
+      "component" : "BufferTool_Old2",
+      "metadata" : {
+        "label" : "buffer_new_england",
+        "x" : -180,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "new_england" ],
+        "_oldMacroProperties" : {
+          "macroName" : "BufferTool_Old2",
+          "projectName" : "andre_spatial_07",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "distance",
+            "value" : "10"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "polygonColumnName" : "geometry",
+        "unit" : "miles",
+        "distance" : 10
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "qNmIq_QHuPAXRUgodRKLq$$p3g5nAxs89w4cqEttkeSD",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "4x52D6CPdxi2DseL3X2cI$$5vEzUZFKvMJlNADTZYcQc",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Databricks",
+            "fields" : [ {
+              "name" : "output",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "BufferTool_Old2_andre_spatial_07",
+        "name" : "BufferTool_Old2",
+        "projectName" : "andre_spatial_07",
+        "sourceProjectName" : "andre_spatial_07"
+      }
+    },
+    "eJ_NAtNbbUWGBKdMyeTOb$$HZffoxKI6N9V6Y6MKgek8" : {
+      "id" : "eJ_NAtNbbUWGBKdMyeTOb$$HZffoxKI6N9V6Y6MKgek8",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -400,
+        "y" : -260,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "QRbrMBk8KiqKAjgkgd8Tt$$oRJreXP2ziSmLOtrfHNgS",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "wQWd2YFxYGZs4PRGAi-sF$$FpT40alF51dORO7nS6sJD",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "r6slmCDy2hb4MkoGjFLQx",
+    "source" : "eJ_NAtNbbUWGBKdMyeTOb$$HZffoxKI6N9V6Y6MKgek8",
+    "sourcePort" : "wQWd2YFxYGZs4PRGAi-sF$$FpT40alF51dORO7nS6sJD",
+    "target" : "vcsWXElVpee8fT87nrU_M$$yvtTnFzaB1OaIAS5zlfgw",
+    "targetPort" : "qNmIq_QHuPAXRUgodRKLq$$p3g5nAxs89w4cqEttkeSD"
+  } ],
+  "component" : "Pipeline"
+}
