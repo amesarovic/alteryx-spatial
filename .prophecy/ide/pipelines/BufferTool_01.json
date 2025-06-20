@@ -27,8 +27,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -1500,
-        "y" : -1060,
+        "x" : -1780,
+        "y" : -1300,
         "phase" : 0
       },
       "properties" : {
@@ -68,17 +68,18 @@
         "isCustomOutputSchema" : false
       }
     },
-    "2OqA3r3rvWumW3J3QqVrr$$ZzdELpm5wI3gq1i7jJgRS" : {
-      "id" : "2OqA3r3rvWumW3J3QqVrr$$ZzdELpm5wI3gq1i7jJgRS",
+    "xcTsC5r1qJNljJT8UWssh$$SMaJXi3pzJBj5IAfCEAax" : {
+      "id" : "xcTsC5r1qJNljJT8UWssh$$SMaJXi3pzJBj5IAfCEAax",
       "component" : "BufferTool",
       "metadata" : {
         "label" : "buffer_new_england",
-        "x" : -1260,
-        "y" : -1060,
+        "x" : -1540,
+        "y" : -1300,
         "phase" : 0
       },
       "properties" : {
         "relation_name" : [ "new_england" ],
+        "geometryColumnName" : "geometry",
         "_oldMacroProperties" : {
           "macroName" : "BufferTool",
           "projectName" : "andre_spatial_07",
@@ -100,13 +101,12 @@
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
-        "polygonColumnName" : "geometry",
         "unit" : "miles",
         "distance" : 20
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "_huD3xY2SVo8xu8w2Y-TR$$-MUsrXcWpEXhZCFNQzyuI",
+          "id" : "NMr32HG1Y0r8d-OZahc2I$$T2acgk_1q2eDoVLxdIdqm",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -125,7 +125,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "eRIXWL_iWi_jImkUtj2Jj$$Do3qOJ_LmmJvjE-VdDhZs",
+          "id" : "m0tCYS-HNFL3vragxO6XD$$r8DPIyXYyt3tL0jxBwFUE",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -139,11 +139,11 @@
     }
   },
   "connections" : [ {
-    "id" : "WZnypBrH9OQ_ZQ_xvOD12",
+    "id" : "QS-Rv1kWFvtrbgxTmzLkW",
     "source" : "10hNVPABwlOuH0ZZ1knuY$$ldxTmgcV9uHIM2dLdc3Lf",
     "sourcePort" : "yLgNRWiIDZsQrg8YfBg0F$$eDTI5oEQ7tTan_V6c-uT7",
-    "target" : "2OqA3r3rvWumW3J3QqVrr$$ZzdELpm5wI3gq1i7jJgRS",
-    "targetPort" : "_huD3xY2SVo8xu8w2Y-TR$$-MUsrXcWpEXhZCFNQzyuI"
+    "target" : "xcTsC5r1qJNljJT8UWssh$$SMaJXi3pzJBj5IAfCEAax",
+    "targetPort" : "NMr32HG1Y0r8d-OZahc2I$$T2acgk_1q2eDoVLxdIdqm"
   } ],
   "component" : "Pipeline"
 }

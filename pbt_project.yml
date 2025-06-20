@@ -146,7 +146,7 @@ sqlSources:
     author: mesarovic.andre@prophecy.io
     files:
     - models/BufferTool_01/schema.yml
-    createdAt: '2025-06-19 00:39:13'
+    createdAt: '2025-06-20 00:14:08'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__GeneralizeTool_01:
     name: prophecy_tmp_source__GeneralizeTool_01
@@ -200,7 +200,6 @@ sqlOrchestratorPipelines:
     files:
     - models/MakeGridTool3/schema.yml
     - models/MakeGridTool3/model_MakeGridTool3_create_grid.sql
-    - models/MakeGridTool3/model_MakeGridTool3_create_grid_1.sql
     - .prophecy/ide/pipelines/MakeGridTool3.json
     - pipelines/MakeGridTool3.py
     createdAt: '2025-06-17 18:18:31'
