@@ -146,7 +146,7 @@ sqlSources:
     author: mesarovic.andre@prophecy.io
     files:
     - models/BufferTool_01/schema.yml
-    createdAt: '2025-06-20 02:08:16'
+    createdAt: '2025-06-20 03:36:02'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__GeneralizeTool_01:
     name: prophecy_tmp_source__GeneralizeTool_01
@@ -209,8 +209,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
+    - models/BufferTool_01/model_BufferTool_01_BufferTool_1.sql
     - models/BufferTool_01/schema.yml
-    - models/BufferTool_01/model_BufferTool_01_buffer_new_england.sql
     - .prophecy/ide/pipelines/BufferTool_01.json
     - pipelines/BufferTool_01.py
     createdAt: '2025-06-16 19:07:30'

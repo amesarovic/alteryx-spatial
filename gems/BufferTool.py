@@ -94,8 +94,8 @@ class BufferTool(MacroSpec):
             props.schema,
             f"'{props.geometryColumnName}'",            
             str(props.distance),
-            str(props.writeInputGeometry).lower(),
             f"'{props.unit}'",
+            str(props.writeInputGeometry).lower(),
         ]
 
         params = ",".join([param for param in arguments])
