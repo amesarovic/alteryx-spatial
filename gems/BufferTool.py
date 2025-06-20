@@ -16,8 +16,9 @@ class BufferTool(MacroSpec):
         relation_name: List[str] = field(default_factory=list)
         schema: str = ''
         distance: int = 1
-        unit: str = "kms"
+        unit: str = "miles"
         geometryColumnName: str = ""
+        writeInputGeometry: bool = False
 
     def get_relation_names(self, component: Component, context: SqlContext):
         all_upstream_nodes = []
@@ -39,6 +40,7 @@ class BufferTool(MacroSpec):
         return relation_name
 
     def dialog(self) -> Dialog:
+        help = "Add the input geometry to the result along with the output geometry"
         return Dialog("BufferTool").addElement(
             ColumnsLayout(gap="1rem", height="100%")
             .addColumn(
@@ -57,7 +59,9 @@ class BufferTool(MacroSpec):
                 )                
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
-                )                                
+                ) 
+                .addElement(
+                    Checkbox("Write input geometry",helpText=help).bindProperty("writeInputGeometry"))                
            )
        )
 
@@ -86,11 +90,12 @@ class BufferTool(MacroSpec):
         resolved_macro_name = f"{self.projectName}.{self.name}"
 
         arguments = [
-            "'" + table_name + "'",
+            f"'{table_name}'",
             props.schema,
-            "'" + props.geometryColumnName + "'",            
+            f"'{props.geometryColumnName}'",            
             str(props.distance),
-            "'" + props.unit + "'"
+            str(props.writeInputGeometry).lower(),
+            f"'{props.unit}'",
         ]
 
         params = ",".join([param for param in arguments])
@@ -105,7 +110,8 @@ class BufferTool(MacroSpec):
             schema=parametersMap.get('schema'),
             geometryColumnName=parametersMap.get('geometryColumnName'),
             distance=int(parametersMap.get('distance')),
-            unit=str(parametersMap.get('unit'))
+            unit=str(parametersMap.get('unit')),
+            writeInputGeometry=parametersMap.get('writeInputGeometry').lower() == 'true'
         )
 
     def unloadProperties(self, properties: PropertiesType) -> MacroProperties:
@@ -118,7 +124,8 @@ class BufferTool(MacroSpec):
                 MacroParameter("schema", str(properties.schema)),
                 MacroParameter("destinationColumnNames", properties.geometryColumnName),
                 MacroParameter("distance", str(properties.distance)),
-                MacroParameter("unit", properties.unit)
+                MacroParameter("unit", properties.unit),
+                MacroParameter("writeInputGeometry", str(properties.writeInputGeometry).lower()),
             ],
         )
 
