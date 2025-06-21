@@ -184,14 +184,6 @@ sqlSources:
     - models/MakeGridTool3/schema.yml
     createdAt: '2025-06-20 13:27:48'
     tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTool_04:
-    name: prophecy_tmp_source__BufferTool_04
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/BufferTool_04/schema.yml
-    createdAt: '2025-06-21 15:05:50'
-    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTool_01:
     name: prophecy_tmp_source__BufferTool_01
     description: null
@@ -318,8 +310,6 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/BufferTool_04/schema.yml
-    - models/BufferTool_04/model_BufferTool_04_buffer_new_england.sql
     - .prophecy/ide/pipelines/BufferTool_04.json
     - pipelines/BufferTool_04.py
     createdAt: '2025-06-21 02:52:02'

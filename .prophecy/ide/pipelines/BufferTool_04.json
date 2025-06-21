@@ -70,8 +70,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "gIGTO6vyGTi9slM4OLAhP$$tAfZXCVS2zWhTbYZFojsS" : {
-      "id" : "gIGTO6vyGTi9slM4OLAhP$$tAfZXCVS2zWhTbYZFojsS",
+    "BXh0yVfI04rmvAka3Sym7$$LwgPSre2bNR7dhsazngTd" : {
+      "id" : "BXh0yVfI04rmvAka3Sym7$$LwgPSre2bNR7dhsazngTd",
       "component" : "BufferTool_04",
       "metadata" : {
         "label" : "buffer_new_england",
@@ -96,7 +96,7 @@
             "value" : "geometry"
           }, {
             "name" : "distance",
-            "value" : "10"
+            "value" : "20"
           }, {
             "name" : "unit",
             "value" : "miles"
@@ -105,11 +105,11 @@
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "writeInputGeometry" : false,
         "unit" : "miles",
-        "distance" : 10
+        "distance" : 20
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "K5if6XxINRlBA2LX6PWZm$$PoN6ZOFU39lDfTFb3giqK",
+          "id" : "yvUTQbC2KuYF_f1cN8hrE$$eVB93ODZ3vhmOPPUxw9qZ",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -128,17 +128,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "iSRVkB8QtO11T4JDDtL6t$$pyPwkGcaqS8r6k1taB7rU",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "output",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "8pB_RvDwpEyd2WrLM_5v7$$63Qpf0g2AjocUE8IIA8BV",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -152,11 +142,11 @@
     }
   },
   "connections" : [ {
-    "id" : "QOEHA4T7YKd12S4CMh65y$$iYg5pljsh34FV-9UyaPCf",
+    "id" : "Dt9byQbgB-ycL0ntEneZJ$$BxQeoKXM0EscuDO3IxTEG",
     "source" : "i1HO1LxJboMPnwZbxfc0p$$T_g-4gOp721bPi_q1CzJh",
     "sourcePort" : "iK81aI1apETXbhdc4oFYX$$II6KzYSR-BraxwCOEEMgT",
-    "target" : "gIGTO6vyGTi9slM4OLAhP$$tAfZXCVS2zWhTbYZFojsS",
-    "targetPort" : "K5if6XxINRlBA2LX6PWZm$$PoN6ZOFU39lDfTFb3giqK"
+    "target" : "BXh0yVfI04rmvAka3Sym7$$LwgPSre2bNR7dhsazngTd",
+    "targetPort" : "yvUTQbC2KuYF_f1cN8hrE$$eVB93ODZ3vhmOPPUxw9qZ"
   } ],
   "component" : "Pipeline"
 }

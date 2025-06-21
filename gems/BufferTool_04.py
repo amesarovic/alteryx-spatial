@@ -96,6 +96,7 @@ class BufferTool_04(MacroSpec):
             f"'{props.geometryColumnName}'",            
             str(props.distance),
             f"'{props.unit}'",
+            str(props.writeInputGeometry).lower(),
         ]
 
         params = ",".join([param for param in arguments])
@@ -110,7 +111,8 @@ class BufferTool_04(MacroSpec):
             schema=parametersMap.get('schema'),
             geometryColumnName=parametersMap.get('geometryColumnName'),
             distance=int(parametersMap.get('distance')),
-            unit=str(parametersMap.get('unit'))
+            unit=str(parametersMap.get('unit')),
+            replaceNullTextFields=parametersMap.get('writeInputGeometry').lower() == 'true'
         )
 
     def unloadProperties(self, properties: PropertiesType) -> MacroProperties:
@@ -123,8 +125,9 @@ class BufferTool_04(MacroSpec):
                 MacroParameter("schema", str(properties.schema)),
                 MacroParameter("destinationColumnNames", properties.geometryColumnName),
                 MacroParameter("distance", str(properties.distance)),
-                MacroParameter("unit", properties.unit)
-            ],
+                MacroParameter("unit", properties.unit),
+                MacroParameter("writeInputGeometry", str(properties.writeInputGeometry).lower())
+            ]
         )
 
     def updateInputPortSlug(self, component: Component, context: SqlContext):

@@ -70,40 +70,83 @@
         "isCustomOutputSchema" : false
       }
     },
-    "gIGTO6vyGTi9slM4OLAhP$$tAfZXCVS2zWhTbYZFojsS" : {
-      "id" : "gIGTO6vyGTi9slM4OLAhP$$tAfZXCVS2zWhTbYZFojsS",
-      "component" : "Model",
+    "BXh0yVfI04rmvAka3Sym7$$LwgPSre2bNR7dhsazngTd" : {
+      "id" : "BXh0yVfI04rmvAka3Sym7$$LwgPSre2bNR7dhsazngTd",
+      "component" : "BufferTool_04",
       "metadata" : {
-        "label" : "model_BufferTool_04_buffer_new_england",
+        "label" : "buffer_new_england",
+        "x" : -320,
+        "y" : -260,
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "model_BufferTool_04_buffer_new_england"
-      },
-      "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__mc6dfrgd__BufferTool_04__buffer_new_england", "gIGTO6vyGTi9slM4OLAhP$$tAfZXCVS2zWhTbYZFojsS", "i1HO1LxJboMPnwZbxfc0p$$T_g-4gOp721bPi_q1CzJh" ],
-        "type" : "table",
-        "isTemporaryTable" : true
+        "relation_name" : [ "new_england" ],
+        "geometryColumnName" : "geometry",
+        "_oldMacroProperties" : {
+          "macroName" : "BufferTool_04",
+          "projectName" : "andre_spatial_07",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "distance",
+            "value" : "20"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "writeInputGeometry" : false,
+        "unit" : "miles",
+        "distance" : 20
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "model_BufferTool_04_buffer_new_england_in_0",
-          "slug" : "in_0"
+          "id" : "yvUTQbC2KuYF_f1cN8hrE$$eVB93ODZ3vhmOPPUxw9qZ",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "model_BufferTool_04_buffer_new_england_out_0",
-          "slug" : "out_0"
+          "id" : "8pB_RvDwpEyd2WrLM_5v7$$63Qpf0g2AjocUE8IIA8BV",
+          "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "BufferTool_04_andre_spatial_07",
+        "name" : "BufferTool_04",
+        "projectName" : "andre_spatial_07",
+        "sourceProjectName" : "andre_spatial_07"
       }
     }
   },
   "connections" : [ {
-    "id" : "QOEHA4T7YKd12S4CMh65y$$iYg5pljsh34FV-9UyaPCf",
+    "id" : "Dt9byQbgB-ycL0ntEneZJ$$BxQeoKXM0EscuDO3IxTEG",
     "source" : "i1HO1LxJboMPnwZbxfc0p$$T_g-4gOp721bPi_q1CzJh",
     "sourcePort" : "iK81aI1apETXbhdc4oFYX$$II6KzYSR-BraxwCOEEMgT",
-    "target" : "gIGTO6vyGTi9slM4OLAhP$$tAfZXCVS2zWhTbYZFojsS",
-    "targetPort" : "model_BufferTool_04_buffer_new_england_in_0"
+    "target" : "BXh0yVfI04rmvAka3Sym7$$LwgPSre2bNR7dhsazngTd",
+    "targetPort" : "yvUTQbC2KuYF_f1cN8hrE$$eVB93ODZ3vhmOPPUxw9qZ"
   } ],
   "component" : "Pipeline"
 }
