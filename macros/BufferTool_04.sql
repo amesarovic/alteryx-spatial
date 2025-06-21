@@ -5,6 +5,7 @@
     {{ log("polygonColumnName=" ~ polygonColumnName, info=True) }}
     {{ log("distance=" ~ distance, info=True) }}
     {{ log("unit=" ~ unit, info=True) }}
+    {{ log("writeInputGeometry=" ~ writeInputGeometry, info=True) }}
 
     select
     andre_dev.alteryx_spatial.buffer({{polygonColumnName}}, {{distance}}, "{{unit}}" ) as output
