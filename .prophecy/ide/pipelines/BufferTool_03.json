@@ -70,8 +70,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "ygwVCu6OS-AsyRBKSJfZC$$vjx4B5poEIHQScSn-MYDK" : {
-      "id" : "ygwVCu6OS-AsyRBKSJfZC$$vjx4B5poEIHQScSn-MYDK",
+    "5_XE4nfdCPXG-lUk6C0q3$$7TakUuldGmRnPuGud4KGS" : {
+      "id" : "5_XE4nfdCPXG-lUk6C0q3$$7TakUuldGmRnPuGud4KGS",
       "component" : "BufferTool_03",
       "metadata" : {
         "label" : "buffer_new_england",
@@ -96,19 +96,20 @@
             "value" : "geometry"
           }, {
             "name" : "distance",
-            "value" : "20"
+            "value" : "10"
           }, {
             "name" : "unit",
             "value" : "miles"
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "writeInputGeometry" : true,
         "unit" : "miles",
-        "distance" : 20
+        "distance" : 10
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "w-1Jp_ZJkap6Lb7JXl4rS$$t_ul4gypLOuAFGJkXUUUD",
+          "id" : "EdTSQpvkJleGgHLFrbbSb$$YpKapbtFD6wo9t9JP2ThE",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -127,7 +128,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "HVqOM1s7WczRA86DUPIER$$KVL4KFbOlNrbc-OEF2nW_",
+          "id" : "886NHKy_iG9lYV9_E1vuo$$n2GR247EaTFD38GMLG79l",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -151,11 +152,11 @@
     }
   },
   "connections" : [ {
-    "id" : "uhVG3wlj2lQaYlD1qDlNQ",
+    "id" : "ud8HFbjwspIUJU5_RH2OH$$z2DQv44zBl0Sj94n3YZRd",
     "source" : "yCm3Ty4XBw53o1me4xt3w$$NVQXTCy3qJU2JJKToWTMB",
     "sourcePort" : "aAmukS4cBUUsPtY0QFGFK$$3OVaN00FeTUafW6tB3HEb",
-    "target" : "ygwVCu6OS-AsyRBKSJfZC$$vjx4B5poEIHQScSn-MYDK",
-    "targetPort" : "w-1Jp_ZJkap6Lb7JXl4rS$$t_ul4gypLOuAFGJkXUUUD"
+    "target" : "5_XE4nfdCPXG-lUk6C0q3$$7TakUuldGmRnPuGud4KGS",
+    "targetPort" : "EdTSQpvkJleGgHLFrbbSb$$YpKapbtFD6wo9t9JP2ThE"
   } ],
   "component" : "Pipeline"
 }

@@ -227,7 +227,7 @@ sqlSources:
     author: mesarovic.andre@prophecy.io
     files:
     - models/BufferTool_03/schema.yml
-    createdAt: '2025-06-21 02:38:47'
+    createdAt: '2025-06-21 02:44:00'
     tables: []
 sqlUnreferencedSources: {}
 sqlPipeline:

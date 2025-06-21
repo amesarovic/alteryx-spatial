@@ -18,6 +18,7 @@ class BufferTool_03(MacroSpec):
         distance: int = 1
         unit: str = "miles"
         geometryColumnName: str = ""
+        writeInputGeometry: bool = False
         
 
     def get_relation_names(self, component: Component, context: SqlContext):
@@ -40,6 +41,7 @@ class BufferTool_03(MacroSpec):
         return relation_name
 
     def dialog(self) -> Dialog:
+        help = "Add the input geometry to the result along with the output geometry"
         return Dialog("BufferTool_03").addElement(
             ColumnsLayout(gap="1rem", height="100%")
             .addColumn(
@@ -58,7 +60,9 @@ class BufferTool_03(MacroSpec):
                 )                
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
-                )                                
+                )  
+                .addElement(
+                    Checkbox("Write input geometry",helpText=help).bindProperty("writeInputGeometry"))                              
            )
        )
 
