@@ -27,6 +27,17 @@ sqlModels: {}
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
+  .prophecy/metadata/sqlmacros/BufferTool_02:
+    name: BufferTool_02
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/BufferTool_02.sql
+    - .prophecy/ide/macros/BufferTool_02.json
+    - macros/macros.yml
+    - gems/BufferTool_02.py
+    createdAt: '2025-06-20 17:24:26'
   .prophecy/metadata/sqlmacros/BufferTool_Old2:
     name: BufferTool_Old2
     macroType: query
@@ -167,6 +178,14 @@ sqlSources:
     - models/GeneralizeTool_01/schema.yml
     createdAt: '2025-06-17 12:22:54'
     tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTool_02:
+    name: prophecy_tmp_source__BufferTool_02
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/BufferTool_02/schema.yml
+    createdAt: '2025-06-20 17:36:15'
+    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__Generalize2Tool_a:
     name: prophecy_tmp_source__Generalize2Tool_a
     description: null
@@ -228,11 +247,22 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/BufferTool_Old2/schema.yml
     - models/BufferTool_Old2/model_BufferTool_Old2_buffer_new_england.sql
+    - models/BufferTool_Old2/schema.yml
     - .prophecy/ide/pipelines/BufferTool_Old2.json
     - pipelines/BufferTool_Old2.py
     createdAt: '2025-06-20 16:33:50'
+  .prophecy/metadata/sqlorchestratorpipeline/BufferTool_02:
+    name: BufferTool_02
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/BufferTool_02/schema.yml
+    - models/BufferTool_02/model_BufferTool_02_buffer_new_england.sql
+    - .prophecy/ide/pipelines/BufferTool_02.json
+    - pipelines/BufferTool_02.py
+    createdAt: '2025-06-20 17:25:53'
   .prophecy/metadata/sqlorchestratorpipeline/BufferTool_01:
     name: BufferTool_01
     schema: null
