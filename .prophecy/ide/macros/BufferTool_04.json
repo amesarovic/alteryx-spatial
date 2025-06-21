@@ -1,8 +1,8 @@
 {
-  "BufferTool_03" : {
-    "name" : "BufferTool_03",
+  "BufferTool_04" : {
+    "name" : "BufferTool_04",
     "macroType" : "query",
-    "definition" : "\n    {{ log(\"table_name=\" ~ table_name, info=True) }}\n    {{ log(\"schema=\" ~ schema, info=True) }}\n    {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n    {{ log(\"distance=\" ~ distance, info=True) }}\n    {{ log(\"unit=\" ~ unit, info=True) }}\n    {{ log(\"writeInputGeometry=\" ~ writeInputGeometry, info=True) }}\n\n    select\n    andre_dev.alteryx_spatial.buffer({{polygonColumnName}}, {{distance}}, \"{{unit}}\" ) as output\n    from {{ table_name }}",
+    "definition" : "\n    {{ log(\"table_name=\" ~ table_name, info=True) }}\n    {{ log(\"schema=\" ~ schema, info=True) }}\n    {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n    {{ log(\"distance=\" ~ distance, info=True) }}\n    {{ log(\"unit=\" ~ unit, info=True) }}\n    {{ log(\"writeInputGeometry=\" ~ writeInputGeometry, info=True) }}\n\n    select\n        andre_dev.alteryx_spatial.buffer(\n            {{polygonColumnName}}, \n            {{distance}}, \n            \"{{unit}}\" \n        ) as output\n    from {{ table_name }}",
     "parameters" : {
       "type" : "record",
       "fields" : [ {

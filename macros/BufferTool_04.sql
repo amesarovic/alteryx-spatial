@@ -1,5 +1,5 @@
 
-{%- macro BufferTool_03(table_name,schema,polygonColumnName,distance,unit) -%}
+{%- macro BufferTool_04(table_name,schema,polygonColumnName,distance,unit) -%}
     {{ log("table_name=" ~ table_name, info=True) }}
     {{ log("schema=" ~ schema, info=True) }}
     {{ log("polygonColumnName=" ~ polygonColumnName, info=True) }}
@@ -8,6 +8,16 @@
     {{ log("writeInputGeometry=" ~ writeInputGeometry, info=True) }}
 
     select
-    andre_dev.alteryx_spatial.buffer({{polygonColumnName}}, {{distance}}, "{{unit}}" ) as output
+        andre_dev.alteryx_spatial.buffer(
+            {{polygonColumnName}}, 
+            {{distance}}, 
+            "{{unit}}" 
+        ) as output
     from {{ table_name }}
+
+/*
+    select
+    andre_dev.alteryx_spatial.buffer_new({{polygonColumnName}}, {{distance}}, "{{unit}}" ) as output
+    from {{ table_name }}
+*/
 {%- endmacro -%}
