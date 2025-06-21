@@ -54,7 +54,7 @@ class BufferTool_02(MacroSpec):
                         .bindProperty("geometryColumnName")
                 )                               
                 .addElement(
-                    NumberBox("Distance",placeholder="10",minValueVar=1).bindProperty("distance")
+                    NumberBox("Distance",placeholder="10").bindProperty("distance")
                 )                
                 .addElement(
                     SelectBox("Units").addOption("Miles", "miles").addOption("Kilometers", "kms").bindProperty("unit")
