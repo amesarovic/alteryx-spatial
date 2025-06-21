@@ -13,22 +13,9 @@ with DAG(Schedule = Schedule):
           "additionalProperties": None
         }
     )
-    buffer_new_england = Task(
-        task_id = "buffer_new_england", 
-        component = "BufferTool_04", 
-        relation_name = ["new_england"], 
-        geometryColumnName = "geometry", 
-        _oldMacroProperties = {
-          "macroName": "BufferTool_04", 
-          "projectName": "andre_spatial_07", 
-          "parameters": [{"name" : "relation_name", "value" : "['new_england']"},                           {
-                            "name": "schema", 
-                            "value": "[{"name": "name", "dataType": "String"}, {"name": "geometry", "dataType": "String"}]"
-                          },                           {"name" : "destinationColumnNames", "value" : "geometry"},                           {"name" : "distance", "value" : "20"},                           {"name" : "unit", "value" : "miles"}]
-        }, 
-        schema = "[{"name": "name", "dataType": "String"}, {"name": "geometry", "dataType": "String"}]", 
-        writeInputGeometry = False, 
-        unit = "miles", 
-        distance = 20
+    model_BufferTool_04_buffer_new_england = Task(
+        task_id = "model_BufferTool_04_buffer_new_england", 
+        component = "Model", 
+        modelName = "model_BufferTool_04_buffer_new_england"
     )
-    new_england.out >> buffer_new_england.in0
+    new_england.out >> model_BufferTool_04_buffer_new_england.in_0
