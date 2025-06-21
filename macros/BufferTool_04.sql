@@ -8,10 +8,11 @@
     {{ log("writeInputGeometry=" ~ writeInputGeometry, info=True) }}
 
     select
-        andre_dev.alteryx_spatial.buffer(
+        andre_dev.alteryx_spatial.buffer_new(
             {{polygonColumnName}}, 
             {{distance}}, 
-            "{{unit}}" 
+            "{{unit}}",
+            {{writeInputGeometry}}
         ) as output
     from {{ table_name }}
 
@@ -20,4 +21,5 @@
     andre_dev.alteryx_spatial.buffer_new({{polygonColumnName}}, {{distance}}, "{{unit}}" ) as output
     from {{ table_name }}
 */
+
 {%- endmacro -%}

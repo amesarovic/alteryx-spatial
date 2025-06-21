@@ -70,12 +70,12 @@
         "isCustomOutputSchema" : false
       }
     },
-    "lRM32d07L6786XAkDECMG$$g_fGSTXX_sCYzcENYQGmf" : {
-      "id" : "lRM32d07L6786XAkDECMG$$g_fGSTXX_sCYzcENYQGmf",
+    "301Jgbmbm6PENnC7N4SWX$$OASqRbRMZVpVwAwT9X4Ok" : {
+      "id" : "301Jgbmbm6PENnC7N4SWX$$OASqRbRMZVpVwAwT9X4Ok",
       "component" : "BufferTool_04",
       "metadata" : {
         "label" : "buffer_new_england",
-        "x" : -320,
+        "x" : -280,
         "y" : -260,
         "phase" : 0
       },
@@ -96,20 +96,20 @@
             "value" : "geometry"
           }, {
             "name" : "distance",
-            "value" : "10"
+            "value" : "20"
           }, {
             "name" : "unit",
             "value" : "miles"
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
-        "writeInputGeometry" : false,
+        "writeInputGeometry" : true,
         "unit" : "miles",
-        "distance" : 10
+        "distance" : 20
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "XU-JA7YZOe1BgXWZgrBgO$$9gDDLNVRkBQqEAlZPPiWR",
+          "id" : "I857jdX7MIOEHVoRDTZ2o$$vx48jz0u8shLT-zkA8pkO",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -128,17 +128,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "CtsqrDJw-PHHsg4O1vAib$$4O4P5CTgjWUrsUFV2OSlf",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "output",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "M475IBRflj8_RmMy7GnhM$$b5DO6HR5O9YcwsWnlsoqX",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -152,11 +142,11 @@
     }
   },
   "connections" : [ {
-    "id" : "OVNwwzjJx1DI4N1KvS2MW$$M8Jpy65CnDE3PgU4dReMm",
+    "id" : "EGKqWh6v_EtxpfZ0hgbQh$$D8iN1Fp6Fs4YsZpxN5RjE",
     "source" : "i1HO1LxJboMPnwZbxfc0p$$T_g-4gOp721bPi_q1CzJh",
     "sourcePort" : "iK81aI1apETXbhdc4oFYX$$II6KzYSR-BraxwCOEEMgT",
-    "target" : "lRM32d07L6786XAkDECMG$$g_fGSTXX_sCYzcENYQGmf",
-    "targetPort" : "XU-JA7YZOe1BgXWZgrBgO$$9gDDLNVRkBQqEAlZPPiWR"
+    "target" : "301Jgbmbm6PENnC7N4SWX$$OASqRbRMZVpVwAwT9X4Ok",
+    "targetPort" : "I857jdX7MIOEHVoRDTZ2o$$vx48jz0u8shLT-zkA8pkO"
   } ],
   "component" : "Pipeline"
 }

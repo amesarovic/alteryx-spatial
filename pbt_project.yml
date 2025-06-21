@@ -318,8 +318,8 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/BufferTool_04/schema.yml
     - models/BufferTool_04/model_BufferTool_04_buffer_new_england.sql
+    - models/BufferTool_04/schema.yml
     - .prophecy/ide/pipelines/BufferTool_04.json
     - pipelines/BufferTool_04.py
     createdAt: '2025-06-21 02:52:02'
