@@ -1,4 +1,5 @@
-{%- macro BufferTool_04(table_name,schema,polygonColumnName,distance,unit) -%}
+
+{%- macro BufferTool_03(table_name,schema,polygonColumnName,distance,unit) -%}
     {{ log("table_name=" ~ table_name, info=True) }}
     {{ log("schema=" ~ schema, info=True) }}
     {{ log("polygonColumnName=" ~ polygonColumnName, info=True) }}

@@ -1,16 +1,16 @@
 ---
 version: 2
 models:
-- name: "model_BufferTool_03_buffer_new_england"
+- name: "model_BufferTool_04_buffer_new_england"
   tags:
   - "prophecy_temp"
 sources:
-- name: "prophecy_tmp_source__BufferTool_03"
+- name: "prophecy_tmp_source__BufferTool_04"
   database: "andre_dev"
   schema: "spatial"
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mc5n4a2w__BufferTool_03__buffer_new_england"
+  - name: "prophecy_tmp__mc5n8h7p__BufferTool_04__buffer_new_england"
     tags:
     - "prophecy_temp"
