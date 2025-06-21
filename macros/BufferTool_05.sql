@@ -1,4 +1,4 @@
-{%- macro BufferTool_05(table_name,schema,polygonColumnName,distance,unit) -%}
+{%- macro BufferTool_05(table_name,schema,polygonColumnName,distance,unit,writeInputGeometry) -%}
     {{ log("table_name=" ~ table_name, info=True) }}
     {{ log("schema=" ~ schema, info=True) }}
     {{ log("polygonColumnName=" ~ polygonColumnName, info=True) }}
@@ -14,6 +14,7 @@
             {{writeInputGeometry}}
         ) as output
     from {{ table_name }}
+    
 /*
     select andre_dev.alteryx_spatial.buffer_new( {{polygonColumnName}}, {{distance}}, "{{unit}}", {{writeInputGeometry}}) as output from {{ table_name }}
 

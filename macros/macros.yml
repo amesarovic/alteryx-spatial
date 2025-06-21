@@ -222,4 +222,7 @@ macros:
   - name: "unit"
     type: "value"
     description: "{\"ProphecyType\": \"value\"}"
+  - name: "writeInputGeometry"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
   macroType: "query"
