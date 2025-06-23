@@ -13,9 +13,9 @@ with DAG(Schedule = Schedule):
           "additionalProperties": None
         }
     )
-    model_BufferTool_05_buffer_new_england = Task(
-        task_id = "model_BufferTool_05_buffer_new_england", 
+    model_BufferTool_05_b_buffer_new_england = Task(
+        task_id = "model_BufferTool_05_b_buffer_new_england", 
         component = "Model", 
-        modelName = "model_BufferTool_05_buffer_new_england"
+        modelName = "model_BufferTool_05_b_buffer_new_england"
     )
-    new_england.out >> model_BufferTool_05_buffer_new_england.in_0
+    new_england.out >> model_BufferTool_05_b_buffer_new_england.in_0
