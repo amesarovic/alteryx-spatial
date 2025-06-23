@@ -7,7 +7,7 @@
     {{ log("writeInputGeometry=" ~ writeInputGeometry, info=True) }}
     
     select
-        andre_dev.alteryx_spatial.buffer_new(
+        andre_dev.alteryx_spatial.buffer(
             {{polygonColumnName}},
             {{distance}},
             "{{unit}}",

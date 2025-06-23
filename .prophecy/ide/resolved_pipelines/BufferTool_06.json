@@ -1,0 +1,109 @@
+{
+  "id" : "BufferTool_06",
+  "metainfo" : {
+    "label" : "BufferTool_06",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "UvkosUGiktYQQANtabHLA$$7eIQUA9SYatDQEq21XoFs" : {
+      "id" : "UvkosUGiktYQQANtabHLA$$7eIQUA9SYatDQEq21XoFs",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -420,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ktMwoV1uCTYJ0q1kShGGS$$2RiFUKocJ8NjhS3poiRFE",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "exNfdCgZvVXLU2LfEzntz$$iorSWPMZuAgV7wsQxG8YL",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "dO0SJ80B-kOq26F5IAgKA$$TBbcf-gr4H25icjkxOURU" : {
+      "id" : "dO0SJ80B-kOq26F5IAgKA$$TBbcf-gr4H25icjkxOURU",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_BufferTool_06_buffer_new_england",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_BufferTool_06_buffer_new_england"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy_tmp__mc9gre37__BufferTool_06__buffer_new_england", "dO0SJ80B-kOq26F5IAgKA$$TBbcf-gr4H25icjkxOURU", "UvkosUGiktYQQANtabHLA$$7eIQUA9SYatDQEq21XoFs" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "model_BufferTool_06_buffer_new_england_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "model_BufferTool_06_buffer_new_england_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "qxiudOV236-DZTDrZ-w5e$$vueb5Qvn3r0P8EJc0fCYE",
+    "source" : "UvkosUGiktYQQANtabHLA$$7eIQUA9SYatDQEq21XoFs",
+    "sourcePort" : "exNfdCgZvVXLU2LfEzntz$$iorSWPMZuAgV7wsQxG8YL",
+    "target" : "dO0SJ80B-kOq26F5IAgKA$$TBbcf-gr4H25icjkxOURU",
+    "targetPort" : "model_BufferTool_06_buffer_new_england_in_0"
+  } ],
+  "component" : "Pipeline"
+}
