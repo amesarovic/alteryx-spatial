@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mc94gmg4__BufferTool_05__buffer_new_england\"",
+        "alias" : "\"prophecy_tmp__mc95lltd__BufferTool_05__buffer_new_england\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"spatial\"",
@@ -19,8 +19,8 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__mc94gmg4__BufferTool_05__buffer_new_england" : {
-      "id" : "prophecy_tmp__mc94gmg4__BufferTool_05__buffer_new_england",
+    "prophecy_tmp__mc95lltd__BufferTool_05__buffer_new_england" : {
+      "id" : "prophecy_tmp__mc95lltd__BufferTool_05__buffer_new_england",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "buffer_new_england",
@@ -50,13 +50,13 @@
         "autoUpdateOnRun" : false
       }
     },
-    "nzkP8Zp1ezhyQikThEi9x$$bXGydulqXpPA0PCpzWDr7" : {
-      "id" : "nzkP8Zp1ezhyQikThEi9x$$bXGydulqXpPA0PCpzWDr7",
+    "pueK3SkG5v90EXHyvUKaq$$BgN42hw6XufYbrbK-WUhJ" : {
+      "id" : "pueK3SkG5v90EXHyvUKaq$$BgN42hw6XufYbrbK-WUhJ",
       "component" : "BufferTool_05",
       "metadata" : {
         "label" : "buffer_new_england",
-        "x" : -240,
-        "y" : -220,
+        "x" : -600,
+        "y" : -520,
         "phase" : 0
       },
       "properties" : {
@@ -76,7 +76,7 @@
             "value" : "geometry"
           }, {
             "name" : "distance",
-            "value" : "10"
+            "value" : "20"
           }, {
             "name" : "unit",
             "value" : "miles"
@@ -88,15 +88,15 @@
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "writeInputGeometry" : true,
         "unit" : "miles",
-        "distance" : 10
+        "distance" : 20
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "zDj36KLvLg5OdFcR40F8R$$Q60oIutvgeL-xvGhK4tKe",
+          "id" : "UwfuJbUL2euiT8dq7U4el$$-oNC2_lLMqaLGCsDq9OxT",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "ZZEmg5zFNH69GFymjIQio$$tCi32SjdEEc6scOmaXEQX",
+          "id" : "tLiSA-IPgCWG0pkLA0MCU$$yIewhxv1_kv-NStlSCFxp",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -108,8 +108,8 @@
       "component" : "Source",
       "metadata" : {
         "label" : "new_england",
-        "x" : -440,
-        "y" : -220,
+        "x" : -800,
+        "y" : -520,
         "phase" : 0
       },
       "properties" : {
@@ -136,17 +136,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_nzkP8Zp1ezhyQikThEi9x$$bXGydulqXpPA0PCpzWDr7_prophecy_tmp__mc94gmg4__BufferTool_05__buffer_new_england",
-    "source" : "nzkP8Zp1ezhyQikThEi9x$$bXGydulqXpPA0PCpzWDr7",
-    "sourcePort" : "ZZEmg5zFNH69GFymjIQio$$tCi32SjdEEc6scOmaXEQX",
-    "target" : "prophecy_tmp__mc94gmg4__BufferTool_05__buffer_new_england",
+    "id" : "conn_pueK3SkG5v90EXHyvUKaq$$BgN42hw6XufYbrbK-WUhJ_prophecy_tmp__mc95lltd__BufferTool_05__buffer_new_england",
+    "source" : "pueK3SkG5v90EXHyvUKaq$$BgN42hw6XufYbrbK-WUhJ",
+    "sourcePort" : "tLiSA-IPgCWG0pkLA0MCU$$yIewhxv1_kv-NStlSCFxp",
+    "target" : "prophecy_tmp__mc95lltd__BufferTool_05__buffer_new_england",
     "targetPort" : "input_port_0_1"
   }, {
-    "id" : "SF6DVUpc5VevBufJYWsRv$$V2KmpyCVUZxVCzspcqjjk",
+    "id" : "feuVzHWne3jCVWR3DEuAd$$8UeqkINXx4X_dF2IazTWP",
     "source" : "xsuLjM1SIzNSqlkyC3fsv$$zqgF3qj6bbEj2IoPnPcls",
     "sourcePort" : "J3LlKqW5fMi4B_GCbgen-$$EBxdQ4vyUMnLWyt6weW7D",
-    "target" : "nzkP8Zp1ezhyQikThEi9x$$bXGydulqXpPA0PCpzWDr7",
-    "targetPort" : "zDj36KLvLg5OdFcR40F8R$$Q60oIutvgeL-xvGhK4tKe"
+    "target" : "pueK3SkG5v90EXHyvUKaq$$BgN42hw6XufYbrbK-WUhJ",
+    "targetPort" : "UwfuJbUL2euiT8dq7U4el$$-oNC2_lLMqaLGCsDq9OxT"
   } ],
   "component" : "Model"
 }
