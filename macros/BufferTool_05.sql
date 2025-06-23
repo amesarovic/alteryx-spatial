@@ -14,5 +14,20 @@
             {{writeInputGeometry}}
         ) as output
     from {{ table_name }}
+/*
+    select andre_dev.alteryx_spatial.buffer_new( {{polygonColumnName}}, {{distance}}, "{{unit}}", {{writeInputGeometry}}) as output from {{ table_name }}
+
+    select
+        andre_dev.alteryx_spatial.buffer(
+            {{polygonColumnName}},
+            {{distance}},
+            "{{unit}}"
+        ) as output
+    from {{ table_name }}
+
+    select
+    andre_dev.alteryx_spatial.buffer({{polygonColumnName}}, {{distance}}, "{{unit}}" ) as output
+    from {{ table_name }}
+*/
 
 {%- endmacro -%}
