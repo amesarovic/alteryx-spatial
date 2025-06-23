@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mc95lltd__BufferTool_05__buffer_new_england"
+  - name: "prophecy_tmp__mc95on0w__BufferTool_05__buffer_new_england"
     tags:
     - "prophecy_temp"
