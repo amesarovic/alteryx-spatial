@@ -51,7 +51,7 @@ class BufferTool(MacroSpec):
             .addColumn(
                 StackLayout()
                 .addElement(
-                    SchemaColumnsDropdown("Geometry Column Input")
+                    SchemaColumnsDropdown("Geometry column")
                         .bindSchema("component.ports.inputs[0].schema")
                         .bindProperty("geometryColumnName")
                 )                               

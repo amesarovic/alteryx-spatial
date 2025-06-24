@@ -102,11 +102,11 @@
             "value" : "miles"
           }, {
             "name" : "writeInputGeometry",
-            "value" : "false"
+            "value" : "true"
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
-        "writeInputGeometry" : false,
+        "writeInputGeometry" : true,
         "unit" : "miles",
         "distance" : 10
       },

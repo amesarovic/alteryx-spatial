@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc9yi2pt__BufferTool__buffer_new_england",
+    "alias": "prophecy_tmp__mc9ymn8t__BufferTool__buffer_new_england",
     "database": "andre_dev",
     "schema": "spatial"
   })
@@ -24,7 +24,7 @@ buffer_new_england AS (
       'geometry', 
       10, 
       'miles', 
-      false
+      true
     )
   }}
 
