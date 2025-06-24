@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mca37u5c__MakeGridTool_04__MakeGridTool_04_0",
+    "alias": "prophecy_tmp__mcahv0xx__MakeGridTool_04__MakeGridTool_04_0",
     "database": "andre_dev",
     "schema": "spatial"
   })
@@ -17,7 +17,7 @@ WITH new_england AS (
 
 MakeGridTool_04_0 AS (
 
-  {{ andre_spatial_07.MakeGridTool_04('default_value_of_parameter1') }}
+  {{ andre_spatial_07.MakeGridTool_04('',,'',0.1,'miles') }}
 
 )
 

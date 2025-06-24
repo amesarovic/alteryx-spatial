@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mcaho5rw__MakeGridTool_05__create_grid_miles",
+    "alias": "prophecy_tmp__mcai1ym8__MakeGridTool_05__create_grid_miles",
     "database": "andre_dev",
     "schema": "spatial"
   })

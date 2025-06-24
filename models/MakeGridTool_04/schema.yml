@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mca37u5c__MakeGridTool_04__MakeGridTool_04_0"
+  - name: "prophecy_tmp__mcahv0xx__MakeGridTool_04__MakeGridTool_04_0"
     tags:
     - "prophecy_temp"
