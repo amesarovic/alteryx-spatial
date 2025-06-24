@@ -1,0 +1,135 @@
+{
+  "id" : "MakeGridTool_04",
+  "metainfo" : {
+    "label" : "MakeGridTool_04",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "BLGQcroYrIHkJfjxrPua4$$bmNpA29TclhrqPM1xjwRb" : {
+      "id" : "BLGQcroYrIHkJfjxrPua4$$bmNpA29TclhrqPM1xjwRb",
+      "component" : "MakeGridTool_04",
+      "metadata" : {
+        "label" : "MakeGridTool_04_0",
+        "x" : -200,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "parameter1" : "'default_value_of_parameter1'",
+        "_oldMacroProperties" : {
+          "macroName" : "MakeGridTool_04",
+          "projectName" : "andre_spatial_07",
+          "parameters" : [ {
+            "name" : "parameter1",
+            "value" : "'default_value_of_parameter1'"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "We1DIHniADveQDH4fdXRB$$0503LKcnkgAvUKTSinnvb",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "nrajmUDMO0ZQgqP-oO9U9$$5oLTqwi3LzjhJXLcbMyNW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "componentInfo" : {
+        "gemId" : "MakeGridTool_04_andre_spatial_07",
+        "name" : "MakeGridTool_04",
+        "projectName" : "andre_spatial_07",
+        "sourceProjectName" : "andre_spatial_07"
+      }
+    },
+    "WsweR1NQrLxkaYvpktMwz$$53qkVdBTRfFd1wfT1ti9o" : {
+      "id" : "WsweR1NQrLxkaYvpktMwz$$53qkVdBTRfFd1wfT1ti9o",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -420,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "53zs1VSk8wch6DcTz4kSc$$THmpVSSMiYyC-4wonPlao",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "cNP2AA7VgGnqd415aXaYN$$SIDVJgG9r1uWKg_QSxD5T",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "lt4yrW3OuoZBuKYS-jC8S",
+    "source" : "WsweR1NQrLxkaYvpktMwz$$53qkVdBTRfFd1wfT1ti9o",
+    "sourcePort" : "cNP2AA7VgGnqd415aXaYN$$SIDVJgG9r1uWKg_QSxD5T",
+    "target" : "BLGQcroYrIHkJfjxrPua4$$bmNpA29TclhrqPM1xjwRb",
+    "targetPort" : "We1DIHniADveQDH4fdXRB$$0503LKcnkgAvUKTSinnvb"
+  } ],
+  "component" : "Pipeline"
+}

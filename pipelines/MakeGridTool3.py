@@ -6,9 +6,9 @@ with DAG(Schedule = Schedule):
         component = "Dataset", 
         table = {"name" : "new_england", "sourceType" : "Source", "sourceName" : "andre_dev.alteryx_spatial", "alias" : ""}
     )
-    model_MakeGridTool3_create_grid_new_england = Task(
-        task_id = "model_MakeGridTool3_create_grid_new_england", 
+    model_MakeGridTool3_MakeGridTool3_1 = Task(
+        task_id = "model_MakeGridTool3_MakeGridTool3_1", 
         component = "Model", 
-        modelName = "model_MakeGridTool3_create_grid_new_england"
+        modelName = "model_MakeGridTool3_MakeGridTool3_1"
     )
-    new_england.out >> model_MakeGridTool3_create_grid_new_england.in_0
+    new_england.out >> model_MakeGridTool3_MakeGridTool3_1.in_0

@@ -1,0 +1,132 @@
+{
+  "id" : "model_MakeGridTool_04_MakeGridTool_04_0",
+  "metainfo" : {
+    "label" : "model_MakeGridTool_04_MakeGridTool_04_0",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mc9r3qrm__MakeGridTool_04__MakeGridTool_04_0\"",
+        "materialized" : "table",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy_tmp__mc9r3qrm__MakeGridTool_04__MakeGridTool_04_0" : {
+      "id" : "prophecy_tmp__mc9r3qrm__MakeGridTool_04__MakeGridTool_04_0",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "MakeGridTool_04_0",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM MakeGridTool_04_0\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0_1",
+          "slug" : "input_port_0_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0_1",
+          "slug" : "output_port_0_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "BLGQcroYrIHkJfjxrPua4$$bmNpA29TclhrqPM1xjwRb" : {
+      "id" : "BLGQcroYrIHkJfjxrPua4$$bmNpA29TclhrqPM1xjwRb",
+      "component" : "MakeGridTool_04",
+      "metadata" : {
+        "label" : "MakeGridTool_04_0",
+        "x" : -200,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "parameter1" : "'default_value_of_parameter1'",
+        "_oldMacroProperties" : {
+          "macroName" : "MakeGridTool_04",
+          "projectName" : "andre_spatial_07",
+          "parameters" : [ {
+            "name" : "parameter1",
+            "value" : "'default_value_of_parameter1'"
+          } ]
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "We1DIHniADveQDH4fdXRB$$0503LKcnkgAvUKTSinnvb",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "nrajmUDMO0ZQgqP-oO9U9$$5oLTqwi3LzjhJXLcbMyNW",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "WsweR1NQrLxkaYvpktMwz$$53qkVdBTRfFd1wfT1ti9o" : {
+      "id" : "WsweR1NQrLxkaYvpktMwz$$53qkVdBTRfFd1wfT1ti9o",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -420,
+        "y" : -280,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "cNP2AA7VgGnqd415aXaYN$$SIDVJgG9r1uWKg_QSxD5T",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_BLGQcroYrIHkJfjxrPua4$$bmNpA29TclhrqPM1xjwRb_prophecy_tmp__mc9r3qrm__MakeGridTool_04__MakeGridTool_04_0",
+    "source" : "BLGQcroYrIHkJfjxrPua4$$bmNpA29TclhrqPM1xjwRb",
+    "sourcePort" : "nrajmUDMO0ZQgqP-oO9U9$$5oLTqwi3LzjhJXLcbMyNW",
+    "target" : "prophecy_tmp__mc9r3qrm__MakeGridTool_04__MakeGridTool_04_0",
+    "targetPort" : "input_port_0_1"
+  }, {
+    "id" : "lt4yrW3OuoZBuKYS-jC8S",
+    "source" : "WsweR1NQrLxkaYvpktMwz$$53qkVdBTRfFd1wfT1ti9o",
+    "sourcePort" : "cNP2AA7VgGnqd415aXaYN$$SIDVJgG9r1uWKg_QSxD5T",
+    "target" : "BLGQcroYrIHkJfjxrPua4$$bmNpA29TclhrqPM1xjwRb",
+    "targetPort" : "We1DIHniADveQDH4fdXRB$$0503LKcnkgAvUKTSinnvb"
+  } ],
+  "component" : "Model"
+}

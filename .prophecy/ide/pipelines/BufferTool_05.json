@@ -132,16 +132,6 @@
         } ],
         "outputs" : [ {
           "id" : "q_6gidlcwS7EkmF68dKHo$$GCkNH1xZpig7nSvpSRF_m",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "output",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false

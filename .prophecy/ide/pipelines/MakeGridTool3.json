@@ -27,8 +27,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -1540,
-        "y" : -940,
+        "x" : -1820,
+        "y" : -1180,
         "phase" : 0
       },
       "properties" : {
@@ -66,13 +66,13 @@
         "isCustomOutputSchema" : false
       }
     },
-    "eXpNecx8tEbHw8Es8puhL$$m_v0XWQ6NBkBSzjw2BUs7" : {
-      "id" : "eXpNecx8tEbHw8Es8puhL$$m_v0XWQ6NBkBSzjw2BUs7",
+    "ZJuORDB1Fr6FaWFfIngKN$$P1rNwElHGdoX_edhYbYZf" : {
+      "id" : "ZJuORDB1Fr6FaWFfIngKN$$P1rNwElHGdoX_edhYbYZf",
       "component" : "MakeGridTool3",
       "metadata" : {
-        "label" : "create_grid_new_england",
-        "x" : -1340,
-        "y" : -940,
+        "label" : "MakeGridTool3_1",
+        "x" : -1640,
+        "y" : -1180,
         "phase" : 0
       },
       "properties" : {
@@ -89,7 +89,7 @@
             "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
           }, {
             "name" : "destinationColumnNames",
-            "value" : "geometry"
+            "value" : ""
           }, {
             "name" : "cell_size",
             "value" : "0.1"
@@ -99,12 +99,12 @@
           } ]
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
-        "polygonColumnName" : "geometry",
+        "polygonColumnName" : "",
         "unit" : "miles"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "TZLkB--O81fSs_2tj21HW$$RnDY8OxZ4vD4rmVNoH_ip",
+          "id" : "wuspudqpUw1OkRW6T0MTC$$JUlfo4f06tFY1KfZk8RP5",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -123,7 +123,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "iZ_3m-kXiw7uzj4CTJgIo$$xyXY8tLiCrHhHniS26nmA",
+          "id" : "s0Sl0lr7xxpdYUIVfISch$$h4XVRlmcMq5GcmlxiweeP",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -137,11 +137,11 @@
     }
   },
   "connections" : [ {
-    "id" : "XLEW7lcADhGn2Z31oy_KL$$gIKHF_rkZeNUQzjTfVvK4",
+    "id" : "4nsJIvlwt39OqEO_UVkoa$$dBPKGZO9PfT3VPxtehYfo",
     "source" : "ARctJmMTcRfAWTmNws10K$$CZSxgmkO_oAbGu7d2LRb0",
     "sourcePort" : "AFmyu7aWnil9SkTaKoRAQ$$ERjnySjSHio_jqK7LrPLs",
-    "target" : "eXpNecx8tEbHw8Es8puhL$$m_v0XWQ6NBkBSzjw2BUs7",
-    "targetPort" : "TZLkB--O81fSs_2tj21HW$$RnDY8OxZ4vD4rmVNoH_ip"
+    "target" : "ZJuORDB1Fr6FaWFfIngKN$$P1rNwElHGdoX_edhYbYZf",
+    "targetPort" : "wuspudqpUw1OkRW6T0MTC$$JUlfo4f06tFY1KfZk8RP5"
   } ],
   "component" : "Pipeline"
 }

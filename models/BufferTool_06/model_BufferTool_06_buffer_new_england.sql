@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc9gre37__BufferTool_06__buffer_new_england",
+    "alias": "prophecy_tmp__mc9qod5c__BufferTool_06__buffer_new_england",
     "database": "andre_dev",
     "schema": "spatial"
   })
@@ -22,7 +22,7 @@ buffer_new_england AS (
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      10, 
+      1, 
       'miles', 
       true
     )
