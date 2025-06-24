@@ -1,16 +1,16 @@
 ---
 version: 2
 models:
-- name: "model_MakeGridTool_05_create_grid_miles"
+- name: "model_BufferTableTool_buffer_new_england"
   tags:
   - "prophecy_temp"
 sources:
-- name: "prophecy_tmp_source__MakeGridTool_05"
+- name: "prophecy_tmp_source__BufferTableTool"
   database: "andre_dev"
   schema: "spatial"
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mcapuygb__MakeGridTool_05__create_grid_miles"
+  - name: "prophecy_tmp__mcawjjcu__BufferTableTool__buffer_new_england"
     tags:
     - "prophecy_temp"
