@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mcax9dsg__BufferTableTool__BufferTableTool_1"
+  - name: "prophecy_tmp__mcax14de__BufferTableTool__BufferTableTool_1"
     tags:
     - "prophecy_temp"

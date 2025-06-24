@@ -60,6 +60,17 @@ sqlMacros:
     - macros/macros.yml
     - gems/MakeGridTool_05.py
     createdAt: '2025-06-24 12:11:48'
+  .prophecy/metadata/sqlmacros/BufferTableTool_01:
+    name: BufferTableTool_01
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/BufferTableTool_01.sql
+    - .prophecy/ide/macros/BufferTableTool_01.json
+    - macros/macros.yml
+    - gems/BufferTableTool_01.py
+    createdAt: '2025-06-24 20:40:26'
   .prophecy/metadata/sqlmacros/MakeGridTool:
     name: MakeGridTool
     macroType: query

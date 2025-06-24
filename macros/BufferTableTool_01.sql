@@ -1,4 +1,4 @@
-{%- macro BufferTableTool(table_name,schema,polygonColumnName,distanceColumnName,unitColumnName,writeInputGeometry) -%}
+{%- macro BufferTableTool_01(table_name,schema,polygonColumnName,distanceColumnName,unitColumnName,writeInputGeometry) -%}
     {{ log("table_name=" ~ table_name, info=True) }}
     {{ log("schema=" ~ schema, info=True) }}
     {{ log("polygonColumnName=" ~ polygonColumnName, info=True) }}
