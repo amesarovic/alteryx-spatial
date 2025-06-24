@@ -1,0 +1,109 @@
+{
+  "id" : "MakeGridTool_05",
+  "metainfo" : {
+    "label" : "MakeGridTool_05",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "EB1Mt0b5lait1XxBF3otY$$Ud3wFXLzh71viwG9ER5Iq" : {
+      "id" : "EB1Mt0b5lait1XxBF3otY$$Ud3wFXLzh71viwG9ER5Iq",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -420,
+        "y" : -200,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SDAKpcoMst-BJzz2u1uWT$$5Gx_QgRTJe03SeUh2UUN7",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "_y0JnihzRmrGfZkz-hvCm$$5ImShMLJJE9Gt9z8RwniP",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "ysb38psKeEZ1i2iZ5fiJV$$LmZ2fMbDGPDWsMcLRi-cc" : {
+      "id" : "ysb38psKeEZ1i2iZ5fiJV$$LmZ2fMbDGPDWsMcLRi-cc",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_MakeGridTool_05_create_grid_miles",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_MakeGridTool_05_create_grid_miles"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy_tmp__MakeGridTool_05__create_grid_miles", "ysb38psKeEZ1i2iZ5fiJV$$LmZ2fMbDGPDWsMcLRi-cc", "EB1Mt0b5lait1XxBF3otY$$Ud3wFXLzh71viwG9ER5Iq" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "model_MakeGridTool_05_create_grid_miles_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "model_MakeGridTool_05_create_grid_miles_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "M-zlITt-yVoLUfQSF__E9$$hYb5ZiLtaUAvCyohFOcpg",
+    "source" : "EB1Mt0b5lait1XxBF3otY$$Ud3wFXLzh71viwG9ER5Iq",
+    "sourcePort" : "_y0JnihzRmrGfZkz-hvCm$$5ImShMLJJE9Gt9z8RwniP",
+    "target" : "ysb38psKeEZ1i2iZ5fiJV$$LmZ2fMbDGPDWsMcLRi-cc",
+    "targetPort" : "model_MakeGridTool_05_create_grid_miles_in_0"
+  } ],
+  "component" : "Pipeline"
+}

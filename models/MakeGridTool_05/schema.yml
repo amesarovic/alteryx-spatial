@@ -1,0 +1,16 @@
+---
+version: 2
+models:
+- name: "model_MakeGridTool_05_create_grid_miles"
+  tags:
+  - "prophecy_temp"
+sources:
+- name: "prophecy_tmp_source__MakeGridTool_05"
+  database: "andre_dev"
+  schema: "spatial"
+  config:
+    enabled: true
+  tables:
+  - name: "prophecy_tmp__mcaho5rw__MakeGridTool_05__create_grid_miles"
+    tags:
+    - "prophecy_temp"
