@@ -27,8 +27,8 @@
       "component" : "MakeGridTool_04",
       "metadata" : {
         "label" : "MakeGridTool_04_0",
-        "x" : -200,
-        "y" : -280,
+        "x" : -480,
+        "y" : -420,
         "phase" : 0
       },
       "properties" : {
@@ -80,8 +80,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -420,
-        "y" : -280,
+        "x" : -700,
+        "y" : -420,
         "phase" : 0
       },
       "properties" : {

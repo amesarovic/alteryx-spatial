@@ -8,6 +8,6 @@
     {{ log("unit=" ~ unit, info=True) }}
 
     select
-    andre_dev.alteryx_spatial.make_grid({{polygonColumnName}}, {{cell_size}}) as output
+    andre_dev.alteryx_spatial.make_grid_old({{polygonColumnName}}, {{cell_size}}) as output
     from {{ table_name }}
 {%- endmacro -%}

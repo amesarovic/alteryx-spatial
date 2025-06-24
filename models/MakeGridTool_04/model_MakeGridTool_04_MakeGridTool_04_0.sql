@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mc9r3qrm__MakeGridTool_04__MakeGridTool_04_0",
+    "alias": "prophecy_tmp__mca37u5c__MakeGridTool_04__MakeGridTool_04_0",
     "database": "andre_dev",
     "schema": "spatial"
   })

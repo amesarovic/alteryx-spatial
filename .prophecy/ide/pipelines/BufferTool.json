@@ -27,8 +27,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -440,
-        "y" : -200,
+        "x" : -800,
+        "y" : -420,
         "phase" : 0
       },
       "properties" : {
@@ -75,8 +75,8 @@
       "component" : "BufferTool",
       "metadata" : {
         "label" : "buffer_new_england",
-        "x" : -260,
-        "y" : -200,
+        "x" : -620,
+        "y" : -420,
         "phase" : 0
       },
       "properties" : {
