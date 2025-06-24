@@ -70,18 +70,18 @@
         "isCustomOutputSchema" : false
       }
     },
-    "iPm-fescQW1UT-4PtqZPv$$a31d6smDyqv4MvGiViPq6" : {
-      "id" : "iPm-fescQW1UT-4PtqZPv$$a31d6smDyqv4MvGiViPq6",
+    "NOR_mQ5ngZqkbmm_byBwE$$ZGvV72Zyao6qlh9OaUove" : {
+      "id" : "NOR_mQ5ngZqkbmm_byBwE$$ZGvV72Zyao6qlh9OaUove",
       "component" : "BufferTableTool",
       "metadata" : {
-        "label" : "buffer_new_england",
-        "x" : -160,
+        "label" : "BufferTableTool_1",
+        "x" : -180,
         "y" : -180,
         "phase" : 0
       },
       "properties" : {
         "relation_name" : [ "new_england" ],
-        "geometryColumnName" : "geometry",
+        "geometryColumnName" : "",
         "_oldMacroProperties" : {
           "macroName" : "BufferTableTool",
           "projectName" : "andre_spatial_07",
@@ -93,10 +93,10 @@
             "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
           }, {
             "name" : "destinationColumnNames",
-            "value" : "geometry"
+            "value" : ""
           }, {
             "name" : "distance",
-            "value" : "10"
+            "value" : "1"
           }, {
             "name" : "unit",
             "value" : "miles"
@@ -108,11 +108,11 @@
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "writeInputGeometry" : false,
         "unit" : "miles",
-        "distance" : 10
+        "distance" : 1
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "9Mo-SPx-aFmOGeOkR9vkH$$qNjRZHSRpixDgQASQ2_P1",
+          "id" : "rGsMuiS_IYkAfiZg-s0ii$$JeOXMjc4wDn64AFv-bHAC",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -131,17 +131,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "Z1Vp1dIOoKY1F-js4aJEf$$l0l3Lbi6ZGr7zbfB_TqBp",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "Databricks",
-            "fields" : [ {
-              "name" : "output",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
+          "id" : "-XmPCmI8D0MaEDqPT0mIQ$$c3UWZBEkOFXzBpIpuoM5_",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
@@ -155,11 +145,11 @@
     }
   },
   "connections" : [ {
-    "id" : "fcFN9FzUxxfCvbHXhSFXv$$RDjeqxZ9Ona8lOH7IGLRV",
+    "id" : "V7wmm2R6Fyv2-MdTbBAMW$$BX9fl4c0Bemjsy4asFZ8b",
     "source" : "pQ0WPJqdxNOdvU2_d2Ycz$$LNPoUnFKPS5MsaDXR0WLn",
     "sourcePort" : "6tdteU9grt9kMaUA4sjPX$$ilJmj-OpsENcEXlMy2R3W",
-    "target" : "iPm-fescQW1UT-4PtqZPv$$a31d6smDyqv4MvGiViPq6",
-    "targetPort" : "9Mo-SPx-aFmOGeOkR9vkH$$qNjRZHSRpixDgQASQ2_P1"
+    "target" : "NOR_mQ5ngZqkbmm_byBwE$$ZGvV72Zyao6qlh9OaUove",
+    "targetPort" : "rGsMuiS_IYkAfiZg-s0ii$$JeOXMjc4wDn64AFv-bHAC"
   } ],
   "component" : "Pipeline"
 }
