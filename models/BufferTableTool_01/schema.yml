@@ -1,0 +1,16 @@
+---
+version: 2
+models:
+- name: "model_BufferTableTool_01_buffer_new_england_distance"
+  tags:
+  - "prophecy_temp"
+sources:
+- name: "prophecy_tmp_source__BufferTableTool_01"
+  database: "andre_dev"
+  schema: "spatial"
+  config:
+    enabled: true
+  tables:
+  - name: "prophecy_tmp__mcbjpqz8__BufferTableTool_01__buffer_new_england_distance"
+    tags:
+    - "prophecy_temp"

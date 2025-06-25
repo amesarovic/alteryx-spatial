@@ -27,3 +27,18 @@ sources:
       dataType:
         type: "String"
     type: "table"
+  - name: "new_england_distance"
+    columns:
+    - name: "name"
+      dataType:
+        type: "String"
+    - name: "distance"
+      dataType:
+        type: "Integer"
+    - name: "unit"
+      dataType:
+        type: "String"
+    - name: "geometry"
+      dataType:
+        type: "String"
+    type: "table"

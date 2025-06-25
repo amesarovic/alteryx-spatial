@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mc70ujda__BufferTool_05_b__buffer_new_england\"",
+        "alias" : "\"prophecy_tmp__mcbjhujz__BufferTool_05_b__buffer_new_england\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"spatial\"",
@@ -19,8 +19,8 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__mc70ujda__BufferTool_05_b__buffer_new_england" : {
-      "id" : "prophecy_tmp__mc70ujda__BufferTool_05_b__buffer_new_england",
+    "prophecy_tmp__BufferTool_05_b__buffer_new_england" : {
+      "id" : "prophecy_tmp__BufferTool_05_b__buffer_new_england",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "buffer_new_england",
@@ -39,12 +39,12 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "input_port_0_1",
-          "slug" : "input_port_0_1"
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
         } ],
         "outputs" : [ {
-          "id" : "output_port_0_1",
-          "slug" : "output_port_0_1"
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
@@ -136,11 +136,11 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_NgmiYAW3iP8Ji3aVkeyCy$$ZjGjccGBjYcCRGm46s03u_prophecy_tmp__mc70ujda__BufferTool_05_b__buffer_new_england",
+    "id" : "conn_NgmiYAW3iP8Ji3aVkeyCy$$ZjGjccGBjYcCRGm46s03u_prophecy_tmp__BufferTool_05_b__buffer_new_england",
     "source" : "NgmiYAW3iP8Ji3aVkeyCy$$ZjGjccGBjYcCRGm46s03u",
     "sourcePort" : "mxcL5MB9OkcmbV7hWq-Tt$$IhT0ONGaW_7oZ9sW2GINc",
-    "target" : "prophecy_tmp__mc70ujda__BufferTool_05_b__buffer_new_england",
-    "targetPort" : "input_port_0_1"
+    "target" : "prophecy_tmp__BufferTool_05_b__buffer_new_england",
+    "targetPort" : "input_port_0"
   }, {
     "id" : "4e3wFILjhF4e4oJmTflBQ$$Dp7OPJDsT_opHFLsoGeXX",
     "source" : "TVkwwiZ3N_rq12dRbeyUS$$KPdEBVPuQs2LPBUc7YJR1",

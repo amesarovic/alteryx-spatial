@@ -1,0 +1,156 @@
+{
+  "id" : "model_BufferTableTool_01_buffer_new_england_distance",
+  "metainfo" : {
+    "label" : "model_BufferTableTool_01_buffer_new_england_distance",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mcbjpqz8__BufferTableTool_01__buffer_new_england_distance\"",
+        "materialized" : "table",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy_tmp__BufferTableTool_01__buffer_new_england_distance" : {
+      "id" : "prophecy_tmp__BufferTableTool_01__buffer_new_england_distance",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "buffer_new_england_distance",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM buffer_new_england_distance\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "lrU4XXWUkSJgExNTBC2M6$$YySxAz8ra6wRW8OBG1Cau" : {
+      "id" : "lrU4XXWUkSJgExNTBC2M6$$YySxAz8ra6wRW8OBG1Cau",
+      "component" : "BufferTableTool_01",
+      "metadata" : {
+        "label" : "buffer_new_england_distance",
+        "x" : -320,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "new_england_distance" ],
+        "geometryColumnName" : "geometry",
+        "_oldMacroProperties" : {
+          "macroName" : "BufferTableTool_01",
+          "projectName" : "andre_spatial_07",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england_distance']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"distance\", \"dataType\": \"Integer\"}, {\"name\": \"unit\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "distance"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "unit"
+          }, {
+            "name" : "distance",
+            "value" : "1"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          }, {
+            "name" : "writeInputGeometry",
+            "value" : "true"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"distance\", \"dataType\": \"Integer\"}, {\"name\": \"unit\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "writeInputGeometry" : true,
+        "distanceColumnName" : "distance",
+        "unit" : "miles",
+        "unitColumnName" : "unit",
+        "distance" : 1
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SsTSAn6EIPm1QAYbsJaIz$$GwY9Q1xgN3BpKWkzesBtW",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "blAstc3ksrkLgbpIMRJ49$$OmTAgeNKTI3SdM-43pmZz",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "oS9qPYmUnn1JRefmu-0M8$$ym17x7qmoGk1d2zzzbrvN" : {
+      "id" : "oS9qPYmUnn1JRefmu-0M8$$ym17x7qmoGk1d2zzzbrvN",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "new_england_distance",
+        "x" : -520,
+        "y" : -180,
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "new_england_distance",
+          "sourceType" : "Source",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "RVWmiAuwnNj9fVTO2SgHP$$9JrZCVi9BR2N2Ds1uU__G",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_lrU4XXWUkSJgExNTBC2M6$$YySxAz8ra6wRW8OBG1Cau_prophecy_tmp__BufferTableTool_01__buffer_new_england_distance",
+    "source" : "lrU4XXWUkSJgExNTBC2M6$$YySxAz8ra6wRW8OBG1Cau",
+    "sourcePort" : "blAstc3ksrkLgbpIMRJ49$$OmTAgeNKTI3SdM-43pmZz",
+    "target" : "prophecy_tmp__BufferTableTool_01__buffer_new_england_distance",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "aOgbQXOv6LkJ6_jHcei_B$$iaXHdtAIPWXAWE44FkapF",
+    "source" : "oS9qPYmUnn1JRefmu-0M8$$ym17x7qmoGk1d2zzzbrvN",
+    "sourcePort" : "RVWmiAuwnNj9fVTO2SgHP$$9JrZCVi9BR2N2Ds1uU__G",
+    "target" : "lrU4XXWUkSJgExNTBC2M6$$YySxAz8ra6wRW8OBG1Cau",
+    "targetPort" : "SsTSAn6EIPm1QAYbsJaIz$$GwY9Q1xgN3BpKWkzesBtW"
+  } ],
+  "component" : "Model"
+}

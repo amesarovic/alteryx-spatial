@@ -1,7 +1,7 @@
 {
-  "id" : "BufferTool_05_b",
+  "id" : "BufferTableTool_01",
   "metainfo" : {
-    "label" : "BufferTool_05_b",
+    "label" : "BufferTableTool_01",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -22,39 +22,45 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "TVkwwiZ3N_rq12dRbeyUS$$KPdEBVPuQs2LPBUc7YJR1" : {
-      "id" : "TVkwwiZ3N_rq12dRbeyUS$$KPdEBVPuQs2LPBUc7YJR1",
+    "oS9qPYmUnn1JRefmu-0M8$$ym17x7qmoGk1d2zzzbrvN" : {
+      "id" : "oS9qPYmUnn1JRefmu-0M8$$ym17x7qmoGk1d2zzzbrvN",
       "component" : "Dataset",
       "metadata" : {
-        "label" : "new_england",
-        "x" : -420,
-        "y" : -240,
+        "label" : "new_england_distance",
+        "x" : -520,
+        "y" : -180,
         "phase" : 0
       },
       "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
         "table" : {
-          "name" : "new_england",
-          "sourceType" : "Table",
+          "name" : "new_england_distance",
+          "sourceType" : "Source",
           "sourceName" : "andre_dev.alteryx_spatial",
-          "alias" : "",
-          "additionalProperties" : null
+          "alias" : ""
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "AFh4hfb1eq1RotBgMFl8N$$jXvNRLLh-FHkTZB1ZUcaQ",
+          "id" : "P22dM1G2jY1KDD6hwPG2Y$$XoJfJNSq6c0YE18qsFwiu",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "DKvoquB6Mjsg5uJIawY-m$$iit8kj3QJcPv1QyWqvA5P",
+          "id" : "RVWmiAuwnNj9fVTO2SgHP$$9JrZCVi9BR2N2Ds1uU__G",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
             "fields" : [ {
               "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "distance",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "unit",
               "dataType" : {
                 "type" : "String"
               }
@@ -70,28 +76,28 @@
         "isCustomOutputSchema" : false
       }
     },
-    "NgmiYAW3iP8Ji3aVkeyCy$$ZjGjccGBjYcCRGm46s03u" : {
-      "id" : "NgmiYAW3iP8Ji3aVkeyCy$$ZjGjccGBjYcCRGm46s03u",
+    "lrU4XXWUkSJgExNTBC2M6$$YySxAz8ra6wRW8OBG1Cau" : {
+      "id" : "lrU4XXWUkSJgExNTBC2M6$$YySxAz8ra6wRW8OBG1Cau",
       "component" : "Model",
       "metadata" : {
-        "label" : "model_BufferTool_05_b_buffer_new_england",
+        "label" : "model_BufferTableTool_01_buffer_new_england_distance",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "model_BufferTool_05_b_buffer_new_england"
+        "modelName" : "model_BufferTableTool_01_buffer_new_england_distance"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__BufferTool_05_b__buffer_new_england", "NgmiYAW3iP8Ji3aVkeyCy$$ZjGjccGBjYcCRGm46s03u", "TVkwwiZ3N_rq12dRbeyUS$$KPdEBVPuQs2LPBUc7YJR1" ],
+        "visualProcessIds" : [ "prophecy_tmp__BufferTableTool_01__buffer_new_england_distance", "lrU4XXWUkSJgExNTBC2M6$$YySxAz8ra6wRW8OBG1Cau", "oS9qPYmUnn1JRefmu-0M8$$ym17x7qmoGk1d2zzzbrvN" ],
         "type" : "table",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "model_BufferTool_05_b_buffer_new_england_in_0",
+          "id" : "model_BufferTableTool_01_buffer_new_england_distance_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "model_BufferTool_05_b_buffer_new_england_out_0",
+          "id" : "model_BufferTableTool_01_buffer_new_england_distance_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -99,11 +105,11 @@
     }
   },
   "connections" : [ {
-    "id" : "4e3wFILjhF4e4oJmTflBQ$$Dp7OPJDsT_opHFLsoGeXX",
-    "source" : "TVkwwiZ3N_rq12dRbeyUS$$KPdEBVPuQs2LPBUc7YJR1",
-    "sourcePort" : "DKvoquB6Mjsg5uJIawY-m$$iit8kj3QJcPv1QyWqvA5P",
-    "target" : "NgmiYAW3iP8Ji3aVkeyCy$$ZjGjccGBjYcCRGm46s03u",
-    "targetPort" : "model_BufferTool_05_b_buffer_new_england_in_0"
+    "id" : "aOgbQXOv6LkJ6_jHcei_B$$iaXHdtAIPWXAWE44FkapF",
+    "source" : "oS9qPYmUnn1JRefmu-0M8$$ym17x7qmoGk1d2zzzbrvN",
+    "sourcePort" : "RVWmiAuwnNj9fVTO2SgHP$$9JrZCVi9BR2N2Ds1uU__G",
+    "target" : "lrU4XXWUkSJgExNTBC2M6$$YySxAz8ra6wRW8OBG1Cau",
+    "targetPort" : "model_BufferTableTool_01_buffer_new_england_distance_in_0"
   } ],
   "component" : "Pipeline"
 }
