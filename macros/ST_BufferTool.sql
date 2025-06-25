@@ -6,6 +6,7 @@
     {{ log("unit=" ~ unit, info=True) }}
     {{ log("writeInputGeometry=" ~ writeInputGeometry, info=True) }}
 
+/*
     select
         andre_dev.alteryx_spatial.buffer(
             {{polygonColumnName}},
@@ -14,4 +15,8 @@
             {{writeInputGeometry}}
         ) as output
     from {{ table_name }}
+*/
+
+    select name from {{ table_name }} 
+
 {%- endmacro -%}

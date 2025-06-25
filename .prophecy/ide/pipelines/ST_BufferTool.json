@@ -27,8 +27,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -500,
-        "y" : -180,
+        "x" : -960,
+        "y" : -460,
         "phase" : 0
       },
       "properties" : {
@@ -75,8 +75,8 @@
       "component" : "ST_BufferTool",
       "metadata" : {
         "label" : "buffer_new_england",
-        "x" : -320,
-        "y" : -180,
+        "x" : -780,
+        "y" : -460,
         "phase" : 0
       },
       "properties" : {
@@ -136,7 +136,7 @@
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "output",
+              "name" : "name",
               "dataType" : {
                 "type" : "String"
               }
