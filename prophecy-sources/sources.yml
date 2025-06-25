@@ -5,19 +5,6 @@ sources:
   database: "andre_dev"
   schema: "alteryx_spatial"
   tables:
-  - name: "ne_polygons"
-    description: "Geospatial data representing polygons, useful for mapping and spatial\
-      \ analysis."
-    columns:
-    - name: "name"
-      description: "The name of the polygon"
-      dataType:
-        type: "String"
-    - name: "geometry"
-      description: "Geometric representation of the polygon shape"
-      dataType:
-        type: "String"
-    type: "table"
   - name: "new_england"
     columns:
     - name: "name"

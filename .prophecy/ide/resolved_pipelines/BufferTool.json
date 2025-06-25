@@ -27,8 +27,8 @@
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -1200,
-        "y" : -640,
+        "x" : -1620,
+        "y" : -860,
         "phase" : 0
       },
       "properties" : {

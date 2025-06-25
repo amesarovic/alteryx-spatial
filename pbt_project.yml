@@ -93,6 +93,17 @@ sqlMacros:
     - macros/macros.yml
     - gems/BufferTool.py
     createdAt: '2025-06-24 03:16:52'
+  .prophecy/metadata/sqlmacros/ST_BufferTool:
+    name: ST_BufferTool
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/ST_BufferTool.sql
+    - .prophecy/ide/macros/ST_BufferTool.json
+    - macros/macros.yml
+    - gems/ST_BufferTool.py
+    createdAt: '2025-06-25 20:05:59'
   .prophecy/metadata/sqlmacros/BufferTool_03:
     name: BufferTool_03
     macroType: query
@@ -214,6 +225,58 @@ sqlMacros:
     createdAt: '2025-06-20 16:45:31'
 sqlSeeds: {}
 sqlSources:
+  .prophecy/metadata/sqlsources/andre_dev_alteryx_spatial:
+    name: andre_dev.alteryx_spatial
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2025-06-16 19:08:46'
+    tables:
+    - name: new_england
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: name
+          dataType:
+            type: String
+        - name: geometry
+          dataType:
+            type: String
+      description: null
+      author: mesarovic.andre@prophecy.io
+      createdAt: '2025-06-18 06:26:37'
+      tableType: table
+    - name: new_england_distance
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: name
+          dataType:
+            type: String
+        - name: distance
+          dataType:
+            type: Integer
+        - name: unit
+          dataType:
+            type: String
+        - name: geometry
+          dataType:
+            type: String
+      description: null
+      author: mesarovic.andre@prophecy.io
+      createdAt: '2025-06-25 05:58:06'
+      tableType: table
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__ST_BufferTool:
+    name: prophecy_tmp_source__ST_BufferTool
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/ST_BufferTool/schema.yml
+    createdAt: '2025-06-25 20:08:01'
+    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__MakeGridTool3:
     name: prophecy_tmp_source__MakeGridTool3
     description: null
@@ -300,76 +363,8 @@ sqlSources:
     author: mesarovic.andre@prophecy.io
     files:
     - models/BufferTableTool/schema.yml
-    createdAt: '2025-06-24 19:32:02'
+    createdAt: '2025-06-25 06:17:12'
     tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTableTool_01:
-    name: prophecy_tmp_source__BufferTableTool_01
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/BufferTableTool_01/schema.yml
-    createdAt: '2025-06-25 05:57:01'
-    tables: []
-  .prophecy/metadata/sqlsources/andre_dev_alteryx_spatial:
-    name: andre_dev.alteryx_spatial
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - prophecy-sources/sources.yml
-    createdAt: '2025-06-16 19:08:46'
-    tables:
-    - name: ne_polygons
-      schema:
-        entityType: ''
-        providerType: databricks
-        fields:
-        - name: name
-          dataType:
-            type: String
-        - name: geometry
-          dataType:
-            type: String
-      description: Geospatial data representing polygons, useful for mapping and spatial
-        analysis.
-      author: mesarovic.andre@prophecy.io
-      createdAt: '2025-06-17 04:25:45'
-      tableType: table
-    - name: new_england
-      schema:
-        entityType: ''
-        providerType: databricks
-        fields:
-        - name: name
-          dataType:
-            type: String
-        - name: geometry
-          dataType:
-            type: String
-      description: null
-      author: mesarovic.andre@prophecy.io
-      createdAt: '2025-06-18 06:26:37'
-      tableType: table
-    - name: new_england_distance
-      schema:
-        entityType: ''
-        providerType: databricks
-        fields:
-        - name: name
-          dataType:
-            type: String
-        - name: distance
-          dataType:
-            type: Integer
-        - name: unit
-          dataType:
-            type: String
-        - name: geometry
-          dataType:
-            type: String
-      description: null
-      author: mesarovic.andre@prophecy.io
-      createdAt: '2025-06-25 05:58:06'
-      tableType: table
   .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTool_04:
     name: prophecy_tmp_source__BufferTool_04
     description: null
@@ -450,24 +445,24 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/BufferTool/model_BufferTool_buffer_new_england.sql
     - models/BufferTool_02/model_BufferTool_02_buffer_new_england.sql
-    - models/BufferTool_01/schema.yml
-    - models/BufferTool_04/model_BufferTool_04_buffer_new_england.sql
-    - models/BufferTool_06/model_BufferTool_06_buffer_new_england.sql
-    - models/BufferTool_05_b/model_BufferTool_05_b_buffer_new_england.sql
-    - models/BufferTool_01/model_BufferTool_01_buffer_new_england.sql
     - models/BufferTool_06/schema.yml
-    - models/BufferTool_05_b/schema.yml
-    - models/BufferTool_05/schema.yml
+    - models/BufferTool_04/model_BufferTool_04_buffer_new_england.sql
     - models/BufferTool_03/model_BufferTool_03_buffer_new_england.sql
+    - models/BufferTool_05/schema.yml
     - models/BufferTool_02/schema.yml
-    - models/BufferTool_04/schema.yml
+    - models/BufferTool_01/model_BufferTool_01_buffer_new_england.sql
     - models/BufferTool_Old2/schema.yml
+    - models/BufferTool_04/schema.yml
+    - models/BufferTool_01/schema.yml
+    - models/BufferTool/model_BufferTool_buffer_new_england.sql
     - models/BufferTool/schema.yml
-    - models/BufferTool_05/model_BufferTool_05_buffer_new_england.sql
-    - models/BufferTool_Old2/model_BufferTool_Old2_buffer_new_england.sql
     - models/BufferTool_03/schema.yml
+    - models/BufferTool_Old2/model_BufferTool_Old2_buffer_new_england.sql
+    - models/BufferTool_05_b/model_BufferTool_05_b_buffer_new_england.sql
+    - models/BufferTool_05_b/schema.yml
+    - models/BufferTool_05/model_BufferTool_05_buffer_new_england.sql
+    - models/BufferTool_06/model_BufferTool_06_buffer_new_england.sql
     - .prophecy/ide/pipelines/BufferTool.json
     - pipelines/BufferTool.py
     createdAt: '2025-06-24 03:18:26'
@@ -504,6 +499,17 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/BufferTool_03.json
     - pipelines/BufferTool_03.py
     createdAt: '2025-06-21 02:38:27'
+  .prophecy/metadata/sqlorchestratorpipeline/ST_BufferTool:
+    name: ST_BufferTool
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/ST_BufferTool/schema.yml
+    - models/ST_BufferTool/model_ST_BufferTool_buffer_new_england.sql
+    - .prophecy/ide/pipelines/ST_BufferTool.json
+    - pipelines/ST_BufferTool.py
+    createdAt: '2025-06-25 20:07:46'
   .prophecy/metadata/sqlorchestratorpipeline/MakeGridTool_05:
     name: MakeGridTool_05
     schema: null
@@ -523,8 +529,6 @@ sqlOrchestratorPipelines:
     files:
     - models/BufferTableTool/model_BufferTableTool_BufferTableTool_1.sql
     - models/BufferTableTool/schema.yml
-    - models/BufferTableTool_01/schema.yml
-    - models/BufferTableTool_01/model_BufferTableTool_01_buffer_new_england_distance.sql
     - .prophecy/ide/pipelines/BufferTableTool.json
     - pipelines/BufferTableTool.py
     createdAt: '2025-06-24 19:11:17'
@@ -567,8 +571,6 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/BufferTableTool_01/schema.yml
-    - models/BufferTableTool_01/model_BufferTableTool_01_buffer_new_england_distance.sql
     - .prophecy/ide/pipelines/BufferTableTool_01.json
     - pipelines/BufferTableTool_01.py
     createdAt: '2025-06-25 05:56:42'
@@ -600,10 +602,10 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/BufferTool_05_b/model_BufferTool_05_b_buffer_new_england.sql
-    - models/BufferTool_05_b/schema.yml
     - models/BufferTool_05/model_BufferTool_05_buffer_new_england.sql
     - models/BufferTool_05/schema.yml
+    - models/BufferTool_05_b/model_BufferTool_05_b_buffer_new_england.sql
+    - models/BufferTool_05_b/schema.yml
     - .prophecy/ide/pipelines/BufferTool_05.json
     - pipelines/BufferTool_05.py
     createdAt: '2025-06-21 17:34:26'
