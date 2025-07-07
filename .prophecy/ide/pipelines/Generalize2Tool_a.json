@@ -1,7 +1,7 @@
 {
-  "id" : "MakeGridTool_04",
+  "id" : "Generalize2Tool_a",
   "metainfo" : {
-    "label" : "MakeGridTool_04",
+    "label" : "Generalize2Tool_a",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -22,29 +22,45 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "BLGQcroYrIHkJfjxrPua4$$bmNpA29TclhrqPM1xjwRb" : {
-      "id" : "BLGQcroYrIHkJfjxrPua4$$bmNpA29TclhrqPM1xjwRb",
-      "component" : "MakeGridTool_04",
+    "ABnw9YSsWMPC1i8h3ZqIP$$-SrMzjFIXB2PbMwM4EKUx" : {
+      "id" : "ABnw9YSsWMPC1i8h3ZqIP$$-SrMzjFIXB2PbMwM4EKUx",
+      "component" : "Generalize2Tool",
       "metadata" : {
-        "label" : "MakeGridTool_04_0",
+        "label" : "generalize_polygons",
         "x" : -480,
-        "y" : -420,
+        "y" : -320,
         "phase" : 0
       },
       "properties" : {
-        "parameter1" : "'default_value_of_parameter1'",
+        "relation_name" : [ "new_england" ],
         "_oldMacroProperties" : {
-          "macroName" : "MakeGridTool_04",
+          "macroName" : "Generalize2Tool",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
-            "name" : "parameter1",
-            "value" : "'default_value_of_parameter1'"
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "threshold",
+            "value" : "4"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
           } ]
-        }
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "threshold" : 4,
+        "polygonColumnName" : "geometry",
+        "unit" : "miles"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "We1DIHniADveQDH4fdXRB$$0503LKcnkgAvUKTSinnvb",
+          "id" : "1pKkSO6NETGKHmPkzGELC$$Qh7E7TzwH9rgkDugZaN-d",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -63,25 +79,25 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "nrajmUDMO0ZQgqP-oO9U9$$5oLTqwi3LzjhJXLcbMyNW",
+          "id" : "uX4w_DmYsmiiFVrz-Y4M8$$XBf2UVpwoc--9z57aF1oj",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false
       },
       "componentInfo" : {
-        "gemId" : "MakeGridTool_04_andre_spatial_07",
-        "name" : "MakeGridTool_04",
+        "gemId" : "Generalize2Tool_andre_spatial_07",
+        "name" : "Generalize2Tool",
         "projectName" : "andre_spatial_07",
         "sourceProjectName" : "andre_spatial_07"
       }
     },
-    "WsweR1NQrLxkaYvpktMwz$$53qkVdBTRfFd1wfT1ti9o" : {
-      "id" : "WsweR1NQrLxkaYvpktMwz$$53qkVdBTRfFd1wfT1ti9o",
+    "yFosoLxelntO8aVd1gxMZ$$JfvJgLwSRgfp6-mqf6-hK" : {
+      "id" : "yFosoLxelntO8aVd1gxMZ$$JfvJgLwSRgfp6-mqf6-hK",
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
         "x" : -700,
-        "y" : -420,
+        "y" : -320,
         "phase" : 0
       },
       "properties" : {
@@ -90,19 +106,17 @@
         },
         "table" : {
           "name" : "new_england",
-          "sourceType" : "Table",
           "sourceName" : "andre_dev.alteryx_spatial",
-          "alias" : "",
-          "additionalProperties" : null
+          "sourceType" : "Table"
         }
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "53zs1VSk8wch6DcTz4kSc$$THmpVSSMiYyC-4wonPlao",
+          "id" : "JN2rajG4INp8xPNCgknAC$$1Bu1l-vZ4ctmOYivyEAKB",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "cNP2AA7VgGnqd415aXaYN$$SIDVJgG9r1uWKg_QSxD5T",
+          "id" : "W46q40pnunZ3ejkDz9Wyj$$t5VHiIIMI4iSytEFjlkaI",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -125,11 +139,11 @@
     }
   },
   "connections" : [ {
-    "id" : "lt4yrW3OuoZBuKYS-jC8S",
-    "source" : "WsweR1NQrLxkaYvpktMwz$$53qkVdBTRfFd1wfT1ti9o",
-    "sourcePort" : "cNP2AA7VgGnqd415aXaYN$$SIDVJgG9r1uWKg_QSxD5T",
-    "target" : "BLGQcroYrIHkJfjxrPua4$$bmNpA29TclhrqPM1xjwRb",
-    "targetPort" : "We1DIHniADveQDH4fdXRB$$0503LKcnkgAvUKTSinnvb"
+    "id" : "gckZ2xE2Xa0WOQpWMxB6H$$6LbSj6Wa2RotZRyjscZGf",
+    "source" : "yFosoLxelntO8aVd1gxMZ$$JfvJgLwSRgfp6-mqf6-hK",
+    "sourcePort" : "W46q40pnunZ3ejkDz9Wyj$$t5VHiIIMI4iSytEFjlkaI",
+    "target" : "ABnw9YSsWMPC1i8h3ZqIP$$-SrMzjFIXB2PbMwM4EKUx",
+    "targetPort" : "1pKkSO6NETGKHmPkzGELC$$Qh7E7TzwH9rgkDugZaN-d"
   } ],
   "component" : "Pipeline"
 }

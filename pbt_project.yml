@@ -224,6 +224,14 @@ sqlSources:
     - models/MakeGridTool_04/schema.yml
     createdAt: '2025-06-24 06:31:59'
     tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__GeneralizeTool_01:
+    name: prophecy_tmp_source__GeneralizeTool_01
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/GeneralizeTool_01/schema.yml
+    createdAt: '2025-07-07 21:02:02'
+    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__MakeGridTool_05:
     name: prophecy_tmp_source__MakeGridTool_05
     description: null
@@ -231,6 +239,14 @@ sqlSources:
     files:
     - models/MakeGridTool_05/schema.yml
     createdAt: '2025-06-24 12:51:09'
+    tables: []
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__Generalize2Tool_a:
+    name: prophecy_tmp_source__Generalize2Tool_a
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Generalize2Tool_a/schema.yml
+    createdAt: '2025-07-07 21:02:02'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTableTool:
     name: prophecy_tmp_source__BufferTableTool
@@ -284,6 +300,17 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/BufferTool_06.json
     - pipelines/BufferTool_06.py
     createdAt: '2025-06-23 19:01:20'
+  .prophecy/metadata/sqlorchestratorpipeline/GeneralizeTool_01:
+    name: GeneralizeTool_01
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/GeneralizeTool_01/model_GeneralizeTool_01_generalize_polygons.sql
+    - models/GeneralizeTool_01/schema.yml
+    - .prophecy/ide/pipelines/GeneralizeTool_01.json
+    - pipelines/GeneralizeTool_01.py
+    createdAt: '2025-07-07 21:02:02'
   .prophecy/metadata/sqlorchestratorpipeline/ST_BufferTool:
     name: ST_BufferTool
     schema: null
@@ -337,4 +364,15 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/MakeGridTool_04.json
     - pipelines/MakeGridTool_04.py
     createdAt: '2025-06-23 23:47:09'
+  .prophecy/metadata/sqlorchestratorpipeline/Generalize2Tool_a:
+    name: Generalize2Tool_a
+    schema: null
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - models/Generalize2Tool_a/schema.yml
+    - models/Generalize2Tool_a/model_Generalize2Tool_a_generalize_polygons.sql
+    - .prophecy/ide/pipelines/Generalize2Tool_a.json
+    - pipelines/Generalize2Tool_a.py
+    createdAt: '2025-07-07 21:02:02'
 sqlBusinessApps: {}

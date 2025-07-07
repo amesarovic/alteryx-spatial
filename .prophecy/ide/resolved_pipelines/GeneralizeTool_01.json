@@ -1,0 +1,107 @@
+{
+  "id" : "GeneralizeTool_01",
+  "metainfo" : {
+    "label" : "GeneralizeTool_01",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy" : {
+      "id" : "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "ne_polygons",
+        "x" : -720,
+        "y" : -620,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "ne_polygons",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "sourceType" : "Table"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GvNpg7uSKjTb3muZVUivT$$7rmvqic8b3H5-SmIqOKip",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "WDq_fNRSuP8aUQ9zVv6ci$$jH04ff8Aux-qxbChlzYB8",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG" : {
+      "id" : "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_GeneralizeTool_01_generalize_polygons",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_GeneralizeTool_01_generalize_polygons"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy_tmp__GeneralizeTool_01__generalize_polygons", "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG", "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "model_GeneralizeTool_01_generalize_polygons_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "model_GeneralizeTool_01_generalize_polygons_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "Zgyxz-j5DDIWUzcKmiOlE",
+    "source" : "vLjzCc1mTmxovGU8EUrI2$$xkEzzKlYaw7mFHAVEqZwy",
+    "sourcePort" : "WDq_fNRSuP8aUQ9zVv6ci$$jH04ff8Aux-qxbChlzYB8",
+    "target" : "VBdn1HvdJsl7k_7xozJBF$$sX8usk7-yNYpRkf3UXgvG",
+    "targetPort" : "model_GeneralizeTool_01_generalize_polygons_in_0"
+  } ],
+  "component" : "Pipeline"
+}

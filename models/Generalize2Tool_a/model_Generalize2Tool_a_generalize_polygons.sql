@@ -1,9 +1,9 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mctlb76e__ST_BufferTool__ST_BufferTool_1",
+    "alias": "prophecy_tmp__mc1l34j0__Generalize2Tool_a__generalize_polygons",
     "database": "andre_dev",
-    "schema": "alteryx_spatial"
+    "schema": "spatial"
   })
 }}
 
@@ -15,16 +15,15 @@ WITH new_england AS (
 
 ),
 
-ST_BufferTool_1 AS (
+generalize_polygons AS (
 
   {{
-    andre_spatial_07.ST_BufferTool(
+    andre_spatial_07.Generalize2Tool(
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
-      '', 
-      1, 
-      'miles', 
-      false
+      'geometry', 
+      4, 
+      'miles'
     )
   }}
 
@@ -32,4 +31,4 @@ ST_BufferTool_1 AS (
 
 SELECT *
 
-FROM ST_BufferTool_1
+FROM generalize_polygons

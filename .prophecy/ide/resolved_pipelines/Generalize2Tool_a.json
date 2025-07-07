@@ -1,0 +1,107 @@
+{
+  "id" : "Generalize2Tool_a",
+  "metainfo" : {
+    "label" : "Generalize2Tool_a",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "schedule" : {
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "GMT",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ "email@gmail.com" ],
+      "enabled" : false
+    },
+    "isTranspiledPipeline" : false
+  },
+  "processes" : {
+    "yFosoLxelntO8aVd1gxMZ$$JfvJgLwSRgfp6-mqf6-hK" : {
+      "id" : "yFosoLxelntO8aVd1gxMZ$$JfvJgLwSRgfp6-mqf6-hK",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -700,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "sourceType" : "Table"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "JN2rajG4INp8xPNCgknAC$$1Bu1l-vZ4ctmOYivyEAKB",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "W46q40pnunZ3ejkDz9Wyj$$t5VHiIIMI4iSytEFjlkaI",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "ABnw9YSsWMPC1i8h3ZqIP$$-SrMzjFIXB2PbMwM4EKUx" : {
+      "id" : "ABnw9YSsWMPC1i8h3ZqIP$$-SrMzjFIXB2PbMwM4EKUx",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "model_Generalize2Tool_a_generalize_polygons",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "model_Generalize2Tool_a_generalize_polygons"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "prophecy_tmp__mc1l34j0__Generalize2Tool_a__generalize_polygons", "ABnw9YSsWMPC1i8h3ZqIP$$-SrMzjFIXB2PbMwM4EKUx", "yFosoLxelntO8aVd1gxMZ$$JfvJgLwSRgfp6-mqf6-hK" ],
+        "type" : "table",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "model_Generalize2Tool_a_generalize_polygons_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "model_Generalize2Tool_a_generalize_polygons_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "gckZ2xE2Xa0WOQpWMxB6H$$6LbSj6Wa2RotZRyjscZGf",
+    "source" : "yFosoLxelntO8aVd1gxMZ$$JfvJgLwSRgfp6-mqf6-hK",
+    "sourcePort" : "W46q40pnunZ3ejkDz9Wyj$$t5VHiIIMI4iSytEFjlkaI",
+    "target" : "ABnw9YSsWMPC1i8h3ZqIP$$-SrMzjFIXB2PbMwM4EKUx",
+    "targetPort" : "model_Generalize2Tool_a_generalize_polygons_in_0"
+  } ],
+  "component" : "Pipeline"
+}

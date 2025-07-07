@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mctkgddj__BufferTool__buffer_new_england\"",
+        "alias" : "\"prophecy_tmp__mctkdqlw__BufferTool__buffer_new_england\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
