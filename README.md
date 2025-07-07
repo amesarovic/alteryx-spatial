@@ -1,1 +1,1 @@
-Latest Alteryx spatial gems and macros
+Latest Alteryx spatial gems

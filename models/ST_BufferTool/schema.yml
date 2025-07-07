@@ -1,7 +1,7 @@
 ---
 version: 2
 models:
-- name: "model_ST_BufferTool_buffer_new_england"
+- name: "model_ST_BufferTool_ST_BufferTool_1"
   tags:
   - "prophecy_temp"
 sources:
@@ -11,6 +11,6 @@ sources:
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mctjayaf__ST_BufferTool__buffer_new_england"
+  - name: "prophecy_tmp__mctk2ycv__ST_BufferTool__ST_BufferTool_1"
     tags:
     - "prophecy_temp"
