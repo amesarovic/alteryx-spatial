@@ -9,10 +9,10 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mccds0pd__BufferTableTool__BufferTableTool_1\"",
+        "alias" : "\"prophecy_tmp__mctka2cx__BufferTableTool__BufferTableTool_1\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
-        "schema" : "\"spatial\"",
+        "schema" : "\"alteryx_spatial\"",
         "type" : "ModelConfig"
       }
     },
@@ -60,9 +60,32 @@
         "phase" : 0
       },
       "properties" : {
-        "relation_name" : [ ],
+        "relation_name" : [ "new_england" ],
         "geometryColumnName" : "",
-        "schema" : "''",
+        "_oldMacroProperties" : {
+          "macroName" : "BufferTableTool",
+          "projectName" : "andre_spatial_07",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : ""
+          }, {
+            "name" : "distance",
+            "value" : "1"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          }, {
+            "name" : "writeInputGeometry",
+            "value" : "false"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "writeInputGeometry" : false,
         "unit" : "miles",
         "distance" : 1
@@ -79,6 +102,37 @@
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
       }
+    },
+    "8EaKNu81YeKTqip3NXSvP$$RmkkOh2qvcD16wG3JVnL0" : {
+      "id" : "8EaKNu81YeKTqip3NXSvP$$RmkkOh2qvcD16wG3JVnL0",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -800,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "qxVNcS7iSsD5rzOYouP1Q$$vS_reNWHrMho_eSne254V",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
     }
   },
   "connections" : [ {
@@ -87,6 +141,12 @@
     "sourcePort" : "OwCYnS4uf9Vj4p3WgGUQS$$2dQo0b9Y7EsSuDg3QdhJE",
     "target" : "prophecy_tmp__BufferTableTool__BufferTableTool_1",
     "targetPort" : "input_port_0"
+  }, {
+    "id" : "MseETdSWXsqNYAcWIRPzl$$_I01XDS8ATjQqAnj7Ub0g",
+    "source" : "8EaKNu81YeKTqip3NXSvP$$RmkkOh2qvcD16wG3JVnL0",
+    "sourcePort" : "qxVNcS7iSsD5rzOYouP1Q$$vS_reNWHrMho_eSne254V",
+    "target" : "olWnAXux8u-cFUkvz7NVb$$4DmuZ8-os9oVxUjdot0uz",
+    "targetPort" : "XAudJWqqOtb0s_2fV9aE1$$XYpz9pBMSxHDexUKFlKFY"
   } ],
   "component" : "Model"
 }

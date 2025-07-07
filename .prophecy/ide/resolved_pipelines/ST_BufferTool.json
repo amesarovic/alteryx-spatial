@@ -70,8 +70,8 @@
         "isCustomOutputSchema" : false
       }
     },
-    "6fxpTVCKx82VF158ch5ri$$ipQpXi1sMQjuX4NWfWQW0" : {
-      "id" : "6fxpTVCKx82VF158ch5ri$$ipQpXi1sMQjuX4NWfWQW0",
+    "AKHiZ1pq2KinMo9btFo1u$$1dVsZ9sMygx01cJ4IMChh" : {
+      "id" : "AKHiZ1pq2KinMo9btFo1u$$1dVsZ9sMygx01cJ4IMChh",
       "component" : "Model",
       "metadata" : {
         "label" : "model_ST_BufferTool_ST_BufferTool_1",
@@ -81,12 +81,15 @@
         "modelName" : "model_ST_BufferTool_ST_BufferTool_1"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "prophecy_tmp__ST_BufferTool__ST_BufferTool_1", "6fxpTVCKx82VF158ch5ri$$ipQpXi1sMQjuX4NWfWQW0" ],
+        "visualProcessIds" : [ "prophecy_tmp__ST_BufferTool__ST_BufferTool_1", "AKHiZ1pq2KinMo9btFo1u$$1dVsZ9sMygx01cJ4IMChh", "CiejEMN0BsOcdrv-qLmZi$$SQDYAIzy7duqLyTY4NQ-7" ],
         "type" : "table",
         "isTemporaryTable" : true
       },
       "ports" : {
-        "inputs" : [ ],
+        "inputs" : [ {
+          "id" : "model_ST_BufferTool_ST_BufferTool_1_in_0",
+          "slug" : "in_0"
+        } ],
         "outputs" : [ {
           "id" : "model_ST_BufferTool_ST_BufferTool_1_out_0",
           "slug" : "out_0"
@@ -95,6 +98,12 @@
       }
     }
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "acVNpfFlHoaqlXIo8LtSr$$JMxQk0Vo-p2Wp8Ow-W1hv",
+    "source" : "CiejEMN0BsOcdrv-qLmZi$$SQDYAIzy7duqLyTY4NQ-7",
+    "sourcePort" : "qvItfPP_NgkBZIbg6hl09$$DTuRUpewztLiRXXe9cBrQ",
+    "target" : "AKHiZ1pq2KinMo9btFo1u$$1dVsZ9sMygx01cJ4IMChh",
+    "targetPort" : "model_ST_BufferTool_ST_BufferTool_1_in_0"
+  } ],
   "component" : "Pipeline"
 }

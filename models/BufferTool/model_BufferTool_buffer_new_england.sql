@@ -1,9 +1,9 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mccdwthr__BufferTool__buffer_new_england",
+    "alias": "prophecy_tmp__mctkdqlw__BufferTool__buffer_new_england",
     "database": "andre_dev",
-    "schema": "spatial"
+    "schema": "alteryx_spatial"
   })
 }}
 

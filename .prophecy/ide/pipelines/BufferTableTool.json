@@ -22,64 +22,6 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "UYTA9wJUifwrPpUrM4dNY$$ldFy3ouT8VzgYRlqhqWkh" : {
-      "id" : "UYTA9wJUifwrPpUrM4dNY$$ldFy3ouT8VzgYRlqhqWkh",
-      "component" : "Dataset",
-      "metadata" : {
-        "label" : "new_england_distance",
-        "x" : -740,
-        "y" : -320,
-        "phase" : 0
-      },
-      "properties" : {
-        "writeOptions" : {
-          "writeMode" : "overwrite"
-        },
-        "table" : {
-          "name" : "new_england_distance",
-          "sourceType" : "Table",
-          "sourceName" : "andre_dev.alteryx_spatial",
-          "alias" : "",
-          "additionalProperties" : null
-        }
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "8HAxTJZXZ9T7M_X76ny2J$$I94H7TYrNLkNtSnyL76Ez",
-          "slug" : "in"
-        } ],
-        "outputs" : [ {
-          "id" : "cqj9e4fadAU09TRxWonVj$$yOk_nmySkuUYfBA7_gKhs",
-          "schema" : {
-            "entityType" : "",
-            "providerType" : "databricks",
-            "fields" : [ {
-              "name" : "name",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "distance",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "unit",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "geometry",
-              "dataType" : {
-                "type" : "String"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
     "olWnAXux8u-cFUkvz7NVb$$4DmuZ8-os9oVxUjdot0uz" : {
       "id" : "olWnAXux8u-cFUkvz7NVb$$4DmuZ8-os9oVxUjdot0uz",
       "component" : "BufferTableTool",
@@ -90,9 +32,32 @@
         "phase" : 0
       },
       "properties" : {
-        "relation_name" : [ ],
+        "relation_name" : [ "new_england" ],
         "geometryColumnName" : "",
-        "schema" : "''",
+        "_oldMacroProperties" : {
+          "macroName" : "BufferTableTool",
+          "projectName" : "andre_spatial_07",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : ""
+          }, {
+            "name" : "distance",
+            "value" : "1"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          }, {
+            "name" : "writeInputGeometry",
+            "value" : "false"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "writeInputGeometry" : false,
         "unit" : "miles",
         "distance" : 1
@@ -100,6 +65,21 @@
       "ports" : {
         "inputs" : [ {
           "id" : "XAudJWqqOtb0s_2fV9aE1$$XYpz9pBMSxHDexUKFlKFY",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
           "slug" : "in0"
         } ],
         "outputs" : [ {
@@ -114,8 +94,62 @@
         "projectName" : "andre_spatial_07",
         "sourceProjectName" : "andre_spatial_07"
       }
+    },
+    "8EaKNu81YeKTqip3NXSvP$$RmkkOh2qvcD16wG3JVnL0" : {
+      "id" : "8EaKNu81YeKTqip3NXSvP$$RmkkOh2qvcD16wG3JVnL0",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -800,
+        "y" : -320,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "SbBV82pMCBg98jbQb3dHN$$ab3IiKwB0SWM59Ogx-4Vf",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "qxVNcS7iSsD5rzOYouP1Q$$vS_reNWHrMho_eSne254V",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "databricks",
+            "fields" : [ {
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "geometry",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
     }
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "MseETdSWXsqNYAcWIRPzl$$_I01XDS8ATjQqAnj7Ub0g",
+    "source" : "8EaKNu81YeKTqip3NXSvP$$RmkkOh2qvcD16wG3JVnL0",
+    "sourcePort" : "qxVNcS7iSsD5rzOYouP1Q$$vS_reNWHrMho_eSne254V",
+    "target" : "olWnAXux8u-cFUkvz7NVb$$4DmuZ8-os9oVxUjdot0uz",
+    "targetPort" : "XAudJWqqOtb0s_2fV9aE1$$XYpz9pBMSxHDexUKFlKFY"
+  } ],
   "component" : "Pipeline"
 }

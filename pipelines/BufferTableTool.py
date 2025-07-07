@@ -1,12 +1,12 @@
 Schedule = Schedule(cron = "* 0 2 * * * *", timezone = "GMT", emails = ["email@gmail.com"], enabled = False)
 
 with DAG(Schedule = Schedule):
-    new_england_distance = Task(
-        task_id = "new_england_distance", 
+    new_england = Task(
+        task_id = "new_england", 
         component = "Dataset", 
         writeOptions = {"writeMode" : "overwrite"}, 
         table = {
-          "name": "new_england_distance", 
+          "name": "new_england", 
           "sourceType": "Table", 
           "sourceName": "andre_dev.alteryx_spatial", 
           "alias": "", 
@@ -18,3 +18,4 @@ with DAG(Schedule = Schedule):
         component = "Model", 
         modelName = "model_BufferTableTool_BufferTableTool_1"
     )
+    new_england.out >> model_BufferTableTool_BufferTableTool_1.in_0

@@ -18,3 +18,4 @@ with DAG(Schedule = Schedule):
         component = "Model", 
         modelName = "model_ST_BufferTool_ST_BufferTool_1"
     )
+    new_england.out >> model_ST_BufferTool_ST_BufferTool_1.in_0

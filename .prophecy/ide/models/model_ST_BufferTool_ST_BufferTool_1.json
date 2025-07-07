@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mctk2ycv__ST_BufferTool__ST_BufferTool_1\"",
+        "alias" : "\"prophecy_tmp__mctk55f2__ST_BufferTool__ST_BufferTool_1\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
@@ -50,30 +50,84 @@
         "autoUpdateOnRun" : false
       }
     },
-    "6fxpTVCKx82VF158ch5ri$$ipQpXi1sMQjuX4NWfWQW0" : {
-      "id" : "6fxpTVCKx82VF158ch5ri$$ipQpXi1sMQjuX4NWfWQW0",
+    "AKHiZ1pq2KinMo9btFo1u$$1dVsZ9sMygx01cJ4IMChh" : {
+      "id" : "AKHiZ1pq2KinMo9btFo1u$$1dVsZ9sMygx01cJ4IMChh",
       "component" : "ST_BufferTool",
       "metadata" : {
         "label" : "ST_BufferTool_1",
-        "x" : -780,
+        "x" : -740,
         "y" : -460,
         "phase" : 0
       },
       "properties" : {
-        "relation_name" : [ ],
+        "relation_name" : [ "new_england" ],
         "geometryColumnName" : "",
-        "schema" : "''",
+        "_oldMacroProperties" : {
+          "macroName" : "ST_BufferTool",
+          "projectName" : "andre_spatial_07",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : ""
+          }, {
+            "name" : "distance",
+            "value" : "1"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          }, {
+            "name" : "writeInputGeometry",
+            "value" : "false"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "writeInputGeometry" : false,
         "unit" : "miles",
         "distance" : 1
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "js4hhjp-f2PVzICN1zLh_$$yr2oD8a1Fqs964rewQQ0k",
+          "id" : "t0gyYsKwtFhWmjqgXzo6y$$bh06hjtch4rYhYX0nBFks",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "I2g1AUKG04Ji7PGztlTFH$$aBXMjhyTmZ6bIiZ3bPhhE",
+          "id" : "5C0e0dI_pF9u4Ni-uhJud$$FeywvxjbIe5MYtOdiks_i",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "CiejEMN0BsOcdrv-qLmZi$$SQDYAIzy7duqLyTY4NQ-7" : {
+      "id" : "CiejEMN0BsOcdrv-qLmZi$$SQDYAIzy7duqLyTY4NQ-7",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -960,
+        "y" : -460,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "qvItfPP_NgkBZIbg6hl09$$DTuRUpewztLiRXXe9cBrQ",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -82,11 +136,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_6fxpTVCKx82VF158ch5ri$$ipQpXi1sMQjuX4NWfWQW0_prophecy_tmp__ST_BufferTool__ST_BufferTool_1",
-    "source" : "6fxpTVCKx82VF158ch5ri$$ipQpXi1sMQjuX4NWfWQW0",
-    "sourcePort" : "I2g1AUKG04Ji7PGztlTFH$$aBXMjhyTmZ6bIiZ3bPhhE",
+    "id" : "conn_AKHiZ1pq2KinMo9btFo1u$$1dVsZ9sMygx01cJ4IMChh_prophecy_tmp__ST_BufferTool__ST_BufferTool_1",
+    "source" : "AKHiZ1pq2KinMo9btFo1u$$1dVsZ9sMygx01cJ4IMChh",
+    "sourcePort" : "5C0e0dI_pF9u4Ni-uhJud$$FeywvxjbIe5MYtOdiks_i",
     "target" : "prophecy_tmp__ST_BufferTool__ST_BufferTool_1",
     "targetPort" : "input_port_0"
+  }, {
+    "id" : "acVNpfFlHoaqlXIo8LtSr$$JMxQk0Vo-p2Wp8Ow-W1hv",
+    "source" : "CiejEMN0BsOcdrv-qLmZi$$SQDYAIzy7duqLyTY4NQ-7",
+    "sourcePort" : "qvItfPP_NgkBZIbg6hl09$$DTuRUpewztLiRXXe9cBrQ",
+    "target" : "AKHiZ1pq2KinMo9btFo1u$$1dVsZ9sMygx01cJ4IMChh",
+    "targetPort" : "t0gyYsKwtFhWmjqgXzo6y$$bh06hjtch4rYhYX0nBFks"
   } ],
   "component" : "Model"
 }
