@@ -7,10 +7,10 @@ models:
 sources:
 - name: "prophecy_tmp_source__ST_BufferTool"
   database: "andre_dev"
-  schema: "spatial"
+  schema: "alteryx_spatial"
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mcce4z0k__ST_BufferTool__buffer_new_england"
+  - name: "prophecy_tmp__mctjayaf__ST_BufferTool__buffer_new_england"
     tags:
     - "prophecy_temp"
