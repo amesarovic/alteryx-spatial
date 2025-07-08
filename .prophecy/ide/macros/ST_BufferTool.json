@@ -2,7 +2,7 @@
   "ST_BufferTool" : {
     "name" : "ST_BufferTool",
     "macroType" : "query",
-    "definition" : "\n    {{ log(\"table_name=\" ~ table_name, info=True) }}\n    {{ log(\"schema=\" ~ schema, info=True) }}\n    {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n    {{ log(\"distance=\" ~ distance, info=True) }}\n    {{ log(\"unit=\" ~ unit, info=True) }}\n    {{ log(\"writeInputGeometry=\" ~ writeInputGeometry, info=True) }}\n\n/*\n    select\n        andre_dev.alteryx_spatial.buffer(\n            {{polygonColumnName}},\n            {{distance}},\n            \"{{unit}}\",\n            {{writeInputGeometry}}\n        ) as output\n    from {{ table_name }}\n\n    select name from {{ table_name }} \n\n    select st_astext(st_buffer(ST_GeomFromText('POLYGON ((-71.0565 42.3555, -73.9249 40.6943, -73.5617 45.5089, -71.0565 42.3555))'), \n2)) as result\n*/\n\nSELECT\n  name,\n  ST_AsText(\n    ST_Transform(\n      ST_Buffer(\n        ST_Transform(\n          ST_GeomFromText(\n            {{polygonColumnName}},\n            4326 -- SRID\n          ),\n          3857 -- SRID\n        ),\n        20000 -- distance in meters\n      ),\n      4326 -- SRID\n    )\n  ) as output\n  FROM \n    {{table_name}}",
+    "definition" : "\n    {{ log(\"table_name=\" ~ table_name, info=True) }}\n    {{ log(\"schema=\" ~ schema, info=True) }}\n    {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n    {{ log(\"distance=\" ~ distance, info=True) }}\n    {{ log(\"unit=\" ~ unit, info=True) }}\n    {{ log(\"writeInputGeometry=\" ~ writeInputGeometry, info=True) }}\n\n/*\n    select\n        andre_dev.alteryx_spatial.buffer(\n            {{polygonColumnName}},\n            {{distance}},\n            \"{{unit}}\",\n            {{writeInputGeometry}}\n        ) as output\n    from {{ table_name }}\n\n    select name from {{ table_name }} \n*/\n\n-- Consider enabling Photon or switch to a tier that supports ST expressions SQLSTATE: 0A000\n\nselect st_astext(st_buffer(ST_GeomFromText('POLYGON ((-71.0565 42.3555, -73.9249 40.6943, -73.5617 45.5089, -71.0565 42.3555))'), \n2)) as result",
     "parameters" : {
       "type" : "record",
       "fields" : [ {
@@ -64,7 +64,7 @@
     "staleState" : "none",
     "propertiesFile" : {
       "name" : "macros",
-      "content" : "---\nversion: 2\nmacros:\n- name: \"BufferTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"writeInputGeometry\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"GeneralizeTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"threshold\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"MakeGridTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"cell_size\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"Float_MakeGrid\"\n  arguments:\n  - name: \"parameter1\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"FoobarTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"Generalize2Tool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"threshold\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTool_06\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"writeInputGeometry\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"MakeGridTool_05\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"cell_size\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"Buffer_Table\"\n  arguments:\n  - name: \"parameter1\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTableTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distanceColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unitColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"writeInputGeometry\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTableTool_01\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distanceColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unitColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"writeInputGeometry\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"ST_BufferTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"writeInputGeometry\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"DistanceOriginal\"\n  arguments:\n  - name: \"relation_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"sourceColumnNames\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"destinationColumnNames\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"sourceType\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"destinationType\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"outputDistance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"units\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"outputCardDirection\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"outputDirectionDegrees\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"allColumnNames\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"ST_BufferTool_02\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"writeInputGeometry\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"BufferTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"writeInputGeometry\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"GeneralizeTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"threshold\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"MakeGridTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"cell_size\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"Float_MakeGrid\"\n  arguments:\n  - name: \"parameter1\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"FoobarTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"Generalize2Tool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"threshold\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"MakeGridTool3\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"cell_size\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTool_Old2\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTool_01\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTool_02\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTool_03\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTool_04\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTool_05\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"writeInputGeometry\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTool_06\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"writeInputGeometry\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"MakeGridTool_04\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"cell_size\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"MakeGridTool_05\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"cell_size\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"Buffer_Table\"\n  arguments:\n  - name: \"parameter1\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTableTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distanceColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unitColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"writeInputGeometry\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"BufferTableTool_01\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distanceColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unitColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"writeInputGeometry\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"ST_BufferTool\"\n  arguments:\n  - name: \"table_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"schema\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"polygonColumnName\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"distance\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unit\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"writeInputGeometry\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
       "path" : "andre_spatial_07/macros/macros.yml",
       "projectConfiguration" : null,
       "folderConfiguration" : {
@@ -202,6 +202,178 @@
           } ],
           "macroType" : "query"
         }, {
+          "name" : "MakeGridTool3",
+          "arguments" : [ {
+            "name" : "table_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "schema",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "polygonColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "cell_size",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "unit",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "BufferTool_Old2",
+          "arguments" : [ {
+            "name" : "table_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "schema",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "polygonColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "distance",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "unit",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "BufferTool_01",
+          "arguments" : [ {
+            "name" : "table_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "schema",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "polygonColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "distance",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "unit",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "BufferTool_02",
+          "arguments" : [ {
+            "name" : "table_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "schema",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "polygonColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "distance",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "unit",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "BufferTool_03",
+          "arguments" : [ {
+            "name" : "table_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "schema",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "polygonColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "distance",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "unit",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "BufferTool_04",
+          "arguments" : [ {
+            "name" : "table_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "schema",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "polygonColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "distance",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "unit",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "BufferTool_05",
+          "arguments" : [ {
+            "name" : "table_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "schema",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "polygonColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "distance",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "unit",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "writeInputGeometry",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
           "name" : "BufferTool_06",
           "arguments" : [ {
             "name" : "table_name",
@@ -225,6 +397,30 @@
             "description" : "{\"ProphecyType\": \"value\"}"
           }, {
             "name" : "writeInputGeometry",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "MakeGridTool_04",
+          "arguments" : [ {
+            "name" : "table_name",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "schema",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "polygonColumnName",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "cell_size",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "unit",
             "type" : "value",
             "description" : "{\"ProphecyType\": \"value\"}"
           } ],
@@ -319,78 +515,6 @@
           "macroType" : "query"
         }, {
           "name" : "ST_BufferTool",
-          "arguments" : [ {
-            "name" : "table_name",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "schema",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "polygonColumnName",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "distance",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "unit",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "writeInputGeometry",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          } ],
-          "macroType" : "query"
-        }, {
-          "name" : "DistanceOriginal",
-          "arguments" : [ {
-            "name" : "relation_name",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "sourceColumnNames",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "destinationColumnNames",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "sourceType",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "destinationType",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "outputDistance",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "units",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "outputCardDirection",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "outputDirectionDegrees",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "allColumnNames",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          } ],
-          "macroType" : "query"
-        }, {
-          "name" : "ST_BufferTool_02",
           "arguments" : [ {
             "name" : "table_name",
             "type" : "value",

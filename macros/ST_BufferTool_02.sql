@@ -8,23 +8,6 @@
     {{ log("writeInputGeometry=" ~ writeInputGeometry, info=True) }}
 
 
-SELECT
-  ST_AsText(
-    ST_Transform(
-      ST_Buffer(
-        ST_Transform(
-          ST_GeomFromText(
-            {{polygonColumnName}},
-            4326 
-          ),
-          3857  
-        ),
-        {{distance}}  
-      ),
-      4326  
-    )
-  ) as output
-FROM
-  {{table_name}}
+select {{ polygonColumnName }} from {{ table_name }} 
 
 {%- endmacro -%}

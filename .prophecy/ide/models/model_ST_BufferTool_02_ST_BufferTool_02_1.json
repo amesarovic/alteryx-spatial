@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mctu9q1i__ST_BufferTool_02__ST_BufferTool_02_1\"",
+        "alias" : "\"prophecy_tmp__mcuql3z6__ST_BufferTool_02__ST_BufferTool_02_1\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
@@ -50,8 +50,8 @@
         "autoUpdateOnRun" : false
       }
     },
-    "mNsQhCUdFR5mUMEPgvnuY$$uImhBZ6KrWjKOD1ZEOYzq" : {
-      "id" : "mNsQhCUdFR5mUMEPgvnuY$$uImhBZ6KrWjKOD1ZEOYzq",
+    "t8jamIgWS_4QHioChiKZH$$a5tjvcVAXMWsXVWKSt7Qa" : {
+      "id" : "t8jamIgWS_4QHioChiKZH$$a5tjvcVAXMWsXVWKSt7Qa",
       "component" : "ST_BufferTool_02",
       "metadata" : {
         "label" : "ST_BufferTool_02_1",
@@ -60,23 +60,43 @@
         "phase" : 0
       },
       "properties" : {
-        "parameter1" : "'default_value_of_parameter1'",
+        "relation_name" : [ "new_england" ],
+        "geometryColumnName" : "",
         "_oldMacroProperties" : {
           "macroName" : "ST_BufferTool_02",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
-            "name" : "parameter1",
-            "value" : "'default_value_of_parameter1'"
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : ""
+          }, {
+            "name" : "distance",
+            "value" : "1"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          }, {
+            "name" : "writeInputGeometry",
+            "value" : "false"
           } ]
-        }
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "writeInputGeometry" : false,
+        "unit" : "miles",
+        "distance" : 1
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "0ZRSqc_1utXyTNGB8aJUd$$-KUQQhMZeWC0Vl6U-xKqg",
+          "id" : "jhe-3Extv8osELmg78dx2$$MZHSIvAjacCNIQ-yVBeqt",
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "KXjG-Eh1Rr-xAr6VHDA6z$$iOi_zOp-4lcF9JzJZhFoD",
+          "id" : "QvPWTXRdg1ethea_uXaRP$$j_7L9x9FtFtdI_fUP7LTp",
           "slug" : "out"
         } ],
         "isCustomOutputSchema" : false,
@@ -116,17 +136,17 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_mNsQhCUdFR5mUMEPgvnuY$$uImhBZ6KrWjKOD1ZEOYzq_prophecy_tmp__ST_BufferTool_02__ST_BufferTool_02_1",
-    "source" : "mNsQhCUdFR5mUMEPgvnuY$$uImhBZ6KrWjKOD1ZEOYzq",
-    "sourcePort" : "KXjG-Eh1Rr-xAr6VHDA6z$$iOi_zOp-4lcF9JzJZhFoD",
+    "id" : "conn_t8jamIgWS_4QHioChiKZH$$a5tjvcVAXMWsXVWKSt7Qa_prophecy_tmp__ST_BufferTool_02__ST_BufferTool_02_1",
+    "source" : "t8jamIgWS_4QHioChiKZH$$a5tjvcVAXMWsXVWKSt7Qa",
+    "sourcePort" : "QvPWTXRdg1ethea_uXaRP$$j_7L9x9FtFtdI_fUP7LTp",
     "target" : "prophecy_tmp__ST_BufferTool_02__ST_BufferTool_02_1",
     "targetPort" : "input_port_0"
   }, {
-    "id" : "R1kDeTiPcmvFDuPYRyMCr",
+    "id" : "qYGd7v3FhAKHOnHYqfaZS$$aQYGgJtU9xbWWZN1I0pvy",
     "source" : "UiI7lLkb1xJ-KVuw-j8Ak$$kH8e9JYXx2OSQtQhrhhyB",
     "sourcePort" : "ej7UDdjkEGp14C5ItQt3x$$NHuJUApW5sdy40lKuBN9G",
-    "target" : "mNsQhCUdFR5mUMEPgvnuY$$uImhBZ6KrWjKOD1ZEOYzq",
-    "targetPort" : "0ZRSqc_1utXyTNGB8aJUd$$-KUQQhMZeWC0Vl6U-xKqg"
+    "target" : "t8jamIgWS_4QHioChiKZH$$a5tjvcVAXMWsXVWKSt7Qa",
+    "targetPort" : "jhe-3Extv8osELmg78dx2$$MZHSIvAjacCNIQ-yVBeqt"
   } ],
   "component" : "Model"
 }

@@ -1,4 +1,5 @@
-{%- macro ST_BufferTool(table_name,schema,polygonColumnName,distance,unit,writeInputGeometry) -%}
+
+{%- macro ST_BufferTool_03(table_name,schema,polygonColumnName,distance,unit,writeInputGeometry) -%}
     {{ log("table_name=" ~ table_name, info=True) }}
     {{ log("schema=" ~ schema, info=True) }}
     {{ log("polygonColumnName=" ~ polygonColumnName, info=True) }}
@@ -7,6 +8,18 @@
     {{ log("writeInputGeometry=" ~ writeInputGeometry, info=True) }}
 
 /*
+select
+  st_astext(
+    st_buffer(
+       ST_GeomFromText({{polygonColumnName}}),
+       2
+    )
+  ) as output
+from {{ table_name }}
+
+select {{ polygonColumnName }} from {{ table_name }} 
+*/
+
     select
         andre_dev.alteryx_spatial.buffer(
             {{polygonColumnName}},
@@ -16,12 +29,5 @@
         ) as output
     from {{ table_name }}
 
-    select name from {{ table_name }} 
-*/
-
--- Consider enabling Photon or switch to a tier that supports ST expressions SQLSTATE: 0A000
-
-select st_astext(st_buffer(ST_GeomFromText('POLYGON ((-71.0565 42.3555, -73.9249 40.6943, -73.5617 45.5089, -71.0565 42.3555))'), 
-2)) as result
-
 {%- endmacro -%}
+
