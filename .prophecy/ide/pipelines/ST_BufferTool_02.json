@@ -1,7 +1,7 @@
 {
-  "id" : "ST_BufferTool",
+  "id" : "ST_BufferTool_02",
   "metainfo" : {
-    "label" : "ST_BufferTool",
+    "label" : "ST_BufferTool_02",
     "autoLayout" : false,
     "version" : 1,
     "configuration" : {
@@ -22,13 +22,13 @@
     "isTranspiledPipeline" : false
   },
   "processes" : {
-    "CiejEMN0BsOcdrv-qLmZi$$SQDYAIzy7duqLyTY4NQ-7" : {
-      "id" : "CiejEMN0BsOcdrv-qLmZi$$SQDYAIzy7duqLyTY4NQ-7",
+    "UiI7lLkb1xJ-KVuw-j8Ak$$kH8e9JYXx2OSQtQhrhhyB" : {
+      "id" : "UiI7lLkb1xJ-KVuw-j8Ak$$kH8e9JYXx2OSQtQhrhhyB",
       "component" : "Dataset",
       "metadata" : {
         "label" : "new_england",
-        "x" : -960,
-        "y" : -460,
+        "x" : -420,
+        "y" : -300,
         "phase" : 0
       },
       "properties" : {
@@ -45,11 +45,11 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "ekTrYkwuzfnilAUzuThpN$$8fsTj7FiZ3YF3HjsH1fue",
+          "id" : "a1m-Jthm5Q4fHf8xoMIqm$$vFGPI2UMCZMPNRy9Dz_w3",
           "slug" : "in"
         } ],
         "outputs" : [ {
-          "id" : "qvItfPP_NgkBZIbg6hl09$$DTuRUpewztLiRXXe9cBrQ",
+          "id" : "ej7UDdjkEGp14C5ItQt3x$$NHuJUApW5sdy40lKuBN9G",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -70,20 +70,20 @@
         "isCustomOutputSchema" : false
       }
     },
-    "AKHiZ1pq2KinMo9btFo1u$$1dVsZ9sMygx01cJ4IMChh" : {
-      "id" : "AKHiZ1pq2KinMo9btFo1u$$1dVsZ9sMygx01cJ4IMChh",
-      "component" : "ST_BufferTool",
+    "zL-nCHpnS3LwZpcEeX4m2$$GX3kB-uXH5y1BwsDIPNuW" : {
+      "id" : "zL-nCHpnS3LwZpcEeX4m2$$GX3kB-uXH5y1BwsDIPNuW",
+      "component" : "ST_BufferTool_02",
       "metadata" : {
         "label" : "buffer_new_england",
-        "x" : -740,
-        "y" : -460,
+        "x" : -240,
+        "y" : -300,
         "phase" : 0
       },
       "properties" : {
         "relation_name" : [ "new_england" ],
         "geometryColumnName" : "geometry",
         "_oldMacroProperties" : {
-          "macroName" : "ST_BufferTool",
+          "macroName" : "ST_BufferTool_02",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
             "name" : "relation_name",
@@ -112,7 +112,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "t0gyYsKwtFhWmjqgXzo6y$$bh06hjtch4rYhYX0nBFks",
+          "id" : "cBphi65MwQTNHfRgrQRV9$$-b9vbMBBxRZOy2NGo1cOd",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -131,12 +131,12 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "5C0e0dI_pF9u4Ni-uhJud$$FeywvxjbIe5MYtOdiks_i",
+          "id" : "9_Z8T2_h8qdnO9yjKGJgx$$6ux0jCqHm0SmUZRvhCqxx",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "result",
+              "name" : "name",
               "dataType" : {
                 "type" : "String"
               }
@@ -147,19 +147,19 @@
         "isCustomOutputSchema" : false
       },
       "componentInfo" : {
-        "gemId" : "ST_BufferTool_andre_spatial_07",
-        "name" : "ST_BufferTool",
+        "gemId" : "ST_BufferTool_02_andre_spatial_07",
+        "name" : "ST_BufferTool_02",
         "projectName" : "andre_spatial_07",
         "sourceProjectName" : "andre_spatial_07"
       }
     }
   },
   "connections" : [ {
-    "id" : "acVNpfFlHoaqlXIo8LtSr$$JMxQk0Vo-p2Wp8Ow-W1hv",
-    "source" : "CiejEMN0BsOcdrv-qLmZi$$SQDYAIzy7duqLyTY4NQ-7",
-    "sourcePort" : "qvItfPP_NgkBZIbg6hl09$$DTuRUpewztLiRXXe9cBrQ",
-    "target" : "AKHiZ1pq2KinMo9btFo1u$$1dVsZ9sMygx01cJ4IMChh",
-    "targetPort" : "t0gyYsKwtFhWmjqgXzo6y$$bh06hjtch4rYhYX0nBFks"
+    "id" : "7ckmEduXC91DsMNPXUOQz$$qQPUgwCCG-0q5do5vtWZV",
+    "source" : "UiI7lLkb1xJ-KVuw-j8Ak$$kH8e9JYXx2OSQtQhrhhyB",
+    "sourcePort" : "ej7UDdjkEGp14C5ItQt3x$$NHuJUApW5sdy40lKuBN9G",
+    "target" : "zL-nCHpnS3LwZpcEeX4m2$$GX3kB-uXH5y1BwsDIPNuW",
+    "targetPort" : "cBphi65MwQTNHfRgrQRV9$$-b9vbMBBxRZOy2NGo1cOd"
   } ],
   "component" : "Pipeline"
 }
