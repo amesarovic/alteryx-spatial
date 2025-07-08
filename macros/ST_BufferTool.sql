@@ -17,11 +17,29 @@
     from {{ table_name }}
 
     select name from {{ table_name }} 
+
+    select st_astext(st_buffer(ST_GeomFromText('POLYGON ((-71.0565 42.3555, -73.9249 40.6943, -73.5617 45.5089, -71.0565 42.3555))'), 
+2)) as result
 */
 
--- Consider enabling Photon or switch to a tier that supports ST expressions SQLSTATE: 0A000
-
-select st_astext(st_buffer(ST_GeomFromText('POLYGON ((-71.0565 42.3555, -73.9249 40.6943, -73.5617 45.5089, -71.0565 42.3555))'), 
-2)) as result
+SELECT
+  name,
+  ST_AsText(
+    ST_Transform(
+      ST_Buffer(
+        ST_Transform(
+          ST_GeomFromText(
+            {{polygonColumnName}},
+            4326 -- SRID
+          ),
+          3857 -- SRID
+        ),
+        20000 -- distance in meters
+      ),
+      4326 -- SRID
+    )
+  ) as output
+  FROM 
+    {{table_name}}
 
 {%- endmacro -%}

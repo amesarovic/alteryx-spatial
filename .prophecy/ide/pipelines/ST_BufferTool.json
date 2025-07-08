@@ -136,7 +136,12 @@
             "entityType" : "",
             "providerType" : "Databricks",
             "fields" : [ {
-              "name" : "result",
+              "name" : "name",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "output",
               "dataType" : {
                 "type" : "String"
               }

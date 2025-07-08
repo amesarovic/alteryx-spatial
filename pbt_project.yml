@@ -60,6 +60,17 @@ sqlMacros:
     - macros/macros.yml
     - gems/BufferTableTool_01.py
     createdAt: '2025-06-24 20:40:26'
+  .prophecy/metadata/sqlmacros/MakeGridTool:
+    name: MakeGridTool
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/MakeGridTool.sql
+    - .prophecy/ide/macros/MakeGridTool.json
+    - macros/macros.yml
+    - gems/MakeGridTool.py
+    createdAt: '2025-06-17 04:34:21'
   .prophecy/metadata/sqlmacros/BufferTool:
     name: BufferTool
     macroType: query
@@ -124,27 +135,6 @@ sqlMacros:
     - macros/macros.yml
     - gems/BufferTableTool.py
     createdAt: '2025-06-24 19:09:48'
-  .prophecy/metadata/sqlmacros/ST_BufferTool_03:
-    name: ST_BufferTool_03
-    macroType: query
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - macros/ST_BufferTool_03.sql
-    - .prophecy/ide/macros/ST_BufferTool_03.json
-    - macros/macros.yml
-    createdAt: '2025-07-08 15:42:07'
-  .prophecy/metadata/sqlmacros/MakeGridTool:
-    name: MakeGridTool
-    macroType: query
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - macros/MakeGridTool.sql
-    - .prophecy/ide/macros/MakeGridTool.json
-    - macros/macros.yml
-    - gems/MakeGridTool.py
-    createdAt: '2025-06-17 04:34:21'
   .prophecy/metadata/sqlmacros/GeneralizeTool:
     name: GeneralizeTool
     macroType: query
@@ -347,7 +337,7 @@ sqlOrchestratorPipelines:
     author: mesarovic.andre@prophecy.io
     files:
     - models/ST_BufferTool_02/schema.yml
-    - models/ST_BufferTool_02/model_ST_BufferTool_02_buffer_new_england.sql
+    - models/ST_BufferTool_02/model_ST_BufferTool_02_ST_BufferTool_02_1.sql
     - .prophecy/ide/pipelines/ST_BufferTool_02.json
     - pipelines/ST_BufferTool_02.py
     createdAt: '2025-07-07 22:42:20'
@@ -360,7 +350,7 @@ sqlOrchestratorPipelines:
     - models/ST_BufferTool/schema.yml
     - models/ST_BufferTool/model_ST_BufferTool_buffer_new_england.sql
     - models/ST_BufferTool_02/schema.yml
-    - models/ST_BufferTool_02/model_ST_BufferTool_02_buffer_new_england.sql
+    - models/ST_BufferTool_02/model_ST_BufferTool_02_ST_BufferTool_02_1.sql
     - .prophecy/ide/pipelines/ST_BufferTool.json
     - pipelines/ST_BufferTool.py
     createdAt: '2025-06-25 20:07:46'
