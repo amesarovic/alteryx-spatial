@@ -2,7 +2,7 @@
   "ST_BufferTool_02" : {
     "name" : "ST_BufferTool_02",
     "macroType" : "query",
-    "definition" : "\n    {{ log(\"table_name=\" ~ table_name, info=True) }}\n    {{ log(\"schema=\" ~ schema, info=True) }}\n    {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n    {{ log(\"distance=\" ~ distance, info=True) }}\n    {{ log(\"unit=\" ~ unit, info=True) }}\n    {{ log(\"writeInputGeometry=\" ~ writeInputGeometry, info=True) }}\n\nselect \"name\" from {{ table_name }}",
+    "definition" : "\n    {{ log(\"table_name=\" ~ table_name, info=True) }}\n    {{ log(\"schema=\" ~ schema, info=True) }}\n    {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n    {{ log(\"distance=\" ~ distance, info=True) }}\n    {{ log(\"unit=\" ~ unit, info=True) }}\n    {{ log(\"writeInputGeometry=\" ~ writeInputGeometry, info=True) }}\n\nselect {{ polygonColumnName }} from {{ table_name }}",
     "parameters" : {
       "type" : "record",
       "fields" : [ {

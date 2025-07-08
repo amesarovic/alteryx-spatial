@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mctugb3b__ST_BufferTool_02__buffer_new_england",
+    "alias": "prophecy_tmp__mctx05dm__ST_BufferTool_02__buffer_new_england",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })
