@@ -1,8 +1,8 @@
 {
-  "ST_BufferTool_02" : {
-    "name" : "ST_BufferTool_02",
+  "ST_BufferTool_03" : {
+    "name" : "ST_BufferTool_03",
     "macroType" : "query",
-    "definition" : "\n    {{ log(\"table_name=\" ~ table_name, info=True) }}\n    {{ log(\"schema=\" ~ schema, info=True) }}\n    {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n    {{ log(\"distance=\" ~ distance, info=True) }}\n    {{ log(\"unit=\" ~ unit, info=True) }}\n    {{ log(\"writeInputGeometry=\" ~ writeInputGeometry, info=True) }}\n\n\nselect {{ polygonColumnName }} from {{ table_name }}",
+    "definition" : "\n    {{ log(\"table_name=\" ~ table_name, info=True) }}\n    {{ log(\"schema=\" ~ schema, info=True) }}\n    {{ log(\"polygonColumnName=\" ~ polygonColumnName, info=True) }}\n    {{ log(\"distance=\" ~ distance, info=True) }}\n    {{ log(\"unit=\" ~ unit, info=True) }}\n    {{ log(\"writeInputGeometry=\" ~ writeInputGeometry, info=True) }}\n\n/*\nselect\n  st_astext(\n    st_buffer(\n       ST_GeomFromText({{polygonColumnName}}),\n       2\n    )\n  ) as output\nfrom {{ table_name }}\n\nselect {{ polygonColumnName }} from {{ table_name }} \n*/\n\n    select\n        andre_dev.alteryx_spatial.buffer(\n            {{polygonColumnName}},\n            {{distance}},\n            \"{{unit}}\",\n            {{writeInputGeometry}}\n        ) as output\n    from {{ table_name }}",
     "parameters" : {
       "type" : "record",
       "fields" : [ {

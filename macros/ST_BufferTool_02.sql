@@ -7,6 +7,7 @@
     {{ log("unit=" ~ unit, info=True) }}
     {{ log("writeInputGeometry=" ~ writeInputGeometry, info=True) }}
 
-select {{ polygonColumnName }} from {{ table_name }}
+
+select {{ polygonColumnName }} from {{ table_name }} 
 
 {%- endmacro -%}
