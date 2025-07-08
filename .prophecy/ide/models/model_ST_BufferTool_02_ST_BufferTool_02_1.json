@@ -1,7 +1,7 @@
 {
-  "id" : "model_ST_BufferTool_02_buffer_new_england",
+  "id" : "model_ST_BufferTool_02_ST_BufferTool_02_1",
   "metainfo" : {
-    "label" : "model_ST_BufferTool_02_buffer_new_england",
+    "label" : "model_ST_BufferTool_02_ST_BufferTool_02_1",
     "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mcunvgsi__ST_BufferTool_02__buffer_new_england\"",
+        "alias" : "\"prophecy_tmp__mctu9q1i__ST_BufferTool_02__ST_BufferTool_02_1\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
@@ -19,18 +19,18 @@
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__ST_BufferTool_02__buffer_new_england" : {
-      "id" : "prophecy_tmp__ST_BufferTool_02__buffer_new_england",
+    "prophecy_tmp__ST_BufferTool_02__ST_BufferTool_02_1" : {
+      "id" : "prophecy_tmp__ST_BufferTool_02__ST_BufferTool_02_1",
       "component" : "TargetModel",
       "metadata" : {
-        "label" : "buffer_new_england",
+        "label" : "ST_BufferTool_02_1",
         "phase" : 0
       },
       "properties" : {
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "\nSELECT *\n\nFROM buffer_new_england\n\n",
+        "query" : "\nSELECT *\n\nFROM ST_BufferTool_02_1\n\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -54,41 +54,21 @@
       "id" : "mNsQhCUdFR5mUMEPgvnuY$$uImhBZ6KrWjKOD1ZEOYzq",
       "component" : "ST_BufferTool_02",
       "metadata" : {
-        "label" : "buffer_new_england",
+        "label" : "ST_BufferTool_02_1",
         "x" : -220,
         "y" : -300,
         "phase" : 0
       },
       "properties" : {
-        "relation_name" : [ "new_england" ],
-        "geometryColumnName" : "geometry",
+        "parameter1" : "'default_value_of_parameter1'",
         "_oldMacroProperties" : {
           "macroName" : "ST_BufferTool_02",
           "projectName" : "andre_spatial_07",
           "parameters" : [ {
-            "name" : "relation_name",
-            "value" : "['new_england']"
-          }, {
-            "name" : "schema",
-            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
-          }, {
-            "name" : "destinationColumnNames",
-            "value" : "geometry"
-          }, {
-            "name" : "distance",
-            "value" : "1"
-          }, {
-            "name" : "unit",
-            "value" : "miles"
-          }, {
-            "name" : "writeInputGeometry",
-            "value" : "false"
+            "name" : "parameter1",
+            "value" : "'default_value_of_parameter1'"
           } ]
-        },
-        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
-        "writeInputGeometry" : false,
-        "unit" : "miles",
-        "distance" : 1
+        }
       },
       "ports" : {
         "inputs" : [ {
@@ -136,10 +116,10 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_mNsQhCUdFR5mUMEPgvnuY$$uImhBZ6KrWjKOD1ZEOYzq_prophecy_tmp__ST_BufferTool_02__buffer_new_england",
+    "id" : "conn_mNsQhCUdFR5mUMEPgvnuY$$uImhBZ6KrWjKOD1ZEOYzq_prophecy_tmp__ST_BufferTool_02__ST_BufferTool_02_1",
     "source" : "mNsQhCUdFR5mUMEPgvnuY$$uImhBZ6KrWjKOD1ZEOYzq",
     "sourcePort" : "KXjG-Eh1Rr-xAr6VHDA6z$$iOi_zOp-4lcF9JzJZhFoD",
-    "target" : "prophecy_tmp__ST_BufferTool_02__buffer_new_england",
+    "target" : "prophecy_tmp__ST_BufferTool_02__ST_BufferTool_02_1",
     "targetPort" : "input_port_0"
   }, {
     "id" : "R1kDeTiPcmvFDuPYRyMCr",
