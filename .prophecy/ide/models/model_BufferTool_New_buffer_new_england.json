@@ -1,0 +1,148 @@
+{
+  "id" : "model_BufferTool_New_buffer_new_england",
+  "metainfo" : {
+    "label" : "model_BufferTool_New_buffer_new_england",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"prophecy_tmp__mcw368d6__BufferTool_New__buffer_new_england\"",
+        "materialized" : "table",
+        "database" : "\"andre_dev\"",
+        "schema" : "\"alteryx_spatial\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "prophecy_tmp__BufferTool_New__buffer_new_england" : {
+      "id" : "prophecy_tmp__BufferTool_New__buffer_new_england",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "buffer_new_england",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM buffer_new_england\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "bi7TSrkgIkVSIPR07fG-0$$0kWmDY7PQTSwYmqyWMJhU" : {
+      "id" : "bi7TSrkgIkVSIPR07fG-0$$0kWmDY7PQTSwYmqyWMJhU",
+      "component" : "BufferTool",
+      "metadata" : {
+        "label" : "buffer_new_england",
+        "x" : -640,
+        "y" : -580,
+        "phase" : 0
+      },
+      "properties" : {
+        "relation_name" : [ "new_england" ],
+        "geometryColumnName" : "geometry",
+        "_oldMacroProperties" : {
+          "macroName" : "BufferTool",
+          "projectName" : "andre_spatial_07",
+          "parameters" : [ {
+            "name" : "relation_name",
+            "value" : "['new_england']"
+          }, {
+            "name" : "schema",
+            "value" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]"
+          }, {
+            "name" : "destinationColumnNames",
+            "value" : "geometry"
+          }, {
+            "name" : "distance",
+            "value" : "1"
+          }, {
+            "name" : "unit",
+            "value" : "miles"
+          } ]
+        },
+        "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
+        "unit" : "miles",
+        "distance" : 1
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "pxf7Z2U0VAAhAeOSqp2Y0$$o6NTGcAedqg8jmPNELBhq",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "6RJbZsP_ozdHwfZql-F3S$$WgDwaS6mbUi7BiOUDSJzq",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "xrNjwuYBZQ07FFjTOv3uH$$9qAvf9EchMDQcTP0bWuZl" : {
+      "id" : "xrNjwuYBZQ07FFjTOv3uH$$9qAvf9EchMDQcTP0bWuZl",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "new_england",
+        "x" : -840,
+        "y" : -580,
+        "phase" : 0
+      },
+      "properties" : {
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        },
+        "table" : {
+          "name" : "new_england",
+          "sourceType" : "Table",
+          "sourceName" : "andre_dev.alteryx_spatial",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ykHPxvdPGQy8nHuP8LSC2$$ANUmT8svl38Uy7h7l7qKS",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_bi7TSrkgIkVSIPR07fG-0$$0kWmDY7PQTSwYmqyWMJhU_prophecy_tmp__BufferTool_New__buffer_new_england",
+    "source" : "bi7TSrkgIkVSIPR07fG-0$$0kWmDY7PQTSwYmqyWMJhU",
+    "sourcePort" : "6RJbZsP_ozdHwfZql-F3S$$WgDwaS6mbUi7BiOUDSJzq",
+    "target" : "prophecy_tmp__BufferTool_New__buffer_new_england",
+    "targetPort" : "input_port_0"
+  }, {
+    "id" : "ArN4e_qrAMOQTSijf73s2$$QaZuW-ROMlFNzvIkSRHCh",
+    "source" : "xrNjwuYBZQ07FFjTOv3uH$$9qAvf9EchMDQcTP0bWuZl",
+    "sourcePort" : "ykHPxvdPGQy8nHuP8LSC2$$ANUmT8svl38Uy7h7l7qKS",
+    "target" : "bi7TSrkgIkVSIPR07fG-0$$0kWmDY7PQTSwYmqyWMJhU",
+    "targetPort" : "pxf7Z2U0VAAhAeOSqp2Y0$$o6NTGcAedqg8jmPNELBhq"
+  } ],
+  "component" : "Model"
+}

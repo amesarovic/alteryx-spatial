@@ -27,17 +27,6 @@ sqlModels: {}
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
-  .prophecy/metadata/sqlmacros/ST_BufferTool_02:
-    name: ST_BufferTool_02
-    macroType: query
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - macros/ST_BufferTool_03.sql
-    - .prophecy/ide/macros/ST_BufferTool_02.json
-    - macros/macros.yml
-    - gems/ST_BufferTool_02.py
-    createdAt: '2025-07-07 22:37:29'
   .prophecy/metadata/sqlmacros/MakeGridTool_05:
     name: MakeGridTool_05
     macroType: query
@@ -60,6 +49,17 @@ sqlMacros:
     - macros/macros.yml
     - gems/BufferTableTool_01.py
     createdAt: '2025-06-24 20:40:26'
+  .prophecy/metadata/sqlmacros/MakeGridTool:
+    name: MakeGridTool
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/MakeGridTool.sql
+    - .prophecy/ide/macros/MakeGridTool.json
+    - macros/macros.yml
+    - gems/MakeGridTool.py
+    createdAt: '2025-06-17 04:34:21'
   .prophecy/metadata/sqlmacros/BufferTool:
     name: BufferTool
     macroType: query
@@ -70,18 +70,7 @@ sqlMacros:
     - .prophecy/ide/macros/BufferTool.json
     - macros/macros.yml
     - gems/BufferTool.py
-    createdAt: '2025-06-24 03:16:52'
-  .prophecy/metadata/sqlmacros/ST_BufferTool:
-    name: ST_BufferTool
-    macroType: query
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - macros/ST_BufferTool.sql
-    - .prophecy/ide/macros/ST_BufferTool.json
-    - macros/macros.yml
-    - gems/ST_BufferTool.py
-    createdAt: '2025-06-25 20:05:59'
+    createdAt: '2025-07-09 14:15:19'
   .prophecy/metadata/sqlmacros/Generalize2Tool:
     name: Generalize2Tool
     macroType: query
@@ -102,6 +91,17 @@ sqlMacros:
     - macros/generate_schema_name.sql
     - .prophecy/ide/macros/generate_schema_name.json
     createdAt: '2025-06-16 18:21:31'
+  .prophecy/metadata/sqlmacros/UC_BufferTool_01:
+    name: UC_BufferTool_01
+    macroType: query
+    description: null
+    author: mesarovic.andre@prophecy.io
+    files:
+    - macros/UC_BufferTool_01.sql
+    - .prophecy/ide/macros/UC_BufferTool_01.json
+    - macros/macros.yml
+    - gems/UC_BufferTool_01.py
+    createdAt: '2025-07-09 20:46:29'
   .prophecy/metadata/sqlmacros/BufferTool_06:
     name: BufferTool_06
     macroType: query
@@ -124,28 +124,6 @@ sqlMacros:
     - macros/macros.yml
     - gems/BufferTableTool.py
     createdAt: '2025-06-24 19:09:48'
-  .prophecy/metadata/sqlmacros/ST_BufferTool_03:
-    name: ST_BufferTool_03
-    macroType: query
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - macros/ST_BufferTool_02.sql
-    - .prophecy/ide/macros/ST_BufferTool_03.json
-    - macros/macros.yml
-    - gems/ST_BufferTool_03.py
-    createdAt: '2025-07-09 02:54:32'
-  .prophecy/metadata/sqlmacros/MakeGridTool:
-    name: MakeGridTool
-    macroType: query
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - macros/MakeGridTool.sql
-    - .prophecy/ide/macros/MakeGridTool.json
-    - macros/macros.yml
-    - gems/MakeGridTool.py
-    createdAt: '2025-06-17 04:34:21'
   .prophecy/metadata/sqlmacros/GeneralizeTool:
     name: GeneralizeTool
     macroType: query
@@ -214,22 +192,6 @@ sqlSources:
       author: mesarovic.andre@prophecy.io
       createdAt: '2025-06-25 05:58:06'
       tableType: table
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__ST_BufferTool_02:
-    name: prophecy_tmp_source__ST_BufferTool_02
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/ST_BufferTool_02/schema.yml
-    createdAt: '2025-07-08 16:20:36'
-    tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__ST_BufferTool:
-    name: prophecy_tmp_source__ST_BufferTool
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/ST_BufferTool/schema.yml
-    createdAt: '2025-07-07 20:32:27'
-    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTool:
     name: prophecy_tmp_source__BufferTool
     description: null
@@ -246,29 +208,21 @@ sqlSources:
     - models/BufferTool_06/schema.yml
     createdAt: '2025-06-23 23:39:40'
     tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__MakeGridTool_04:
-    name: prophecy_tmp_source__MakeGridTool_04
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTool_New:
+    name: prophecy_tmp_source__BufferTool_New
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/MakeGridTool_04/schema.yml
-    createdAt: '2025-06-24 06:31:59'
+    - models/BufferTool_New/schema.yml
+    createdAt: '2025-07-09 15:00:33'
     tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__GeneralizeTool_01:
-    name: prophecy_tmp_source__GeneralizeTool_01
+  .prophecy/metadata/sqlsources/prophecy_tmp_source__UC_BufferTool_01:
+    name: prophecy_tmp_source__UC_BufferTool_01
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/GeneralizeTool_01/schema.yml
-    createdAt: '2025-07-07 21:02:02'
-    tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__ST_BufferTool_03:
-    name: prophecy_tmp_source__ST_BufferTool_03
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/ST_BufferTool_03/schema.yml
-    createdAt: '2025-07-09 02:56:28'
+    - models/UC_BufferTool_01/schema.yml
+    createdAt: '2025-07-09 20:48:12'
     tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__MakeGridTool_05:
     name: prophecy_tmp_source__MakeGridTool_05
@@ -277,22 +231,6 @@ sqlSources:
     files:
     - models/MakeGridTool_05/schema.yml
     createdAt: '2025-06-24 12:51:09'
-    tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__Generalize2Tool_a:
-    name: prophecy_tmp_source__Generalize2Tool_a
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Generalize2Tool_a/schema.yml
-    createdAt: '2025-07-07 21:02:02'
-    tables: []
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTableTool:
-    name: prophecy_tmp_source__BufferTableTool
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/BufferTableTool/schema.yml
-    createdAt: '2025-06-25 06:17:12'
     tables: []
 sqlUnreferencedSources: {}
 sqlPipeline:
@@ -314,28 +252,18 @@ flags:
   shouldAddDefaultDependenciesIfAbsent: false
 pipelineConfigurations: {}
 sqlOrchestratorPipelines:
-  .prophecy/metadata/sqlorchestratorpipeline/ST_BufferTool_03:
-    name: ST_BufferTool_03
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/ST_BufferTool_03/schema.yml
-    - models/ST_BufferTool_03/model_ST_BufferTool_03_buffer_new_england.sql
-    - .prophecy/ide/pipelines/ST_BufferTool_03.json
-    - pipelines/ST_BufferTool_03.py
-    createdAt: '2025-07-09 02:55:17'
   .prophecy/metadata/sqlorchestratorpipeline/BufferTool:
     name: BufferTool
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/BufferTool/schema.yml
     - models/BufferTool/model_BufferTool_buffer_new_england.sql
-    - models/BufferTool_06/model_BufferTool_06_buffer_new_england.sql
+    - models/BufferTool_New/schema.yml
     - models/BufferTool_06/schema.yml
-    - .prophecy/ide/pipelines/BufferTool.json
+    - models/BufferTool_06/model_BufferTool_06_buffer_new_england.sql
+    - models/BufferTool/schema.yml
+    - models/BufferTool_New/model_BufferTool_New_buffer_new_england.sql
     - pipelines/BufferTool.py
     createdAt: '2025-06-24 03:18:26'
   .prophecy/metadata/sqlorchestratorpipeline/BufferTool_06:
@@ -349,43 +277,17 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/BufferTool_06.json
     - pipelines/BufferTool_06.py
     createdAt: '2025-06-23 19:01:20'
-  .prophecy/metadata/sqlorchestratorpipeline/GeneralizeTool_01:
-    name: GeneralizeTool_01
+  .prophecy/metadata/sqlorchestratorpipeline/UC_BufferTool_01:
+    name: UC_BufferTool_01
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/GeneralizeTool_01/model_GeneralizeTool_01_generalize_polygons.sql
-    - models/GeneralizeTool_01/schema.yml
-    - .prophecy/ide/pipelines/GeneralizeTool_01.json
-    - pipelines/GeneralizeTool_01.py
-    createdAt: '2025-07-07 21:02:02'
-  .prophecy/metadata/sqlorchestratorpipeline/ST_BufferTool_02:
-    name: ST_BufferTool_02
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/ST_BufferTool_02/schema.yml
-    - models/ST_BufferTool_02/model_ST_BufferTool_02_ST_BufferTool_02_1.sql
-    - .prophecy/ide/pipelines/ST_BufferTool_02.json
-    - pipelines/ST_BufferTool_02.py
-    createdAt: '2025-07-07 22:42:20'
-  .prophecy/metadata/sqlorchestratorpipeline/ST_BufferTool:
-    name: ST_BufferTool
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/ST_BufferTool_02/schema.yml
-    - models/ST_BufferTool/model_ST_BufferTool_buffer_new_england.sql
-    - models/ST_BufferTool_02/model_ST_BufferTool_02_ST_BufferTool_02_1.sql
-    - models/ST_BufferTool/schema.yml
-    - models/ST_BufferTool_03/schema.yml
-    - models/ST_BufferTool_03/model_ST_BufferTool_03_buffer_new_england.sql
-    - .prophecy/ide/pipelines/ST_BufferTool.json
-    - pipelines/ST_BufferTool.py
-    createdAt: '2025-06-25 20:07:46'
+    - models/UC_BufferTool_01/schema.yml
+    - models/UC_BufferTool_01/model_UC_BufferTool_01_buffer_new_england.sql
+    - .prophecy/ide/pipelines/UC_BufferTool_01.json
+    - pipelines/UC_BufferTool_01.py
+    createdAt: '2025-07-09 20:47:52'
   .prophecy/metadata/sqlorchestratorpipeline/MakeGridTool_05:
     name: MakeGridTool_05
     schema: null
@@ -397,17 +299,6 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/MakeGridTool_05.json
     - pipelines/MakeGridTool_05.py
     createdAt: '2025-06-24 12:15:05'
-  .prophecy/metadata/sqlorchestratorpipeline/BufferTableTool:
-    name: BufferTableTool
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/BufferTableTool/model_BufferTableTool_BufferTableTool_1.sql
-    - models/BufferTableTool/schema.yml
-    - .prophecy/ide/pipelines/BufferTableTool.json
-    - pipelines/BufferTableTool.py
-    createdAt: '2025-06-24 19:11:17'
   .prophecy/metadata/sqlorchestratorpipeline/BufferTableTool_01:
     name: BufferTableTool_01
     schema: null
@@ -417,26 +308,15 @@ sqlOrchestratorPipelines:
     - .prophecy/ide/pipelines/BufferTableTool_01.json
     - pipelines/BufferTableTool_01.py
     createdAt: '2025-06-25 05:56:42'
-  .prophecy/metadata/sqlorchestratorpipeline/MakeGridTool_04:
-    name: MakeGridTool_04
+  .prophecy/metadata/sqlorchestratorpipeline/BufferTool_New:
+    name: BufferTool_New
     schema: null
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/MakeGridTool_04/model_MakeGridTool_04_MakeGridTool_04_0.sql
-    - models/MakeGridTool_04/schema.yml
-    - .prophecy/ide/pipelines/MakeGridTool_04.json
-    - pipelines/MakeGridTool_04.py
-    createdAt: '2025-06-23 23:47:09'
-  .prophecy/metadata/sqlorchestratorpipeline/Generalize2Tool_a:
-    name: Generalize2Tool_a
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/Generalize2Tool_a/schema.yml
-    - models/Generalize2Tool_a/model_Generalize2Tool_a_generalize_polygons.sql
-    - .prophecy/ide/pipelines/Generalize2Tool_a.json
-    - pipelines/Generalize2Tool_a.py
-    createdAt: '2025-07-07 21:02:02'
+    - models/BufferTool_New/schema.yml
+    - models/BufferTool_New/model_BufferTool_New_buffer_new_england.sql
+    - .prophecy/ide/pipelines/BufferTool_New.json
+    - pipelines/BufferTool_New.py
+    createdAt: '2025-07-09 14:26:26'
 sqlBusinessApps: {}
