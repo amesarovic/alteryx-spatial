@@ -1,16 +1,16 @@
 ---
 version: 2
 models:
-- name: "model_UC_BufferTool_01_buffer_new_england"
+- name: "model_UC_BufferTool_02_buffer_new_england"
   tags:
   - "prophecy_temp"
 sources:
-- name: "prophecy_tmp_source__UC_BufferTool_01"
+- name: "prophecy_tmp_source__UC_BufferTool_02"
   database: "andre_dev"
   schema: "alteryx_spatial"
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mcwk0gef__UC_BufferTool_01__buffer_new_england"
+  - name: "prophecy_tmp__mcwp01pw__UC_BufferTool_02__buffer_new_england"
     tags:
     - "prophecy_temp"

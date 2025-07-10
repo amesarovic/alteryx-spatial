@@ -1,7 +1,7 @@
 {{
   config({    
     "materialized": "table",
-    "alias": "prophecy_tmp__mcwk0gef__UC_BufferTool_01__buffer_new_england",
+    "alias": "prophecy_tmp__mcwp01pw__UC_BufferTool_02__buffer_new_england",
     "database": "andre_dev",
     "schema": "alteryx_spatial"
   })
@@ -18,11 +18,11 @@ WITH new_england AS (
 buffer_new_england AS (
 
   {{
-    andre_spatial_07.UC_BufferTool_01(
+    andre_spatial_07.UC_BufferTool_02(
       'new_england', 
       [{ "name": "name", "dataType": "String" }, { "name": "geometry", "dataType": "String" }], 
       'geometry', 
-      10, 
+      1, 
       'miles', 
       false
     )
