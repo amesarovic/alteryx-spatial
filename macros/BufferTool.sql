@@ -6,6 +6,7 @@
   {{ log("unit=" ~ unit, info=True) }}
 
   SELECT
+    {{geometryColumnName}} as input,
     ST_AsText(
       ST_Transform(
         ST_Buffer(

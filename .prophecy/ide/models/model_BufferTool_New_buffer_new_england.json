@@ -9,7 +9,7 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__md2hwcba__BufferTool_New__buffer_new_england\"",
+        "alias" : "\"prophecy_tmp__md3mizdm__BufferTool_New__buffer_new_england\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
         "schema" : "\"alteryx_spatial\"",
@@ -76,7 +76,7 @@
             "value" : "geometry"
           }, {
             "name" : "distance",
-            "value" : "1"
+            "value" : "20"
           }, {
             "name" : "unit",
             "value" : "miles"
@@ -84,7 +84,7 @@
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "unit" : "miles",
-        "distance" : 1
+        "distance" : 20
       },
       "ports" : {
         "inputs" : [ {

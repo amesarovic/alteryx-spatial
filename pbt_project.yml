@@ -170,14 +170,6 @@ sqlMacros:
     createdAt: '2025-06-26 17:08:31'
 sqlSeeds: {}
 sqlSources:
-  .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTool:
-    name: prophecy_tmp_source__BufferTool
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/BufferTool/schema.yml
-    createdAt: '2025-06-24 03:18:44'
-    tables: []
   .prophecy/metadata/sqlsources/prophecy_tmp_source__BufferTool_06:
     name: prophecy_tmp_source__BufferTool_06
     description: null
@@ -290,20 +282,6 @@ flags:
   shouldAddDefaultDependenciesIfAbsent: false
 pipelineConfigurations: {}
 sqlOrchestratorPipelines:
-  .prophecy/metadata/sqlorchestratorpipeline/BufferTool:
-    name: BufferTool
-    schema: null
-    description: null
-    author: mesarovic.andre@prophecy.io
-    files:
-    - models/BufferTool_New/schema.yml
-    - models/BufferTool/model_BufferTool_buffer_new_england.sql
-    - models/BufferTool_New/model_BufferTool_New_buffer_new_england.sql
-    - models/BufferTool_06/schema.yml
-    - models/BufferTool/schema.yml
-    - models/BufferTool_06/model_BufferTool_06_buffer_new_england.sql
-    - pipelines/BufferTool.py
-    createdAt: '2025-06-24 03:18:26'
   .prophecy/metadata/sqlorchestratorpipeline/BufferTool_06:
     name: BufferTool_06
     schema: null
