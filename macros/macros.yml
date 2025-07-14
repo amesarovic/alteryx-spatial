@@ -228,7 +228,7 @@ macros:
   - name: "schema"
     type: "value"
     description: "{\"ProphecyType\": \"value\"}"
-  - name: "polygonColumnName"
+  - name: "geometryColumnName"
     type: "value"
     description: "{\"ProphecyType\": \"value\"}"
   - name: "distance"
