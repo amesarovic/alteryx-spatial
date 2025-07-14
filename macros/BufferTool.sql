@@ -4,23 +4,21 @@
   {{ log("geometryColumnName=" ~ geometryColumnName, info=True) }}
   {{ log("distance=" ~ distance, info=True) }}
   {{ log("unit=" ~ unit, info=True) }}
-SELECT
- ST_AsText(
-  ST_Transform(
-   ST_Buffer(
-    ST_Transform(
-     ST_GeomFromText(
-      {{geometryColumnName}},
-      4326
-     ),
-     3857
-    ),
-    {{distance}}
-   ),
-   4326
-  )
- ) as output
-FROM
- {{table_name}}
+
+  SELECT
+    ST_AsText(
+      ST_Transform(
+        ST_Buffer(
+          ST_Transform(
+            ST_GeomFromText({{geometryColumnName}}, 4326),
+            3857
+          ),
+          {{distance}}
+        ),
+        4326
+      )
+    ) as  output
+  FROM
+    {{table_name}}
 
 {%- endmacro -%}

@@ -70,12 +70,12 @@
         "isCustomOutputSchema" : false
       }
     },
-    "61j5bogYjKwRC-3x78mE9$$UGD-0WiKsJHev-bJ9LFcy" : {
-      "id" : "61j5bogYjKwRC-3x78mE9$$UGD-0WiKsJHev-bJ9LFcy",
+    "kq1GzPdDniK3BB9j_kqkW$$_zxc9_oyx-ExKKZCG7Tl5" : {
+      "id" : "kq1GzPdDniK3BB9j_kqkW$$_zxc9_oyx-ExKKZCG7Tl5",
       "component" : "BufferTool",
       "metadata" : {
         "label" : "buffer_new_england",
-        "x" : -620,
+        "x" : -660,
         "y" : -580,
         "phase" : 0
       },
@@ -96,7 +96,7 @@
             "value" : "geometry"
           }, {
             "name" : "distance",
-            "value" : "20"
+            "value" : "1"
           }, {
             "name" : "unit",
             "value" : "miles"
@@ -104,11 +104,11 @@
         },
         "schema" : "[{\"name\": \"name\", \"dataType\": \"String\"}, {\"name\": \"geometry\", \"dataType\": \"String\"}]",
         "unit" : "miles",
-        "distance" : 20
+        "distance" : 1
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "ZlJgSPEyxsWRjVPOCvG6a$$jUpJnd9Bcjl5gFsA20gIn",
+          "id" : "bp1_kkpp1oQapeLnijkSx$$x5lv70PkanuDUMI1yxzEK",
           "schema" : {
             "entityType" : "",
             "providerType" : "databricks",
@@ -127,7 +127,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "hOUSrZDP1d0fF7FHngGV9$$_00kGQUVo0UGrqboaxR8t",
+          "id" : "93xTy-NVnYFURosdgqR2m$$_QRiZTPqprRuhJ4n7-9-0",
           "schema" : {
             "entityType" : "",
             "providerType" : "Databricks",
@@ -151,11 +151,11 @@
     }
   },
   "connections" : [ {
-    "id" : "-wMAnGTTEQmUE5tJPABdx$$6P66lYjcCG-O2ImdWJbQ0",
+    "id" : "4ECpJ7mRw2Q3EVgzyrucK$$blvBHJK_3Zg-qgClmaCeE",
     "source" : "xrNjwuYBZQ07FFjTOv3uH$$9qAvf9EchMDQcTP0bWuZl",
     "sourcePort" : "ykHPxvdPGQy8nHuP8LSC2$$ANUmT8svl38Uy7h7l7qKS",
-    "target" : "61j5bogYjKwRC-3x78mE9$$UGD-0WiKsJHev-bJ9LFcy",
-    "targetPort" : "ZlJgSPEyxsWRjVPOCvG6a$$jUpJnd9Bcjl5gFsA20gIn"
+    "target" : "kq1GzPdDniK3BB9j_kqkW$$_zxc9_oyx-ExKKZCG7Tl5",
+    "targetPort" : "bp1_kkpp1oQapeLnijkSx$$x5lv70PkanuDUMI1yxzEK"
   } ],
   "component" : "Pipeline"
 }
