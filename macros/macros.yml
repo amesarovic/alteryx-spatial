@@ -286,3 +286,9 @@ macros:
     type: "value"
     description: "{\"ProphecyType\": \"value\"}"
   macroType: "query"
+- name: "Hello_World"
+  arguments:
+  - name: "parameter1"
+    type: "value"
+    description: "{\"ProphecyType\": \"value\"}"
+  macroType: "query"

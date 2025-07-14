@@ -9,18 +9,18 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mc9qod5c__BufferTool_06__buffer_new_england\"",
+        "alias" : "\"prophecy_tmp__mcxxvfy2__BufferTool_06__buffer_new_england\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
-        "schema" : "\"spatial\"",
+        "schema" : "\"alteryx_spatial\"",
         "type" : "ModelConfig"
       }
     },
     "version" : 3
   },
   "processes" : {
-    "prophecy_tmp__mc9qod5c__BufferTool_06__buffer_new_england" : {
-      "id" : "prophecy_tmp__mc9qod5c__BufferTool_06__buffer_new_england",
+    "prophecy_tmp__BufferTool_06__buffer_new_england" : {
+      "id" : "prophecy_tmp__BufferTool_06__buffer_new_england",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "buffer_new_england",
@@ -39,12 +39,12 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "input_port_0_1",
-          "slug" : "input_port_0_1"
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
         } ],
         "outputs" : [ {
-          "id" : "output_port_0_1",
-          "slug" : "output_port_0_1"
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
         } ],
         "isCustomOutputSchema" : false,
         "autoUpdateOnRun" : false
@@ -136,11 +136,11 @@
     }
   },
   "connections" : [ {
-    "id" : "conn_5Qf89nhEXoNLSIcu4SKAe$$VkcsbTVQ8yRMWIb_v0nm-_prophecy_tmp__mc9qod5c__BufferTool_06__buffer_new_england",
+    "id" : "conn_5Qf89nhEXoNLSIcu4SKAe$$VkcsbTVQ8yRMWIb_v0nm-_prophecy_tmp__BufferTool_06__buffer_new_england",
     "source" : "5Qf89nhEXoNLSIcu4SKAe$$VkcsbTVQ8yRMWIb_v0nm-",
     "sourcePort" : "4i4jPyeUEC77YZ6qsJ1NE$$7AoFKpk5zHCW6LVJf_Cnr",
-    "target" : "prophecy_tmp__mc9qod5c__BufferTool_06__buffer_new_england",
-    "targetPort" : "input_port_0_1"
+    "target" : "prophecy_tmp__BufferTool_06__buffer_new_england",
+    "targetPort" : "input_port_0"
   }, {
     "id" : "PHJeppwZoT3vM3EK9FSdi$$M2BMUi1_mfjltKWvQ74SE",
     "source" : "UvkosUGiktYQQANtabHLA$$7eIQUA9SYatDQEq21XoFs",

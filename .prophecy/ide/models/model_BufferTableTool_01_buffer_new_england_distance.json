@@ -9,10 +9,10 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mcbk9odb__BufferTableTool_01__buffer_new_england_distance\"",
+        "alias" : "\"prophecy_tmp__mcxic2m4__BufferTableTool_01__buffer_new_england_distance\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
-        "schema" : "\"spatial\"",
+        "schema" : "\"alteryx_spatial\"",
         "type" : "ModelConfig"
       }
     },

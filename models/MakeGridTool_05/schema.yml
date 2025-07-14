@@ -7,10 +7,10 @@ models:
 sources:
 - name: "prophecy_tmp_source__MakeGridTool_05"
   database: "andre_dev"
-  schema: "spatial"
+  schema: "alteryx_spatial"
   config:
     enabled: true
   tables:
-  - name: "prophecy_tmp__mcapuygb__MakeGridTool_05__create_grid_miles"
+  - name: "prophecy_tmp__mcxm795j__MakeGridTool_05__create_grid_miles"
     tags:
     - "prophecy_temp"

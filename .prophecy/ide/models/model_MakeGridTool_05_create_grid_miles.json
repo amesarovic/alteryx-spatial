@@ -9,10 +9,10 @@
     },
     "graphConfig" : {
       "entityConfig" : {
-        "alias" : "\"prophecy_tmp__mcapuygb__MakeGridTool_05__create_grid_miles\"",
+        "alias" : "\"prophecy_tmp__mcxm795j__MakeGridTool_05__create_grid_miles\"",
         "materialized" : "table",
         "database" : "\"andre_dev\"",
-        "schema" : "\"spatial\"",
+        "schema" : "\"alteryx_spatial\"",
         "type" : "ModelConfig"
       }
     },
