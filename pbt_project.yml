@@ -296,12 +296,12 @@ sqlOrchestratorPipelines:
     description: null
     author: mesarovic.andre@prophecy.io
     files:
-    - models/BufferTool_06/model_BufferTool_06_buffer_new_england.sql
+    - models/BufferTool/model_BufferTool_buffer_new_england.sql
+    - models/BufferTool_06/schema.yml
+    - models/BufferTool_New/schema.yml
     - models/BufferTool_New/model_BufferTool_New_buffer_new_england.sql
     - models/BufferTool/schema.yml
-    - models/BufferTool_06/schema.yml
-    - models/BufferTool/model_BufferTool_buffer_new_england.sql
-    - models/BufferTool_New/schema.yml
+    - models/BufferTool_06/model_BufferTool_06_buffer_new_england.sql
     - pipelines/BufferTool.py
     createdAt: '2025-06-24 03:18:26'
   .prophecy/metadata/sqlorchestratorpipeline/BufferTool_06:
